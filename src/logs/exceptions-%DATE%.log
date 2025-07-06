@@ -1,0 +1,2217 @@
+2025:07:02 :: 13:47:20::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(5,5): error TS1434: Unexpected keyword or identifier.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(5,5): error TS1434: Unexpected keyword or identifier.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 13:47:43::error::uncaughtException: Router.use() requires a middleware function but got a undefined
+TypeError: Router.use() requires a middleware function but got a undefined
+    at Function.use (C:\Users\omar\Documents\OOP\node_modules\express\lib\router\index.js:469:13)
+    at Function.<anonymous> (C:\Users\omar\Documents\OOP\node_modules\express\lib\application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (C:\Users\omar\Documents\OOP\node_modules\express\lib\application.js:224:7)
+    at C:\Users\omar\Documents\OOP\src\app.ts:44:22
+    at Array.forEach (<anonymous>)
+    at App.initializeRoutes (C:\Users\omar\Documents\OOP\src\app.ts:43:16)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:26:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:13)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+2025:07:02 :: 13:47:50::error::uncaughtException: Router.use() requires a middleware function but got a undefined
+TypeError: Router.use() requires a middleware function but got a undefined
+    at Function.use (C:\Users\omar\Documents\OOP\node_modules\express\lib\router\index.js:469:13)
+    at Function.<anonymous> (C:\Users\omar\Documents\OOP\node_modules\express\lib\application.js:227:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (C:\Users\omar\Documents\OOP\node_modules\express\lib\application.js:224:7)
+    at C:\Users\omar\Documents\OOP\src\app.ts:44:22
+    at Array.forEach (<anonymous>)
+    at App.initializeRoutes (C:\Users\omar\Documents\OOP\src\app.ts:43:16)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:26:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:13)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+2025:07:02 :: 13:48:08::error::uncaughtException: this.initializeRoute is not a function
+TypeError: this.initializeRoute is not a function
+    at new IndexRoute (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:8:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:4:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2025:07:02 :: 13:48:14::error::uncaughtException: this.initializeRoute is not a function
+TypeError: this.initializeRoute is not a function
+    at new IndexRoute (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:8:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:4:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2025:07:02 :: 13:48:22::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(13,5): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(13,5): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 13:48:27::error::uncaughtException: path must be a string, array of strings, or regular expression
+TypeError: path must be a string, array of strings, or regular expression
+    at pathToRegexp (C:\Users\omar\Documents\OOP\node_modules\path-to-regexp\index.js:69:11)
+    at new Layer (C:\Users\omar\Documents\OOP\node_modules\express\lib\router\layer.js:45:17)
+    at Function.route (C:\Users\omar\Documents\OOP\node_modules\express\lib\router\index.js:505:15)
+    at Function.proto.<computed> [as get] (C:\Users\omar\Documents\OOP\node_modules\express\lib\router\index.js:520:22)
+    at IndexRoute.initializeRoute (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:12:21)
+    at new IndexRoute (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:8:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:4:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+2025:07:02 :: 13:48:29::error::uncaughtException: th is not defined
+ReferenceError: th is not defined
+    at IndexRoute.initializeRoute (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:12:25)
+    at new IndexRoute (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:8:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:4:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:07:02 :: 13:48:44::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(12,48): error TS1005: '=>' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(12,48): error TS1005: '=>' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 13:48:49::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(12,61): error TS1005: '=>' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(12,61): error TS1005: '=>' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 13:48:52::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(12,61): error TS1005: '=>' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(12,61): error TS1005: '=>' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 13:48:54::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(12,68): error TS1005: '=>' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(12,68): error TS1005: '=>' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 13:49:00::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(12,68): error TS1005: '=>' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(12,68): error TS1005: '=>' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 13:49:03::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(12,68): error TS1005: '=>' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(12,68): error TS1005: '=>' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 13:49:06::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(12,61): error TS1005: '=>' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(12,61): error TS1005: '=>' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 14:58:01::error::uncaughtException: this.initializeErrorMiddlewares is not a function
+TypeError: this.initializeErrorMiddlewares is not a function
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:27:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:13)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2025:07:02 :: 15:12:37::error::uncaughtException: Car is not defined
+ReferenceError: Car is not defined
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:5:9)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 15:18:35::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(25,75): error TS1136: Property assignment expected.
+src/controllers/car.controller.ts(25,83): error TS1005: ',' expected.
+src/controllers/car.controller.ts(25,84): error TS1472: 'catch' or 'finally' expected.
+src/controllers/car.controller.ts(32,1): error TS1128: Declaration or statement expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(25,75): error TS1136: Property assignment expected.
+src/controllers/car.controller.ts(25,83): error TS1005: ',' expected.
+src/controllers/car.controller.ts(25,84): error TS1472: 'catch' or 'finally' expected.
+src/controllers/car.controller.ts(32,1): error TS1128: Declaration or statement expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\car.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 15:22:03::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(10,5): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(10,5): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\car.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 15:24:59::error::uncaughtException: await is only valid in async functions and the top level bodies of modules
+C:\Users\omar\Documents\OOP\src\controllers\car.controller.ts:15
+            const newCar = await this.carService.createCar({ ...req.body, price: parseInt(price) });
+                           ^^^^^
+
+SyntaxError: await is only valid in async functions and the top level bodies of modules
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1528:20)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 15:25:03::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(12,102): error TS1005: '=>' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(12,102): error TS1005: '=>' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\car.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 15:25:45::error::uncaughtException: Unexpected token ';'
+C:\Users\omar\Documents\OOP\src\controllers\car.controller.ts:15
+            const ;
+                  ^
+
+SyntaxError: Unexpected token ';'
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1528:20)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 15:26:01::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(23,16): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(23,16): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\car.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 21:00:38::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(6,21): error TS1005: '{' expected.
+src/controllers/car.controller.ts(7,5): error TS1128: Declaration or statement expected.
+src/controllers/car.controller.ts(8,19): error TS1005: ';' expected.
+src/controllers/car.controller.ts(12,5): error TS1128: Declaration or statement expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(6,21): error TS1005: '{' expected.
+src/controllers/car.controller.ts(7,5): error TS1128: Declaration or statement expected.
+src/controllers/car.controller.ts(8,19): error TS1005: ';' expected.
+src/controllers/car.controller.ts(12,5): error TS1128: Declaration or statement expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\car.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 21:00:42::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(5,21): error TS1005: '{' expected.
+src/controllers/car.controller.ts(6,5): error TS1128: Declaration or statement expected.
+src/controllers/car.controller.ts(7,19): error TS1005: ';' expected.
+src/controllers/car.controller.ts(11,5): error TS1128: Declaration or statement expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(5,21): error TS1005: '{' expected.
+src/controllers/car.controller.ts(6,5): error TS1128: Declaration or statement expected.
+src/controllers/car.controller.ts(7,19): error TS1005: ';' expected.
+src/controllers/car.controller.ts(11,5): error TS1128: Declaration or statement expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\car.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 21:00:47::error::uncaughtException: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+    at new CarController (C:\Users\omar\Documents\OOP\src\controllers\car.controller.ts:9:9)
+    at CarRoute.<instance_members_initializer> (C:\Users\omar\Documents\OOP\src\routes\car.route.ts:11:29)
+    at new CarRoute (C:\Users\omar\Documents\OOP\src\routes\car.route.ts:12:5)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:6:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4681033309168765.js:71:20)
+2025:07:02 :: 22:34:04::error::uncaughtException: Cannot read properties of undefined (reading 'forEach')
+TypeError: Cannot read properties of undefined (reading 'forEach')
+    at App.initializeRoutes (C:\Users\omar\Documents\OOP\src\app.ts:49:16)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:31:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:70:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:18)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:71:20)
+2025:07:02 :: 22:34:14::error::uncaughtException: Cannot read properties of undefined (reading 'forEach')
+TypeError: Cannot read properties of undefined (reading 'forEach')
+    at App.initializeRoutes (C:\Users\omar\Documents\OOP\src\app.ts:49:16)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:31:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:70:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:18)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:71:20)
+2025:07:02 :: 22:38:20::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/schemas/car.schema.ts(34,1): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/schemas/car.schema.ts(34,1): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\schemas\car.schema.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 22:38:31::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/schemas/car.schema.ts(35,5): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/schemas/car.schema.ts(35,5): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\schemas\car.schema.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 22:39:01::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/schemas/car.schema.ts(44,1): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/schemas/car.schema.ts(44,1): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\schemas\car.schema.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 22:40:02::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(47,9): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(47,9): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\car.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 22:40:32::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(48,9): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(48,9): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\car.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 22:41:04::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(50,61): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/car.controller.ts(50,61): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\car.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 22:43:20::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/base.controller.ts(23,29): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/base.controller.ts(23,29): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\base.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:02 :: 22:44:07::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/base.controller.ts(27,31): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/base.controller.ts(27,31): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\base.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-13816276485171253.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:04 :: 15:14:46::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/services/car.service.ts(6,25): error TS1442: Expected '=' for property initializer.
+
+Error: ⨯ Unable to compile TypeScript:
+src/services/car.service.ts(6,25): error TS1442: Expected '=' for property initializer.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\services\car.service.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:04 :: 15:15:05::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/services/car.service.ts(9,5): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/services/car.service.ts(9,5): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\services\car.service.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:04 :: 16:03:23::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(29,25): error TS1005: ',' expected.
+src/controllers/book.controller.ts(29,31): error TS1005: ',' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(29,25): error TS1005: ',' expected.
+src/controllers/book.controller.ts(29,31): error TS1005: ',' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\book.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:04 :: 16:03:54::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(31,33): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(31,33): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\book.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:04 :: 16:04:03::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(31,55): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(31,55): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\book.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:04 :: 16:04:09::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(32,55): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(32,55): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\book.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:04 :: 16:04:14::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(24,39): error TS1005: ',' expected.
+src/controllers/book.controller.ts(24,51): error TS1005: ',' expected.
+src/controllers/book.controller.ts(24,65): error TS1005: ',' expected.
+src/controllers/book.controller.ts(24,66): error TS1136: Property assignment expected.
+src/controllers/book.controller.ts(32,55): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(24,39): error TS1005: ',' expected.
+src/controllers/book.controller.ts(24,51): error TS1005: ',' expected.
+src/controllers/book.controller.ts(24,65): error TS1005: ',' expected.
+src/controllers/book.controller.ts(24,66): error TS1136: Property assignment expected.
+src/controllers/book.controller.ts(32,55): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\book.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:04 :: 16:04:17::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(32,55): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(32,55): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\book.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:04 :: 16:06:36::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(33,22): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(33,22): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\book.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:04 :: 16:53:31::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(64,30): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(64,30): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\book.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:04 :: 16:53:56::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(89,30): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/book.controller.ts(89,30): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\book.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29995576114795286.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:04 :: 17:13:02::error::uncaughtException: PayWithCredit is not defined
+ReferenceError: PayWithCredit is not defined
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\book.controller.ts:101:21)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:04 :: 17:14:02::error::uncaughtException: there is no enough fund in your current balance
+Error: there is no enough fund in your current balance
+    at PayWithCredit.pay (C:\Users\omar\Documents\OOP\src\classes\payment.class.ts:9:41)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\book.controller.ts:107:13)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2025:07:04 :: 17:15:15::error::uncaughtException: there is no enough fund in your current balance
+Error: there is no enough fund in your current balance
+    at PayWithCredit.pay (C:\Users\omar\Documents\OOP\src\classes\payment.class.ts:9:41)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\payment.class.ts:25:13)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2025:07:04 :: 17:15:21::error::uncaughtException: there is no enough fund in your current balance
+Error: there is no enough fund in your current balance
+    at PayWithCredit.pay (C:\Users\omar\Documents\OOP\src\classes\payment.class.ts:9:41)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\payment.class.ts:26:13)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2025:07:04 :: 17:16:02::error::uncaughtException: this.initializeClasses is not a function
+TypeError: this.initializeClasses is not a function
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:33:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:71:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:07:04 :: 17:16:56::error::uncaughtException: there is no enough fund in your current balance
+Error: there is no enough fund in your current balance
+    at PayWithCredit.pay (C:\Users\omar\Documents\OOP\src\classes\payment.class.ts:9:41)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\payment.class.ts:26:13)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2025:07:05 :: 01:58:17::error::uncaughtException: The "id" argument must be of type string. Received undefined
+TypeError: The "id" argument must be of type string. Received undefined
+    at Module.require (node:internal/modules/cjs/loader:1304:3)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\book.controller.ts:6:1)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:07:05 :: 01:59:42::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(5,1): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(5,5): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(5,10): error TS1435: Unknown keyword or identifier. Did you mean 'any'?
+src/classes/creationalPatterns.ts(5,15): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(5,26): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(5,29): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(5,36): error TS1003: Identifier expected.
+src/classes/creationalPatterns.ts(7,1): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,5): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,10): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,13): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,24): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,40): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(5,1): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(5,5): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(5,10): error TS1435: Unknown keyword or identifier. Did you mean 'any'?
+src/classes/creationalPatterns.ts(5,15): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(5,26): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(5,29): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(5,36): error TS1003: Identifier expected.
+src/classes/creationalPatterns.ts(7,1): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,5): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,10): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,13): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,24): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,40): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 01:59:46::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(7,1): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,5): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,10): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,13): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,24): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,40): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(7,1): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,5): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,10): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,13): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,24): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(7,40): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:02:09::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(46,1): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,5): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,10): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,13): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,20): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,29): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,32): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,40): error TS1435: Unknown keyword or identifier. Did you mean 'object'?
+src/classes/creationalPatterns.ts(46,48): error TS1435: Unknown keyword or identifier. Did you mean 'with out'?
+src/classes/creationalPatterns.ts(46,56): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,67): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,81): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(46,1): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,5): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,10): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,13): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,20): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,29): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,32): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,40): error TS1435: Unknown keyword or identifier. Did you mean 'object'?
+src/classes/creationalPatterns.ts(46,48): error TS1435: Unknown keyword or identifier. Did you mean 'with out'?
+src/classes/creationalPatterns.ts(46,56): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,67): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(46,81): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:02:18::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(48,17): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(48,17): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:03:01::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(58,12): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(58,12): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:03:50::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(70,10): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(70,10): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:04:28::error::uncaughtException: Identifier 'DarkUiFactory' has already been declared
+C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:48
+class DarkUiFactory {
+
+SyntaxError: Identifier 'DarkUiFactory' has already been declared
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1528:20)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:04:51::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(83,34): error TS1110: Type expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(83,34): error TS1110: Type expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:05:11::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(85,1): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(85,1): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:05:44::error::uncaughtException: Cannot read properties of undefined (reading 'createButton')
+TypeError: Cannot read properties of undefined (reading 'createButton')
+    at renderUi (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:84:35)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:88:1)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2025:07:05 :: 02:05:47::error::uncaughtException: renderFactory.createButton is not a function
+TypeError: renderFactory.createButton is not a function
+    at renderUi (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:84:35)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:88:1)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2025:07:05 :: 02:05:57::error::uncaughtException: DarkUiButton is not defined
+ReferenceError: DarkUiButton is not defined
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:88:14)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:16:45::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(98,1): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,5): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,10): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,13): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,19): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,29): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,45): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,48): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,52): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,64): error TS1003: Identifier expected.
+src/classes/creationalPatterns.ts(100,1): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(100,5): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(100,10): error TS1435: Unknown keyword or identifier. Did you mean 'any'?
+src/classes/creationalPatterns.ts(100,15): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(100,31): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(98,1): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,5): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,10): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,13): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,19): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,29): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,45): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,48): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,52): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(98,64): error TS1003: Identifier expected.
+src/classes/creationalPatterns.ts(100,1): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(100,5): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(100,10): error TS1435: Unknown keyword or identifier. Did you mean 'any'?
+src/classes/creationalPatterns.ts(100,15): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(100,31): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:16:57::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(104,7): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(104,7): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:17:02::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(106,1): error TS1110: Type expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(106,1): error TS1110: Type expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:19:02::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(111,7): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(111,7): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:19:10::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(111,19): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(111,19): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:19:50::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(112,27): error TS1442: Expected '=' for property initializer.
+src/classes/creationalPatterns.ts(115,1): error TS1128: Declaration or statement expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(112,27): error TS1442: Expected '=' for property initializer.
+src/classes/creationalPatterns.ts(115,1): error TS1128: Declaration or statement expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:19:52::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(112,27): error TS1442: Expected '=' for property initializer.
+src/classes/creationalPatterns.ts(115,1): error TS1128: Declaration or statement expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(112,27): error TS1442: Expected '=' for property initializer.
+src/classes/creationalPatterns.ts(115,1): error TS1128: Declaration or statement expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:20:45::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(120,5): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(120,5): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:22:10::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(138,19): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(138,19): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:22:19::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(138,36): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(138,36): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4005739937254833.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:28:02::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(132,5): error TS1435: Unknown keyword or identifier. Did you mean 'export'?
+src/classes/creationalPatterns.ts(134,16): error TS1005: ';' expected.
+src/classes/creationalPatterns.ts(135,15): error TS1005: ';' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(132,5): error TS1435: Unknown keyword or identifier. Did you mean 'export'?
+src/classes/creationalPatterns.ts(134,16): error TS1005: ';' expected.
+src/classes/creationalPatterns.ts(135,15): error TS1005: ';' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:28:04::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(134,16): error TS1005: ';' expected.
+src/classes/creationalPatterns.ts(135,15): error TS1005: ';' expected.
+src/classes/creationalPatterns.ts(136,7): error TS1128: Declaration or statement expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(134,16): error TS1005: ';' expected.
+src/classes/creationalPatterns.ts(135,15): error TS1005: ';' expected.
+src/classes/creationalPatterns.ts(136,7): error TS1128: Declaration or statement expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:28:08::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(136,7): error TS1128: Declaration or statement expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(136,7): error TS1128: Declaration or statement expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:28:11::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(136,7): error TS1128: Declaration or statement expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(136,7): error TS1128: Declaration or statement expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:30:38::error::uncaughtException: Cannot read properties of undefined (reading 'build')
+TypeError: Cannot read properties of undefined (reading 'build')
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:93:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:30:45::error::uncaughtException: (intermediate value).setTitle(...).setContent(...).setFooter(...).build is not a function
+TypeError: (intermediate value).setTitle(...).setContent(...).setFooter(...).build is not a function
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:128:6)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:53:05::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(144,1): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(144,5): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(144,10): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(144,12): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(144,37): error TS1005: ',' expected.
+src/classes/creationalPatterns.ts(144,65): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(144,1): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(144,5): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(144,10): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(144,12): error TS1434: Unexpected keyword or identifier.
+src/classes/creationalPatterns.ts(144,37): error TS1005: ',' expected.
+src/classes/creationalPatterns.ts(144,65): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:53:33::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(148,1): error TS1110: Type expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(148,1): error TS1110: Type expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:54:43::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(155,5): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(155,5): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:54:50::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(155,5): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(155,5): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:54:53::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(154,26): error TS1003: Identifier expected.
+src/classes/creationalPatterns.ts(155,5): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(154,26): error TS1003: Identifier expected.
+src/classes/creationalPatterns.ts(155,5): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:55:04::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(156,9): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(156,9): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:56:04::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(165,12): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/creationalPatterns.ts(165,12): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 02:56:17::error::uncaughtException: Class constructor DBConnection cannot be invoked without 'new'
+TypeError: Class constructor DBConnection cannot be invoked without 'new'
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\creationalPatterns.ts:165:14)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-3901286754183486.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 03:03:41::error::uncaughtException: this.initializeMongoConnection1 is not a function
+TypeError: this.initializeMongoConnection1 is not a function
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:34:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:74:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:07:05 :: 03:07:42::error::uncaughtException: connection is not defined
+ReferenceError: connection is not defined
+    at new MongoConnection (C:\Users\omar\Documents\OOP\src\utils\MongoConnection.ts:15:57)
+    at Function.getInstance (C:\Users\omar\Documents\OOP\src\utils\MongoConnection.ts:21:40)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:28:48)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:73:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+2025:07:05 :: 17:20:38::error::uncaughtException: th is not defined
+ReferenceError: th is not defined
+    at App.initializeErrorMiddlewares (C:\Users\omar\Documents\OOP\src\app.ts:62:9)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:31:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:66:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+2025:07:05 :: 17:22:03::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(7,28): error TS1002: Unterminated string literal.
+src/middlewares/xss.ts(8,5): error TS1005: ',' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(7,28): error TS1002: Unterminated string literal.
+src/middlewares/xss.ts(8,5): error TS1005: ',' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\middlewares\xss.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 17:24:07::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(8,19): error TS1005: ',' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(8,19): error TS1005: ',' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\middlewares\xss.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 17:24:10::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(8,23): error TS1005: ',' expected.
+src/middlewares/xss.ts(8,26): error TS1005: ',' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(8,23): error TS1005: ',' expected.
+src/middlewares/xss.ts(8,26): error TS1005: ',' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\middlewares\xss.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 17:24:17::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(8,22): error TS1005: ',' expected.
+src/middlewares/xss.ts(8,25): error TS1005: ',' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(8,22): error TS1005: ',' expected.
+src/middlewares/xss.ts(8,25): error TS1005: ',' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\middlewares\xss.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 17:24:20::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(8,23): error TS1005: ',' expected.
+src/middlewares/xss.ts(8,26): error TS1005: ',' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(8,23): error TS1005: ',' expected.
+src/middlewares/xss.ts(8,26): error TS1005: ',' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\middlewares\xss.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 17:42:12::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(16,21): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(16,21): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\middlewares\xss.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 17:42:27::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(16,21): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(16,21): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\middlewares\xss.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 17:42:51::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(16,13): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(16,13): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\middlewares\xss.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 17:43:12::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(16,12): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/middlewares/xss.ts(16,12): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\middlewares\xss.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:05 :: 17:48:48::error::uncaughtException: upload is not defined
+ReferenceError: upload is not defined
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\middlewares\xss.ts:29:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:40:18::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(29,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(30,1): error TS1127: Invalid character.
+src/classes/structural.class.ts(32,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,5): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,14): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,17): error TS1435: Unknown keyword or identifier. Did you mean 'object'?
+src/classes/structural.class.ts(32,46): error TS1005: ';' expected.
+src/classes/structural.class.ts(32,55): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,66): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(29,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(30,1): error TS1127: Invalid character.
+src/classes/structural.class.ts(32,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,5): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,14): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,17): error TS1435: Unknown keyword or identifier. Did you mean 'object'?
+src/classes/structural.class.ts(32,46): error TS1005: ';' expected.
+src/classes/structural.class.ts(32,55): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,66): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:40:21::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(30,1): error TS1127: Invalid character.
+src/classes/structural.class.ts(32,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,5): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,14): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,17): error TS1435: Unknown keyword or identifier. Did you mean 'object'?
+src/classes/structural.class.ts(32,46): error TS1005: ';' expected.
+src/classes/structural.class.ts(32,55): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,66): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(30,1): error TS1127: Invalid character.
+src/classes/structural.class.ts(32,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,5): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,14): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,17): error TS1435: Unknown keyword or identifier. Did you mean 'object'?
+src/classes/structural.class.ts(32,46): error TS1005: ';' expected.
+src/classes/structural.class.ts(32,55): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,66): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:40:26::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(32,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,5): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,14): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,17): error TS1435: Unknown keyword or identifier. Did you mean 'object'?
+src/classes/structural.class.ts(32,46): error TS1005: ';' expected.
+src/classes/structural.class.ts(32,55): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,66): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(32,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,5): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,14): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,17): error TS1435: Unknown keyword or identifier. Did you mean 'object'?
+src/classes/structural.class.ts(32,46): error TS1005: ';' expected.
+src/classes/structural.class.ts(32,55): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(32,66): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:40:38::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(34,14): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(34,14): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:40:45::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(34,21): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(34,21): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:41:12::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(41,12): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(41,12): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:41:24::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(41,39): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(41,39): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:41:34::error::uncaughtException: Unexpected strict mode reserved word
+C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:30
+    constructor(private) { }
+                ^^^^^^^
+
+SyntaxError: Unexpected strict mode reserved word
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1528:20)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:41:45::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(46,5): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(46,5): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:43:23::error::uncaughtException: TimestampLogger is not defined
+ReferenceError: TimestampLogger is not defined
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:50:16)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:44:24::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(54,1): error TS1127: Invalid character.
+src/classes/structural.class.ts(56,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(56,7): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(56,18): error TS1435: Unknown keyword or identifier. Did you mean 'object'?
+src/classes/structural.class.ts(56,26): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(56,51): error TS1005: ',' expected.
+src/classes/structural.class.ts(56,54): error TS1005: ',' expected.
+src/classes/structural.class.ts(56,63): error TS1005: ';' expected.
+src/classes/structural.class.ts(58,5): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(54,1): error TS1127: Invalid character.
+src/classes/structural.class.ts(56,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(56,7): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(56,18): error TS1435: Unknown keyword or identifier. Did you mean 'object'?
+src/classes/structural.class.ts(56,26): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(56,51): error TS1005: ',' expected.
+src/classes/structural.class.ts(56,54): error TS1005: ',' expected.
+src/classes/structural.class.ts(56,63): error TS1005: ';' expected.
+src/classes/structural.class.ts(58,5): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:44:27::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(56,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(56,7): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(56,18): error TS1435: Unknown keyword or identifier. Did you mean 'object'?
+src/classes/structural.class.ts(56,26): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(56,51): error TS1005: ',' expected.
+src/classes/structural.class.ts(56,54): error TS1005: ',' expected.
+src/classes/structural.class.ts(56,63): error TS1005: ';' expected.
+src/classes/structural.class.ts(58,5): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(56,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(56,7): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(56,18): error TS1435: Unknown keyword or identifier. Did you mean 'object'?
+src/classes/structural.class.ts(56,26): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(56,51): error TS1005: ',' expected.
+src/classes/structural.class.ts(56,54): error TS1005: ',' expected.
+src/classes/structural.class.ts(56,63): error TS1005: ';' expected.
+src/classes/structural.class.ts(58,5): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:45:37::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(78,14): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(78,14): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:46:01::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(78,20): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(78,20): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:46:29::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(81,3): error TS1005: '(' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(81,3): error TS1005: '(' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:46:46::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(84,13): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(84,13): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:46:57::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(86,9): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(86,9): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:47:38::error::uncaughtException: Unexpected token ';'
+C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:65
+const ;
+      ^
+
+SyntaxError: Unexpected token ';'
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1528:20)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:47:44::error::uncaughtException: Missing initializer in const declaration
+C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:65
+const Com;
+      ^^^
+
+SyntaxError: Missing initializer in const declaration
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1528:20)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:48:20::error::uncaughtException: co is not defined
+ReferenceError: co is not defined
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:97:3)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:48:31::error::uncaughtException: C is not defined
+ReferenceError: C is not defined
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:98:3)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 15:48:38::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(98,40): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(98,40): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 16:25:28::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(96,1): error TS1127: Invalid character.
+src/classes/structural.class.ts(98,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,9): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,11): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,23): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,26): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,40): error TS1005: '(' expected.
+src/classes/structural.class.ts(98,48): error TS1005: ';' expected.
+src/classes/structural.class.ts(98,55): error TS1005: ';' expected.
+src/classes/structural.class.ts(98,58): error TS1005: ')' expected.
+src/classes/structural.class.ts(98,73): error TS1003: Identifier expected.
+src/classes/structural.class.ts(100,5): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(100,14): error TS1005: '(' expected.
+src/classes/structural.class.ts(100,19): error TS1005: ';' expected.
+src/classes/structural.class.ts(100,44): error TS1005: ';' expected.
+src/classes/structural.class.ts(100,61): error TS1003: Identifier expected.
+src/classes/structural.class.ts(100,61): error TS1109: Expression expected.
+src/classes/structural.class.ts(101,1): error TS1005: ')' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(96,1): error TS1127: Invalid character.
+src/classes/structural.class.ts(98,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,9): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,11): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,23): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,26): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,40): error TS1005: '(' expected.
+src/classes/structural.class.ts(98,48): error TS1005: ';' expected.
+src/classes/structural.class.ts(98,55): error TS1005: ';' expected.
+src/classes/structural.class.ts(98,58): error TS1005: ')' expected.
+src/classes/structural.class.ts(98,73): error TS1003: Identifier expected.
+src/classes/structural.class.ts(100,5): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(100,14): error TS1005: '(' expected.
+src/classes/structural.class.ts(100,19): error TS1005: ';' expected.
+src/classes/structural.class.ts(100,44): error TS1005: ';' expected.
+src/classes/structural.class.ts(100,61): error TS1003: Identifier expected.
+src/classes/structural.class.ts(100,61): error TS1109: Expression expected.
+src/classes/structural.class.ts(101,1): error TS1005: ')' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 16:25:30::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(98,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,9): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,11): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,23): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,26): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,40): error TS1005: '(' expected.
+src/classes/structural.class.ts(98,48): error TS1005: ';' expected.
+src/classes/structural.class.ts(98,55): error TS1005: ';' expected.
+src/classes/structural.class.ts(98,58): error TS1005: ')' expected.
+src/classes/structural.class.ts(98,73): error TS1003: Identifier expected.
+src/classes/structural.class.ts(100,5): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(100,14): error TS1005: '(' expected.
+src/classes/structural.class.ts(100,19): error TS1005: ';' expected.
+src/classes/structural.class.ts(100,44): error TS1005: ';' expected.
+src/classes/structural.class.ts(100,61): error TS1003: Identifier expected.
+src/classes/structural.class.ts(100,61): error TS1109: Expression expected.
+src/classes/structural.class.ts(101,1): error TS1005: ')' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(98,1): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,9): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,11): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,23): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,26): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(98,40): error TS1005: '(' expected.
+src/classes/structural.class.ts(98,48): error TS1005: ';' expected.
+src/classes/structural.class.ts(98,55): error TS1005: ';' expected.
+src/classes/structural.class.ts(98,58): error TS1005: ')' expected.
+src/classes/structural.class.ts(98,73): error TS1003: Identifier expected.
+src/classes/structural.class.ts(100,5): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(100,14): error TS1005: '(' expected.
+src/classes/structural.class.ts(100,19): error TS1005: ';' expected.
+src/classes/structural.class.ts(100,44): error TS1005: ';' expected.
+src/classes/structural.class.ts(100,61): error TS1003: Identifier expected.
+src/classes/structural.class.ts(100,61): error TS1109: Expression expected.
+src/classes/structural.class.ts(101,1): error TS1005: ')' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:06 :: 16:25:32::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(100,5): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(100,14): error TS1005: '(' expected.
+src/classes/structural.class.ts(100,19): error TS1005: ';' expected.
+src/classes/structural.class.ts(100,44): error TS1005: ';' expected.
+src/classes/structural.class.ts(100,61): error TS1003: Identifier expected.
+src/classes/structural.class.ts(100,61): error TS1109: Expression expected.
+src/classes/structural.class.ts(101,1): error TS1005: ')' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/classes/structural.class.ts(100,5): error TS1434: Unexpected keyword or identifier.
+src/classes/structural.class.ts(100,14): error TS1005: '(' expected.
+src/classes/structural.class.ts(100,19): error TS1005: ';' expected.
+src/classes/structural.class.ts(100,44): error TS1005: ';' expected.
+src/classes/structural.class.ts(100,61): error TS1003: Identifier expected.
+src/classes/structural.class.ts(100,61): error TS1109: Expression expected.
+src/classes/structural.class.ts(101,1): error TS1005: ')' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\structural.class.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-012663739912584182.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)

@@ -1,0 +1,35 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\debug\\.6a2d3ef1db04043d9e0ca01ef276a523a48a6482-audit.json",
+    "files": [
+        {
+            "date": 1751453163672,
+            "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\debug\\application-2025-07-02.log",
+            "hash": "5a6bec16da48633753608a009d921a1a2803d9493bebecd9a0a0a80224efd174"
+        },
+        {
+            "date": 1751509296058,
+            "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\debug\\application-2025-07-03.log",
+            "hash": "593a115d0b2e0598e9ae0237886b9f6d6a262cb86d5dfc698117ccdc5de36d11"
+        },
+        {
+            "date": 1751630457791,
+            "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\debug\\application-2025-07-04.log",
+            "hash": "11a219db137f16cb7541c9c59307351c05f0d42bbebe681cea2e9ad7a537ba81"
+        },
+        {
+            "date": 1751669896547,
+            "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\debug\\application-2025-07-05.log",
+            "hash": "81ef273f3b09751996953ffc6ce5e40fb438dc7b4dabeb02b613af823ee21275"
+        },
+        {
+            "date": 1751803989231,
+            "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\debug\\application-2025-07-06.log",
+            "hash": "09ed230e156fbab195b8f27ccd847737f898967aa6aa53d5b50fd85520ac1a4d"
+        }
+    ],
+    "hashType": "sha256"
+}

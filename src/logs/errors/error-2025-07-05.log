@@ -1,0 +1,87 @@
+2025:07:05 :: 03:03:53::error::unhandledRejection: this.mongoConnection.initializeConnection is not a function
+TypeError: this.mongoConnection.initializeConnection is not a function
+    at App.initializeMongoConnection (C:\Users\omar\Documents\OOP\src\app.ts:46:30)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:30:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:73:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+2025:07:05 :: 03:04:00::error::unhandledRejection: this.mongoConnection.initializeConnection is not a function
+TypeError: this.mongoConnection.initializeConnection is not a function
+    at App.initializeMongoConnection (C:\Users\omar\Documents\OOP\src\app.ts:46:30)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:30:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:73:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+2025:07:05 :: 17:17:35::error::unhandledRejection: hsts is not defined
+ReferenceError: hsts is not defined
+    at App.initializeMiddlewares (C:\Users\omar\Documents\OOP\src\app.ts:53:30)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:29:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:65:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+2025:07:05 :: 17:21:17::error::unhandledRejection: app.use() requires a middleware function
+TypeError: app.use() requires a middleware function
+    at Function.use (C:\Users\omar\Documents\OOP\node_modules\express\lib\application.js:217:11)
+    at App.initializeMiddlewares (C:\Users\omar\Documents\OOP\src\app.ts:59:18)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:30:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:67:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+2025:07:05 :: 17:21:22::error::unhandledRejection: Sen is not defined
+ReferenceError: Sen is not defined
+    at App.initializeMiddlewares (C:\Users\omar\Documents\OOP\src\app.ts:58:22)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:29:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:66:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+2025:07:05 :: 17:21:31::error::unhandledRejection: sant is not defined
+ReferenceError: sant is not defined
+    at App.initializeMiddlewares (C:\Users\omar\Documents\OOP\src\app.ts:58:22)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:29:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:66:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+2025:07:05 :: 17:42:18::error::[POST] /api/books >> StatusCode:: 500, Message:: obj.keys is not a function
+2025:07:05 :: 17:47:08::error::unhandledRejection: Cannot read properties of undefined (reading 'app')
+TypeError: Cannot read properties of undefined (reading 'app')
+    at App.initializeMiddlewares (C:\Users\omar\Documents\OOP\src\app.ts:59:14)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:30:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:68:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+2025:07:05 :: 17:49:24::error::[POST] /api/books >> StatusCode:: 500, Message:: Cannot convert object to primitive value
+2025:07:05 :: 17:49:51::error::[POST] /api/books >> StatusCode:: 500, Message:: Cannot convert object to primitive value

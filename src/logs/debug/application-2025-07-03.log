@@ -1,0 +1,64 @@
+2025:07:03 :: 05:21:37::warn::===== http://localhost:8090 =====
+2025:07:03 :: 05:21:37::info::===========test===========
+2025:07:03 :: 05:21:37::info::===========port:8090=============
+2025:07:03 :: 05:21:37::info::=================================
+2025:07:03 :: 05:21:37::info::[0mGET /cars/car-1 [33m404[0m 3.075 ms - 149[0m
+2025:07:03 :: 05:22:42::warn::===== http://localhost:8090 =====
+2025:07:03 :: 05:22:42::info::===========test===========
+2025:07:03 :: 05:22:42::info::===========port:8090=============
+2025:07:03 :: 05:22:42::info::=================================
+2025:07:03 :: 05:23:16::warn::===== http://localhost:8090 =====
+2025:07:03 :: 05:23:16::info::===========test===========
+2025:07:03 :: 05:23:16::info::===========port:8090=============
+2025:07:03 :: 05:23:16::info::=================================
+2025:07:03 :: 05:23:16::info::[0mGET /cars/car-1 [33m404[0m 2.545 ms - 149[0m
+2025:07:03 :: 11:28:40::info::[0mGET /cars/car-1 [33m404[0m 2.741 ms - 149[0m
+2025:07:03 :: 11:28:40::info::[0mGET /api/cars/686524d6dc2fdf3bb73ff4e0 [33m404[0m 1.850 ms - 64[0m
+2025:07:03 :: 11:28:40::info::Mongodb is connected to database:test
+2025:07:03 :: 11:29:17::info::[0mGET /cars/car-1 [33m404[0m 6.420 ms - 149[0m
+2025:07:03 :: 11:29:17::info::[0mGET /api/cars/686524d6dc2fdf3bb73ff4e0 [33m404[0m 1.716 ms - 64[0m
+2025:07:03 :: 11:29:17::info::Mongodb is connected to database:test
+2025:07:03 :: 11:29:34::info::[0mGET /cars/car-1 [33m404[0m 3.684 ms - 149[0m
+2025:07:03 :: 11:29:34::info::[0mGET /api/cars/686524d6dc2fdf3bb73ff4e0 [33m404[0m 1.865 ms - 64[0m
+2025:07:03 :: 11:29:34::info::Mongodb is connected to database:test
+2025:07:03 :: 11:30:23::info::[0mGET /cars/car-1 [33m404[0m 5.217 ms - 149[0m
+2025:07:03 :: 11:30:23::info::[0mGET /api/cars/car-123 [33m404[0m 1.761 ms - 47[0m
+2025:07:03 :: 11:30:23::info::Mongodb is connected to database:test
+2025:07:03 :: 11:30:50::info::[0mGET /cars/car-1 [33m404[0m 2.670 ms - 149[0m
+2025:07:03 :: 11:30:50::info::[0mGET /api/cars/car-123 [33m404[0m 1.796 ms - 47[0m
+2025:07:03 :: 11:30:50::info::Mongodb is connected to database:test
+2025:07:03 :: 11:31:12::info::[0mGET /cars/car-1 [33m404[0m 2.763 ms - 149[0m
+2025:07:03 :: 11:31:12::info::[0mGET /api/cars/car-123 [33m404[0m 1.898 ms - 47[0m
+2025:07:03 :: 11:31:12::info::Mongodb is connected to database:test
+2025:07:03 :: 11:34:19::info::[0mGET /cars/car-1 [33m404[0m 2.616 ms - 149[0m
+2025:07:03 :: 11:34:19::info::[0mGET /api/cars/car-123 [33m404[0m 1.709 ms - 47[0m
+2025:07:03 :: 11:34:19::info::Mongodb is connected to database:test
+2025:07:03 :: 11:35:07::info::[0mGET /cars/car-1 [33m404[0m 2.799 ms - 149[0m
+2025:07:03 :: 11:35:07::info::[0mGET /api/cars/car-123 [33m404[0m 1.769 ms - 47[0m
+2025:07:03 :: 11:35:07::info::Mongodb is connected to database:test
+2025:07:03 :: 11:36:27::info::[0mGET /cars/car-1 [33m404[0m 4.779 ms - 149[0m
+2025:07:03 :: 11:36:27::info::[0mGET /cars/car-123 [33m404[0m 1.156 ms - 151[0m
+2025:07:03 :: 11:36:27::info::Mongodb is connected to database:test
+2025:07:03 :: 11:36:43::info::[0mGET /api/cars/car-1 [33m404[0m 3.582 ms - 45[0m
+2025:07:03 :: 11:36:43::info::[0mGET /cars/car-123 [33m404[0m 1.230 ms - 151[0m
+2025:07:03 :: 11:36:43::info::Mongodb is connected to database:test
+2025:07:03 :: 11:36:59::info::[0mGET /api/cars/car-1 [33m404[0m 4.364 ms - 45[0m
+2025:07:03 :: 11:36:59::info::[0mGET /api/cars/car-123 [33m404[0m 1.549 ms - 47[0m
+2025:07:03 :: 11:36:59::info::Mongodb is connected to database:test
+2025:07:03 :: 11:52:08::warn::===== http://localhost:8090 =====
+2025:07:03 :: 11:52:08::info::===========development===========
+2025:07:03 :: 11:52:08::info::===========port:8090=============
+2025:07:03 :: 11:52:08::info::=================================
+2025:07:03 :: 11:52:08::info::Mongodb is connected to database:oop
+2025:07:03 :: 11:52:11::info::[0mGET /api/cars/686524d6dc2fdf3bb73ff4e0 [32m200[0m 54.527 ms - 233[0m
+2025:07:03 :: 11:56:18::warn::===== http://localhost:8090 =====
+2025:07:03 :: 11:56:18::info::===========development===========
+2025:07:03 :: 11:56:18::info::===========port:8090=============
+2025:07:03 :: 11:56:18::info::=================================
+2025:07:03 :: 11:56:18::info::Mongodb is connected to database:oop
+2025:07:03 :: 12:00:05::warn::===== http://localhost:8090 =====
+2025:07:03 :: 12:00:05::info::===========development===========
+2025:07:03 :: 12:00:05::info::===========port:8090=============
+2025:07:03 :: 12:00:05::info::=================================
+2025:07:03 :: 12:00:05::info::Mongodb is connected to database:oop
+2025:07:03 :: 12:00:07::info::[0mGET /api/cars/686524d6dc2fdf3bb73ff4e0 [32m200[0m 15.081 ms - 233[0m
