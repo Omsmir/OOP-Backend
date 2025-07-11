@@ -9,7 +9,7 @@ class MongoConnection {
     private static instance: MongoConnection;
 
     private constructor() {
-        MongoConnection.MONGO_DB_URI = MONGO_DB_URI || 'mongodb://localhost:27017/';
+        MongoConnection.MONGO_DB_URI = MONGO_DB_URI || 'mongodb+srv://cluster0.y7dljqp.mongodb.net/';
         MongoConnection.MONGO_DB_NAME = MONGO_DB || 'test';
         this.initializeConnection();
     }
