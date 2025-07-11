@@ -13,7 +13,7 @@ export const validate =
             next();
         } catch (error: any) {
             if (error instanceof ZodError) {
-                const errorMessages = error.errors.map(ele => ele.message);
+                const errorMessages = error.errors.map((ele) => ele.message);
 
                 const responseMessage =
                     errorMessages.length > 1 ? 'More than one field is required' : errorMessages[0];

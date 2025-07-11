@@ -1,0 +1,24 @@
+2025:07:10 :: 11:38:43::error::unhandledRejection: app.use() requires a middleware function
+TypeError: app.use() requires a middleware function
+    at Function.use (C:\Users\omar\Documents\OOP\node_modules\express\lib\application.js:217:11)
+    at App.initializeDeserializers (C:\Users\omar\Documents\OOP\src\app.ts:68:18)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:35:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:75:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6142815698572002.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6142815698572002.js:114:20)
+2025:07:10 :: 23:36:16::error::unhandledRejection: object is not iterable (cannot read property Symbol(Symbol.iterator))
+TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))
+    at Function.all (<anonymous>)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\behavioral.class.ts:135:9)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2806458621231358.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2806458621231358.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2806458621231358.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)

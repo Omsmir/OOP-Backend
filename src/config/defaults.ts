@@ -12,5 +12,17 @@ export const {
     LOG_FORMAT,
     LOG_DIR,
     ORIGIN,
-    BODYSIZELIMIT
+    BODYSIZELIMIT,
+    SALTWORKFACTOR,
+    ACCESSTOKENTTL,
+    REFRESHTOKENTTL,
+    APP_PASSWORD,
+    SMTP_USER
 } = process.env;
+
+export default {
+    accessTokenPublicKey: process.env.ACCESS_TOKEN_PUBLIC_KEY,
+    accessTokenPrivateKey: process.env.ACCESS_TOKEN_PRIVATE_KEY,
+    refreshTokenPrivateKey: process.env.REFRESH_PRIVATE_KEY,
+    refreshTokenPublicKey: process.env.REFRESH_PUBLIC_KEY,
+};

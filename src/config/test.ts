@@ -12,5 +12,5 @@ export const {
     LOG_FORMAT,
     LOG_DIR,
     ORIGIN,
-    BODYSIZELIMIT
+    BODYSIZELIMIT,
 } = process.env;

@@ -11,8 +11,11 @@ import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import { ErrorHandler } from './middlewares/error.middleware';
 import http from 'http';
-import {  sanitizeRequest } from './middlewares/xss';
-import { Logger } from './classes/structural.class';
+import { sanitizeRequest } from './middlewares/xss';
+import { CreationalClassesPattern } from './classes/creationalPatterns';
+import { BehavioralClassesPattern } from './classes/behavioral.class';
+import DeserializeMiddleware from './middlewares/deserializeUser';
+import { developedBy, OOP } from './utils/constants';
 
 class App {
     public PORT: string | number;
@@ -30,16 +33,18 @@ class App {
 
         this.initializeMiddlewares();
         this.initializeRoutes(routes);
+        this.initializeDeserializers();
         this.initializeErrorMiddlewares();
+        this.initializeClasses();
     }
 
     public listen() {
         this.server.listen(this.PORT, async () => {
-            logger.warn(`===== http://localhost:${this.PORT} =====`);
+            logger.info(`\n${OOP}\n${developedBy}`);
+            logger.info(`===== http://localhost:${this.PORT} =====`);
             logger.info(`===========${this.env}===========`);
             logger.info(`===========port:${this.PORT}=============`);
             logger.info(`=================================`);
-            Logger.log(`========================================`)
         });
     }
 
@@ -58,15 +63,30 @@ class App {
         this.app.use(express.json({ limit: BODYSIZELIMIT }));
         this.app.use(express.urlencoded({ extended: true, limit: BODYSIZELIMIT }));
         this.app.use(cookieParser());
-        this.app.use(sanitizeRequest)
+        this.app.use(sanitizeRequest);
     }
 
+    private async initializeDeserializers() {
+        this.app.use(DeserializeMiddleware.deserializeUser);
+    }
     private initializeErrorMiddlewares() {
         this.app.use(ErrorHandler);
     }
 
     static createInstance(routes: routes[]): App {
         return new App(routes);
+    }
+
+    private initializeClasses() {
+        // this method starts with the server for initiating the classes Folder independently without the need for using any instance in any seperate folders
+        //  eg.(controllers, services) to witness results
+        // you only need to use the getInstance method implemented at the very top of each file inside the classes folder
+        // to see the console logs of these classes or files
+
+        // NOTE: initialize every class alone just to focus on the results
+        CreationalClassesPattern.getInstance(); // Creational patterns file initialization
+        // StructuralClassesPattern.getInstance()  // commented to watch the CreationalClass results efficiently
+        BehavioralClassesPattern.getInstance();
     }
 
     public getServer() {

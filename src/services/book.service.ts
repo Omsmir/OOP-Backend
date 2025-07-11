@@ -2,10 +2,12 @@ import { BookInput } from '@/interfaces/models.interface';
 import BookModel, { BookDocument } from '@/models/book.model';
 import { FilterQuery, QueryOptions, UpdateQuery } from 'mongoose';
 
+// SOLID principles interpreted
+
+// All the route Class is a single responsability
 class BookService {
-    private bookModel: typeof BookModel;
-    constructor() {
-        this.bookModel = BookModel;
+    constructor(private bookModel = BookModel) {
+        // dependency injection: composition over inheritance
     }
 
     public async CreateBook(input: BookInput): Promise<BookDocument> {
@@ -31,5 +33,4 @@ class BookService {
     }
 }
 
-
-export default BookService
+export default BookService;

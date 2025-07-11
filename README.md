@@ -41,7 +41,7 @@ This repository documents a **12-week advanced Object-Oriented Programming (OOP)
 | `@middlewares/*` | Express middlewares (auth, error handling, logging)                                    |
 | `@models/*`      | Mongoose models and schemas                                                            |
 | `@routes/*`      | Route definitions mapped to controller methods                                         |
-| `@schemas/*`     | Zod/Joi validation schemas                                                             |
+| `@schemas/*`     | Zod validation schemas                                                             |
 | `@services/*`    | Business logic classes (e.g. UserService, AuthService)                                 |
 | `@utils/*`       | Utility functions, helpers, formatters, loggers                                        |
 | `@classes/*`     |  Design patterns classes, starting from Creational to Behavioral and **teaching patterns** |
@@ -52,17 +52,27 @@ This repository documents a **12-week advanced Object-Oriented Programming (OOP)
 
 ### ✅ Week 1: OOP Basics (Encapsulation, Classes, Instances)
 
+> **Note:** Services, Controllers, App and etc.. all use the OOP basic methods below
+
+---
 - Create real-world class models
 - Understand `private`, `protected`, `public`
-- Learn `getters`, `setters`, `constructor`
+- Learn `getters methods`, `setters methods`, `constructor`
 
 ### ✅ Week 2: Inheritance & Polymorphism
 
+> **Note:** Controllers, Classes use the OOP basic methods below
+
+---
 - Class hierarchies: `Animal -> Dog/Cat`
 - Method overriding
 - Use interfaces and abstract classes
 
 ### ✅ Week 3: SOLID Principles
+
+> **Note:** Controllers, Services, Routes, and Classes all use the OOP basic methods below
+
+---
 
 - Single Responsibility
 - Open/Closed
@@ -72,11 +82,19 @@ This repository documents a **12-week advanced Object-Oriented Programming (OOP)
 
 ### ✅ Week 4: Composition Over Inheritance
 
+> **Note:** Controllers, Services, Routes, and Classes all use the OOP basic methods below
+
+---
+
 - Mixins with `Object.assign`
 - Strategy pattern
 - Favor small components over rigid inheritance trees
 
 ### ✅ Week 5: Creational Design Patterns
+
+> **Note:** Classes (Creational.class.ts) use the OOP basic methods below
+
+---
 
 - **Factory Pattern** (e.g. `UserFactory`)
 - **Builder Pattern** (`ReportBuilder`)
@@ -85,12 +103,20 @@ This repository documents a **12-week advanced Object-Oriented Programming (OOP)
 
 ### ✅ Week 6: Structural Design Patterns
 
+> **Note:** Classes (Structural.class.ts) use the OOP basic methods below
+
+---
+
 - **Adapter** (`LoggerAdapter`)
 - **Decorator** (`TimestampLogger`)
 - **Composite** (`ShapeGroup`)
 - **Proxy** (`LoggingProxy`)
 
 ### ✅ Week 7: Behavioral Design Patterns
+
+> **Note:** Classes (Behavioral.class.ts) use the OOP basic methods below
+
+---
 
 - **Observer** (Event system)
 - **Command** (Encapsulate request logic)
@@ -131,7 +157,11 @@ This repository documents a **12-week advanced Object-Oriented Programming (OOP)
 - TypeScript (strict mode)
 - Node.js / Express.js
 - OOP fundamentals in JS or another language
-- Familiarity with async/await, Promises
+- Familiarity with async/await, Promises 
+- Familiarity mongodb and mongoose schemas
+- Familiarity with zod for validation
+- Familiarity with JWT
+
 
 ---
 
@@ -150,12 +180,86 @@ This repository documents a **12-week advanced Object-Oriented Programming (OOP)
 
 ---
 
+
+# 🧱 Node.js TypeScript Starter (SWC + ts-node-dev)
+
+A clean, production-ready Node.js starter with TypeScript, SWC, ts-node-dev, and support for path aliases.
+
+---
+
+## 📦 Project Scripts
+
+### 🛠 Development
+
+Run the project in development mode using `ts-node-dev` with automatic restarts on changes:
+
+```bash
+npm run dev
+```
+
+> Uses: `ts-node-dev` with path aliases and environment set to `development`.
+
+---
+
+### ⚙️ Build (Production)
+
+Transpile your TypeScript code to JavaScript using SWC and output it to the `dist/src` directory:
+
+```bash
+npm run build
+```
+
+> Uses: `swc` to transpile everything from `src/` into `dist/src` with source maps and file copying.
+
+---
+
+### 🚀 Start (Production)
+
+First builds the app, then runs the compiled code in production mode:
+
+```bash
+npm start
+```
+
+> Alias for: `npm run build && NODE_ENV=production node dist/src/server.js`
+
+---
+
+### ✅ Linting
+
+Check for code quality and lint errors:
+
+```bash
+npm run lint
+```
+
+Automatically fix linting issues:
+
+```bash
+npm run lint:fix
+```
+
+---
+
+### 🧪 Test (Coming Soon)
+
+Add your test script here once you integrate the testing library **Jest**.
+
+```bash
+npm run test
+```
+
+> 🧪 Testing setup will be added soon.
+
+---
+
+
 ## 🏁 Final Deliverables
 
-- [ ] `/creational-patterns`
-- [ ] `/structural-patterns`
-- [ ] `/behavioral-patterns`
-- [ ] `/domain-modeling`
+- [ ] `@/classes/creational-patterns`
+- [ ] `@/classes/structural-patterns`
+- [ ] `@/classes/behavioral-patterns`
+- [ ] `@/classes/domain-modeling`
 - [ ] `/event-driven`
 - [ ] `/test-suite`
 
@@ -171,9 +275,3 @@ This repository documents a **12-week advanced Object-Oriented Programming (OOP)
 - Clean Architecture by Uncle Bob
 
 ---
-
-## 📬 Questions or Suggestions?
-
-Open an issue or message me directly!
-
-Happy Hacking 🚀

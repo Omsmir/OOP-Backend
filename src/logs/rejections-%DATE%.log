@@ -91,3 +91,44 @@ TypeError: Cannot read properties of undefined (reading 'app')
     at node:internal/modules/cjs/loader:1706:10
     at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:114:20)
     at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6760774822456026.js:71:20)
+2025:07:10 :: 11:38:43::error::unhandledRejection: app.use() requires a middleware function
+TypeError: app.use() requires a middleware function
+    at Function.use (C:\Users\omar\Documents\OOP\node_modules\express\lib\application.js:217:11)
+    at App.initializeDeserializers (C:\Users\omar\Documents\OOP\src\app.ts:68:18)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:35:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:75:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6142815698572002.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6142815698572002.js:114:20)
+2025:07:10 :: 23:36:16::error::unhandledRejection: object is not iterable (cannot read property Symbol(Symbol.iterator))
+TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))
+    at Function.all (<anonymous>)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\classes\behavioral.class.ts:135:9)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2806458621231358.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2806458621231358.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2806458621231358.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+2025:07:11 :: 00:00:15::error::unhandledRejection: healthShape is not defined
+ReferenceError: healthShape is not defined
+    at Server.<anonymous> (C:\Users\omar\Documents\OOP\src\app.ts:43:32)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:530:35)
+    at emitListeningNT (node:net:1980:10)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)
+2025:07:11 :: 00:00:21::error::unhandledRejection: healthShape is not defined
+ReferenceError: healthShape is not defined
+    at Server.<anonymous> (C:\Users\omar\Documents\OOP\src\app.ts:44:32)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:530:35)
+    at emitListeningNT (node:net:1980:10)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)
+2025:07:11 :: 15:59:28::error::unhandledRejection: Failed to send email: queryA ETIMEOUT smtp.gmail.com
+Error: Failed to send email: queryA ETIMEOUT smtp.gmail.com
+    at EmailUtils.execute (C:\Users\omar\Documents\OOP\src\utils\send.email.ts:90:19)

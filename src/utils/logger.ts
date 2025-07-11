@@ -14,13 +14,12 @@ const loggerFormat = winston.format.printf(
     ({ timestamp, level, message }) => `${timestamp}::${level}::${message}`
 );
 
-
 const logger = winston.createLogger({
     format: winston.format.combine(
         winston.format.timestamp({ format: 'YYYY:MM:DD :: HH:mm:ss' }),
         loggerFormat
     ),
-    transports:[
+    transports: [
         new winston_daily({
             level: 'debug',
             dirname: logDir + '/debug',
@@ -31,17 +30,16 @@ const logger = winston.createLogger({
             maxFiles: 30,
         }),
         new winston_daily({
-            level:"error",
-            maxFiles:30,
+            level: 'error',
+            maxFiles: 30,
             filename: join(logDir, 'error-%DATE%.log'),
-            dirname: logDir + "/errors",
+            dirname: logDir + '/errors',
             datePattern: 'YYYY-MM-DD',
             zippedArchive: true,
             maxSize: '20m',
-        })
-    ]
+        }),
+    ],
 });
-
 
 logger.exceptions.handle(
     new winston.transports.File({ filename: join(logDir, 'exceptions-%DATE%.log') })

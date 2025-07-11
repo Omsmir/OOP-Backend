@@ -1,3 +1,25 @@
+import { logger as log } from '@/utils/logger';
+
+// base class to use in initializeClasses method in app.ts to witness results in console logs
+// note: use the getInstance method for getting instance of the class or just use any pattern class in any server dependent code files 
+export class StructuralClassesPattern {
+    private static instance: StructuralClassesPattern;
+    constructor() {
+        this.initializeCreational();
+    }
+    private initializeCreational() {
+        // this log is marked warn to not use in production
+        log.warn('Structral patterns folder has been started');
+    }
+
+    static getInstance() {
+        if (!StructuralClassesPattern.instance) {
+            StructuralClassesPattern.instance = new StructuralClassesPattern();
+        }
+        return StructuralClassesPattern.instance;
+    }
+}
+
 //  Adapter Pattern
 //  Purpose:
 
@@ -21,7 +43,6 @@ class LoggerAdapter implements Logger {
 }
 
 export const Logger: Logger = new LoggerAdapter(new ThirdPartyLogger());
-
 // Decorator Pattern
 
 //  Purpose:
@@ -78,7 +99,7 @@ class ShapeGroup implements Shape {
         this.children.push(shape);
     }
 
-    draw(): void {
+    public draw(): void {
         for (const child of this.children) {
             child.draw();
         }
@@ -86,11 +107,11 @@ class ShapeGroup implements Shape {
 }
 
 const CompositeGroupsOfShapes = new ShapeGroup();
+
 CompositeGroupsOfShapes.addShape(new Circle());
 CompositeGroupsOfShapes.addShape(new Rectangle());
 
-CompositeGroupsOfShapes.draw()
-
+CompositeGroupsOfShapes.draw();
 
 //  Proxy Pattern
 
@@ -101,25 +122,24 @@ CompositeGroupsOfShapes.draw()
 
 interface API {
     request(endpoint: string): void;
-  }
-  
-  class RealAPI implements API {
+}
+
+class RealAPI implements API {
     request(endpoint: string): void {
-      console.log(`Fetching data from ${endpoint}`);
+        console.log(`Fetching data from ${endpoint}`);
     }
-  }
-  
-  class LoggingProxy implements API {
+}
+
+class LoggingProxy implements API {
     constructor(private realAPI: RealAPI) {}
-  
+
     request(endpoint: string): void {
-      console.log(`Logging: Request made to ${endpoint}`);
-      this.realAPI.request(endpoint);
+        console.log(`Logging: Request made to ${endpoint}`);
+        this.realAPI.request(endpoint);
     }
-  }
-  
-  // Usage
-  const api: API = new LoggingProxy(new RealAPI());
-  api.request("/users");
-  // Logs both messages
-  
+}
+
+// Usage
+const api: API = new LoggingProxy(new RealAPI());
+api.request('/users');
+// Logs both messages

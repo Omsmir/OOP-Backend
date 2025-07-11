@@ -2,7 +2,6 @@ import { MONGO_DB, MONGO_DB_PASSWD, MONGO_DB_URI, MONGO_DB_USER } from '../confi
 import { logger } from './logger';
 import mongoose from 'mongoose';
 
-
 // Singleton Design Pattern
 class MongoConnection {
     private static MONGO_DB_URI: string;

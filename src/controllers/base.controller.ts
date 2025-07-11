@@ -18,7 +18,7 @@ export abstract class BaseController {
             });
         }
 
-        if(error instanceof mongoose.Error){
+        if (error instanceof mongoose.Error) {
             return res.status(400).json({
                 message: error.message,
             });

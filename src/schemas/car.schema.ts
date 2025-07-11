@@ -29,19 +29,41 @@ const payload = {
     }),
 };
 
+const updatePayload = {
+    body: z.object({
+        name: z.string().optional(),
+        type: z.string().optional(),
+        color: z.string().optional(),
+
+        price: z.string({ required_error: 'at least price needed for editing' }),
+
+        seats: z.string().optional(),
+    }),
+};
 const params = {
-    params:z.object({
-        id:z.string({required_error:"car id is required"})
-    })
-}
+    params: z.object({
+        id: z.string({ required_error: 'car id is required' }),
+    }),
+};
 
 export const carSchema = z.object({
     ...payload,
 });
 
-
 export const getCarSchema = z.object({
-    ...params
-})
+    ...params,
+});
+
+export const deleteCarSchema = z.object({
+    ...params,
+});
+
+export const updateCarSchema = z.object({
+    ...params,
+    ...updatePayload,
+});
 export type carSchemaInterface = z.infer<typeof carSchema>;
 export type getCarSchemaInterface = z.infer<typeof getCarSchema>;
+export type deleteCarSchemaInterface = z.infer<typeof deleteCarSchema>;
+
+export type UpdateCarSchemaInterface = z.infer<typeof updateCarSchema>;

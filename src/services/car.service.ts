@@ -2,10 +2,12 @@ import { CarInput } from '@/interfaces/models.interface';
 import CarModel, { CarDocument } from '@/models/car.model';
 import { FilterQuery, QueryOptions, UpdateQuery } from 'mongoose';
 
+// SOLID principles interpreted
+
+// All the route Class is a single responsability
 class CarService {
-    protected carModel: typeof CarModel
-    constructor() {
-        this.carModel = CarModel
+    constructor(private carModel = CarModel) {
+        // dependency injection: composition over inheritance
     }
 
     public async createCar(input: CarInput): Promise<CarDocument> {

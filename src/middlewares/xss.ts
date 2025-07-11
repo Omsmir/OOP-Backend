@@ -9,8 +9,6 @@ function sanitizeInput(obj: any): any {
         const santizedValue = xss(obj);
         return santizedValue;
     } else if (typeof obj === 'object' && obj !== null) {
-        logger.info(obj);
-
         for (const key in obj) {
             obj[key] = sanitizeInput(obj[key]);
         }
@@ -20,7 +18,7 @@ function sanitizeInput(obj: any): any {
 }
 
 export function sanitizeRequest(req: Request, res: Response, next: NextFunction) {
-    req.body = sanitizeInput(req.body);
+    // req.body = sanitizeInput(req.body);
     req.query = sanitizeInput(req.query);
     req.params = sanitizeInput(req.params);
     next();

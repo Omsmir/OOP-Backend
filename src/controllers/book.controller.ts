@@ -98,9 +98,4 @@ class BookController extends BaseController {
     };
 }
 
-const user = UserFactory.create("admin")
-
-
-console.log(user.permessions())
-
 export default BookController;

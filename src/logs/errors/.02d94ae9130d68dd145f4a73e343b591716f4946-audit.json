@@ -29,6 +29,21 @@
             "date": 1751803989235,
             "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\errors\\error-2025-07-06.log",
             "hash": "ccbf81d7dde9ddce060d21dc39a90723ea3efeb5532075b24e16c24899160108"
+        },
+        {
+            "date": 1752085324399,
+            "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\errors\\error-2025-07-09.log",
+            "hash": "4d7bc061964fd014b4f0c25656a1d01a608fb3a3782abbec9007b6eb7a0bb045"
+        },
+        {
+            "date": 1752126438197,
+            "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\errors\\error-2025-07-10.log",
+            "hash": "1e93e4f78e9f221b11e05a046d0b190373b79287260f22af8a2ad9badf6ffcdb"
+        },
+        {
+            "date": 1752181214441,
+            "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\errors\\error-2025-07-11.log",
+            "hash": "dac8b3611d65169c3fd63106ece8add5037d359c7237271419ea253829564a7e"
         }
     ],
     "hashType": "sha256"

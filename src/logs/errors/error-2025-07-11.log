@@ -1,0 +1,32 @@
+2025:07:11 :: 00:00:15::error::unhandledRejection: healthShape is not defined
+ReferenceError: healthShape is not defined
+    at Server.<anonymous> (C:\Users\omar\Documents\OOP\src\app.ts:43:32)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:530:35)
+    at emitListeningNT (node:net:1980:10)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)
+2025:07:11 :: 00:00:21::error::unhandledRejection: healthShape is not defined
+ReferenceError: healthShape is not defined
+    at Server.<anonymous> (C:\Users\omar\Documents\OOP\src\app.ts:44:32)
+    at Object.onceWrapper (node:events:632:28)
+    at Server.emit (node:events:530:35)
+    at emitListeningNT (node:net:1980:10)
+    at processTicksAndRejections (node:internal/process/task_queues:89:21)
+2025:07:11 :: 15:59:28::error::queryA ETIMEOUT smtp.gmail.com
+2025:07:11 :: 15:59:28::error::unhandledRejection: Failed to send email: queryA ETIMEOUT smtp.gmail.com
+Error: Failed to send email: queryA ETIMEOUT smtp.gmail.com
+    at EmailUtils.execute (C:\Users\omar\Documents\OOP\src\utils\send.email.ts:90:19)
+2025:07:11 :: 16:00:56::error::getaddrinfo ENOTFOUND smtp.gmail.com
+2025:07:11 :: 16:00:56::error::getaddrinfo ENOTFOUND smtp.gmail.com
+2025:07:11 :: 16:00:56::error::getaddrinfo ENOTFOUND smtp.gmail.com
+2025:07:11 :: 16:01:05::error::getaddrinfo ENOTFOUND smtp.gmail.com
+2025:07:11 :: 16:01:05::error::getaddrinfo ENOTFOUND smtp.gmail.com
+2025:07:11 :: 16:01:05::error::getaddrinfo ENOTFOUND smtp.gmail.com
+2025:07:11 :: 16:01:07::error::getaddrinfo ENOTFOUND smtp.gmail.com
+2025:07:11 :: 16:01:07::error::getaddrinfo ENOTFOUND smtp.gmail.com
+2025:07:11 :: 16:01:07::error::getaddrinfo ENOTFOUND smtp.gmail.com
+2025:07:11 :: 16:01:08::error::getaddrinfo ENOTFOUND smtp.gmail.com
+2025:07:11 :: 16:01:08::error::getaddrinfo ENOTFOUND smtp.gmail.com
+2025:07:11 :: 16:01:08::error::getaddrinfo ENOTFOUND smtp.gmail.com
+2025:07:11 :: 16:01:47::error::read ECONNRESET
+2025:07:11 :: 16:01:58::error::read ECONNRESET
