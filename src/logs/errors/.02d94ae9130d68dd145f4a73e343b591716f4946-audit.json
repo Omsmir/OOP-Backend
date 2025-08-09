@@ -44,6 +44,26 @@
             "date": 1752181214441,
             "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\errors\\error-2025-07-11.log",
             "hash": "dac8b3611d65169c3fd63106ece8add5037d359c7237271419ea253829564a7e"
+        },
+        {
+            "date": 1752305730517,
+            "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\errors\\error-2025-07-12.log",
+            "hash": "166c9f7e43e2f0d56f87cbe5afa881bcca32ffc245d1cf1b7cc2a39931bc2e54"
+        },
+        {
+            "date": 1752354078447,
+            "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\errors\\error-2025-07-13.log",
+            "hash": "094bffb3401a323a519fea507bff51c1a0ef08d9c2cab724c08783a0cc288597"
+        },
+        {
+            "date": 1752494346986,
+            "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\errors\\error-2025-07-14.log",
+            "hash": "3082fb354c66ad79004dc77b2019c7c7c6cc0be95e25a60208b82b4a3fc6fa54"
+        },
+        {
+            "date": 1752571106457,
+            "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\errors\\error-2025-07-15.log",
+            "hash": "19dd63a51797601b64ebfd81e6a085715f336a50f69e9d6e5554717833c94d41"
         }
     ],
     "hashType": "sha256"

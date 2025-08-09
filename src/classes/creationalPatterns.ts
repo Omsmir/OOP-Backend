@@ -53,7 +53,7 @@ export class NormalUser implements User {
 
 export class UserFactory {
     // NOTE: example for usage used in auth.controllers.ts for assigning roles and permissions
-    static create(role: string): User {
+    static create(role: string): User | Error {
         switch (role) {
             case 'admin':
                 return new Admin();

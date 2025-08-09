@@ -15,7 +15,8 @@ import { sanitizeRequest } from './middlewares/xss';
 import { CreationalClassesPattern } from './classes/creationalPatterns';
 import { BehavioralClassesPattern } from './classes/behavioral.class';
 import DeserializeMiddleware from './middlewares/deserializeUser';
-import { developedBy, OOP } from './utils/constants';
+import { developedBy, OOP, SIGNALS } from './utils/constants';
+import { gracefulShutdown } from './utils/gracefulEvents';
 
 class App {
     public PORT: string | number;
@@ -23,7 +24,6 @@ class App {
     public app: express.Application;
     public server: http.Server;
     public mongoConnection: MongoConnection;
-
     constructor(routes: routes[]) {
         this.PORT = PORT || 8090;
         this.env = NODE_ENV || 'development';
@@ -36,6 +36,7 @@ class App {
         this.initializeDeserializers();
         this.initializeErrorMiddlewares();
         this.initializeClasses();
+        this.setupGracefulShutdown();
     }
 
     public listen() {
@@ -92,6 +93,12 @@ class App {
     public getServer() {
         // specfic for testing
         return this.app;
+    }
+
+    private async setupGracefulShutdown() {
+        for (const signal of SIGNALS) {
+            process.on(signal, async () => await gracefulShutdown.shutdown(signal));
+        }
     }
 }
 
