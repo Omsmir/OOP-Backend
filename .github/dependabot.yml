@@ -1,0 +1,19 @@
+version: 2
+updates:
+  # Backend (Node.js / Express.js)
+  - package-ecosystem: "npm"
+    directory: "/" # Root folder where your backend package.json is
+    schedule:
+      interval: "weekly" # Can be: daily | weekly | monthly
+    commit-message:
+      prefix: "chore(deps)"
+    open-pull-requests-limit: 5
+    rebase-strategy: "auto"
+    allow:
+      - dependency-type: "all" # "production" or "development" or "all"
+    labels:
+      - "dependencies"
+      - "backend"
+    # reviewers is deprecated — use CODEOWNERS instead
+    # reviewers:
+    #   - "your-github-username"
