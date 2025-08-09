@@ -35,7 +35,7 @@ class UserService {
 
     public validatePassword = async ({ email, password }: { email: string; password: string }) => {
         try {
-            const user = await this.userModel.findOne({ email });
+            const user = await this.findUser({ email });
 
             if (!user) {
                 return false;

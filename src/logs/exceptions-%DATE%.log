@@ -5097,3 +5097,301 @@ TypeError: Cannot read properties of undefined (reading 'subcribe')
     at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2806458621231358.js:71:20)
     at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
     at Module.load (node:internal/modules/cjs/loader:1289:32)
+2025:07:12 :: 10:43:30::error::uncaughtException: this.initializeConnection is not a function
+TypeError: this.initializeConnection is not a function
+    at new MongoConnection (C:\Users\omar\Documents\OOP\src\utils\MongoConnection.ts:14:14)
+    at Function.getInstance (C:\Users\omar\Documents\OOP\src\utils\MongoConnection.ts:19:40)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:32:48)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:77:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:114:20)
+2025:07:12 :: 10:45:21::error::uncaughtException: Cannot read properties of undefined (reading 'this')
+TypeError: Cannot read properties of undefined (reading 'this')
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:34:9)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:77:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:07:12 :: 10:45:32::error::uncaughtException: Class constructor MongoConnection cannot be invoked without 'new'
+TypeError: Class constructor MongoConnection cannot be invoked without 'new'
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:32:47)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:77:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:07:12 :: 10:45:57::error::uncaughtException: Cannot read properties of undefined (reading 'initializeMiddlewares')
+TypeError: Cannot read properties of undefined (reading 'initializeMiddlewares')
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:34:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:77:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:07:12 :: 10:47:01::error::uncaughtException: Cannot read properties of undefined (reading 'initializeMiddlewares')
+TypeError: Cannot read properties of undefined (reading 'initializeMiddlewares')
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:34:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:77:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:07:12 :: 10:47:07::error::uncaughtException: Cannot read properties of undefined (reading 'initializeMiddlewares')
+TypeError: Cannot read properties of undefined (reading 'initializeMiddlewares')
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:34:14)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:77:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6860249961930303.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:07:12 :: 10:48:42::error::uncaughtException: (intermediate value).getInstance is not a function
+TypeError: (intermediate value).getInstance is not a function
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:32:55)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:77:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:07:12 :: 10:48:48::error::uncaughtException: (intermediate value).getInstance is not a function
+TypeError: (intermediate value).getInstance is not a function
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:32:55)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:77:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:07:12 :: 10:48:58::error::uncaughtException: mo is not defined
+ReferenceError: mo is not defined
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:32:33)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:77:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:07:12 :: 10:52:20::error::uncaughtException: mo is not defined
+ReferenceError: mo is not defined
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:33:22)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:77:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:07:12 :: 10:53:22::error::uncaughtException: this.initializeConnection is not a function
+TypeError: this.initializeConnection is not a function
+    at Function.getInstance (C:\Users\omar\Documents\OOP\src\utils\MongoConnection.ts:20:18)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:31:48)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:76:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:71:20)
+2025:07:12 :: 10:54:24::error::uncaughtException: this.initializeConnection is not a function
+TypeError: this.initializeConnection is not a function
+    at Function.getInstance (C:\Users\omar\Documents\OOP\src\utils\MongoConnection.ts:22:30)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:31:48)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:76:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:71:20)
+2025:07:12 :: 10:54:29::error::uncaughtException: initializeConnection is not defined
+ReferenceError: initializeConnection is not defined
+    at Function.getInstance (C:\Users\omar\Documents\OOP\src\utils\MongoConnection.ts:21:13)
+    at new App (C:\Users\omar\Documents\OOP\src\app.ts:31:48)
+    at Function.createInstance (C:\Users\omar\Documents\OOP\src\app.ts:76:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:4:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7977852148697726.js:71:20)
+2025:07:13 :: 09:31:48::error::uncaughtException: Cannot find module '@/utils/logger'
+Require stack:
+- C:\Users\omar\Documents\OOP\src\middlewares\error.middleware.ts
+- C:\Users\omar\Documents\OOP\src\app.ts
+- C:\Users\omar\Documents\OOP\src\server.ts
+Error: Cannot find module '@/utils/logger'
+Require stack:
+- C:\Users\omar\Documents\OOP\src\middlewares\error.middleware.ts
+- C:\Users\omar\Documents\OOP\src\app.ts
+- C:\Users\omar\Documents\OOP\src\server.ts
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1225:15)
+    at Function._load (node:internal/modules/cjs/loader:1055:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:220:24)
+    at Module.require (node:internal/modules/cjs/loader:1311:12)
+    at require (node:internal/modules/helpers:136:16)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\middlewares\error.middleware.ts:2:1)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-22568093732020578.js:69:33)
+2025:07:13 :: 09:42:59::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/utils/gracefulEvents.ts(6,31): error TS1110: Type expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/utils/gracefulEvents.ts(6,31): error TS1110: Type expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\utils\gracefulEvents.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7120380553612322.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7120380553612322.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-7120380553612322.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:13 :: 09:44:16::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/utils/gracefulEvents.ts(33,7): error TS1005: ',' expected.
+src/utils/gracefulEvents.ts(37,1): error TS1128: Declaration or statement expected.
+src/utils/gracefulEvents.ts(37,2): error TS1128: Declaration or statement expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/utils/gracefulEvents.ts(33,7): error TS1005: ',' expected.
+src/utils/gracefulEvents.ts(37,1): error TS1128: Declaration or statement expected.
+src/utils/gracefulEvents.ts(37,2): error TS1128: Declaration or statement expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\utils\gracefulEvents.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4720550023386285.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4720550023386285.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-4720550023386285.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:13 :: 09:44:44::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/utils/gracefulEvents.ts(32,56): error TS1005: ')' expected.
+src/utils/gracefulEvents.ts(32,57): error TS1128: Declaration or statement expected.
+src/utils/gracefulEvents.ts(33,1): error TS1128: Declaration or statement expected.
+src/utils/gracefulEvents.ts(33,2): error TS1128: Declaration or statement expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/utils/gracefulEvents.ts(32,56): error TS1005: ')' expected.
+src/utils/gracefulEvents.ts(32,57): error TS1128: Declaration or statement expected.
+src/utils/gracefulEvents.ts(33,1): error TS1128: Declaration or statement expected.
+src/utils/gracefulEvents.ts(33,2): error TS1128: Declaration or statement expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\utils\gracefulEvents.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29455555475201933.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29455555475201933.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-29455555475201933.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:14 :: 15:25:54::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(14,40): error TS1011: An element access expression should take an argument.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(14,40): error TS1011: An element access expression should take an argument.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2161720086475898.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2161720086475898.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2161720086475898.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:14 :: 15:26:03::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(16,13): error TS1128: Declaration or statement expected.
+src/routes/index.route.ts(17,10): error TS1068: Unexpected token. A constructor, method, accessor, or property was expected.
+src/routes/index.route.ts(19,1): error TS1128: Declaration or statement expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(16,13): error TS1128: Declaration or statement expected.
+src/routes/index.route.ts(17,10): error TS1068: Unexpected token. A constructor, method, accessor, or property was expected.
+src/routes/index.route.ts(19,1): error TS1128: Declaration or statement expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2161720086475898.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2161720086475898.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2161720086475898.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:14 :: 15:49:39::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(16,72): error TS1005: ',' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/index.route.ts(16,72): error TS1005: ',' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\index.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2161720086475898.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2161720086475898.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-2161720086475898.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:07:15 :: 12:18:29::error::uncaughtException: listen EADDRINUSE: address already in use :::8090
+Error: listen EADDRINUSE: address already in use :::8090
+    at Server.setupListenHandle [as _listen2] (node:net:1937:16)
+    at listenInCluster (node:net:1994:12)
+    at Server.listen (node:net:2099:7)
+    at App.listen (C:\Users\omar\Documents\OOP\src\app.ts:43:21)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\server.ts:6:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6315569371531393.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6315569371531393.js:114:20)
