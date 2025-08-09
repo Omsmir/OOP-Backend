@@ -1,7 +1,6 @@
 import { logger } from '@/utils/logger';
 import { NextFunction, Request, Response } from 'express';
 import xss from 'xss';
-import upload from './multer';
 
 function sanitizeInput(obj: any): any {
     if (typeof obj === 'string') {

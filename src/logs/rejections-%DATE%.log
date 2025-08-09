@@ -132,3 +132,18 @@ ReferenceError: healthShape is not defined
 2025:07:11 :: 15:59:28::error::unhandledRejection: Failed to send email: queryA ETIMEOUT smtp.gmail.com
 Error: Failed to send email: queryA ETIMEOUT smtp.gmail.com
     at EmailUtils.execute (C:\Users\omar\Documents\OOP\src\utils\send.email.ts:90:19)
+2025:07:15 :: 09:07:44::error::unhandledRejection: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+Error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at MongoConnection.initializeConnection (/app/src/utils/MongoConnection.ts:47:19)
+2025:07:15 :: 09:09:56::error::unhandledRejection: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+Error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at MongoConnection.initializeConnection (/app/src/utils/MongoConnection.ts:47:19)
+2025:07:15 :: 09:15:33::error::unhandledRejection: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+Error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at MongoConnection.initializeConnection (/app/src/utils/MongoConnection.ts:47:19)
+2025:07:15 :: 09:28:47::error::unhandledRejection: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+Error: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+    at MongoConnection.initializeConnection (/app/src/utils/MongoConnection.ts:47:19)
+2025:07:15 :: 10:31:01::error::unhandledRejection: getaddrinfo ENOTFOUND mongodb
+Error: getaddrinfo ENOTFOUND mongodb
+    at MongoConnection.initializeConnection (/app/src/utils/MongoConnection.ts:47:19)
