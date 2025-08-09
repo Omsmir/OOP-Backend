@@ -37,7 +37,7 @@ export class BehavioralClassesPattern {
 // Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified.
 
 // now we want to use the observer pattern in a real world application
-// e.g for usage, we will use it in the car.controller.ts
+// e.g for usage, we will use it in the car.controller.ts and auth.controller.ts
 
 interface Subscriber {
     update(message: string): void;
@@ -99,7 +99,7 @@ export class CommandInvoker {
     }
 
     public getCommands() {
-        console.log(this.queue);
+        return this.queue
     }
 
     public run() {

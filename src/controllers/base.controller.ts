@@ -31,6 +31,7 @@ export abstract class BaseController {
             ...(NODE_ENV === 'development' && { stack: error.stack }),
         });
     }
+    
 }
 
 // Reusability and Consistency: By centralizing error-handling logic in the BaseController,

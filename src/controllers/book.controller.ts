@@ -11,6 +11,20 @@ class BookController extends BaseController {
         this.bookService = new BookService();
     }
 
+    public getBooksHandler = async (req: Request, res: Response) => {
+        try {
+            const books = await this.bookService.GetAllBooks({});
+
+            if (!books) {
+                throw new HttpException(404, 'No books found');
+            }
+
+            res.status(200).json({ message: 'Books retrieved successfully', books });
+        } catch (error) {
+            this.handleError(res, error);
+        }
+    };
+
     public CreateBookHandler = async (
         req: Request<{}, {}, BookSchemaInterface['body']>,
         res: Response

@@ -50,7 +50,7 @@ class UserController extends BaseController {
 
             const createdUserInstance = this.userFactory.create(req.body.role); // factory design pattern usage
 
-            if (!createdUserInstance) {
+            if (createdUserInstance instanceof Error) {
                 throw new HttpException(400, 'error creating user instance');
             }
 
@@ -66,7 +66,7 @@ class UserController extends BaseController {
                 throw new HttpException(400, 'error creaing user');
             }
 
-            this.sub.notify(`new user with name: ${createdUser.name} has been created`)
+            this.sub.notify(`new user with name: ${createdUser.name} has been created`);
             res.status(201).json({ message: 'user created successfully', createdUser });
         } catch (error) {
             this.handleError(res, error);
@@ -101,8 +101,8 @@ class UserController extends BaseController {
 
             const updatedUserInstance = this.userFactory.create(req.body.role);
 
-            if (!updatedUserInstance) {
-                throw new HttpException(400, 'error creating user instance');
+            if (updatedUserInstance instanceof Error) {
+                throw new HttpException(403, 'error creating user instance');
             }
 
             const user = {
