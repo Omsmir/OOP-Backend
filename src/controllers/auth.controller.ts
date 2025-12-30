@@ -10,16 +10,16 @@ import {
 import { UserFactory } from '@/classes/creationalPatterns';
 import { EmailUtils } from '@/utils/send.email';
 import { CommandInvoker, EventBus, LoggerSubscriber } from '@/classes/behavioral.class';
+import { EMAIL_TEMPLATES, SUBJECT_TYPES } from '@/interfaces/global.interface';
 
 class UserController extends BaseController {
-    private userService: UserService;
-    private userFactory = UserFactory; // factory design pattern usage
-    private invoker: CommandInvoker;
     private sub: EventBus = new EventBus();
-    constructor() {
+    constructor(
+        private readonly userService: UserService,
+        private readonly invoker: CommandInvoker,
+        private readonly userFactory: UserFactory
+    ) {
         super();
-        this.userService = new UserService();
-        this.invoker = new CommandInvoker(); // command behavoiral pattern invoker
         this.sub.subcribe(new LoggerSubscriber()); // observer behavoiral pattern subscriber
     }
 
@@ -160,6 +160,11 @@ class UserController extends BaseController {
 
     public sendVerficationEmailToUnverifiedUsers = async (req: Request, res: Response) => {
         try {
+            const local_user = res.locals.user;
+
+            if (local_user.role !== 'admin' || !local_user.id) {
+                throw new HttpException(401, 'unauthorized access');
+            }
             const unverifiedUsers = await this.userService.getAllUsers({ verified: false });
 
             if (!unverifiedUsers) {
@@ -171,10 +176,10 @@ class UserController extends BaseController {
                     // command behavoiral pattern
                     new EmailUtils({
                         to: user.email,
-                        templateName: 'emailVerification.hbs',
-                        link: 'http://localhost:8090/api', // change it to real verification email link value
+                        templateName: EMAIL_TEMPLATES.EMAIL_VERIFICATION_ALERT,
                         appName: 'OOP',
                         year: new Date().getFullYear(),
+                        subject: SUBJECT_TYPES.EMAIL_VERIFICATION,
                     })
                 ); // now we have added a commands to the invoker queue, let's execute the commands
             }

@@ -30,3 +30,42 @@ export interface sessionInput {
     user: UserDocument['_id'];
     valid?: boolean;
 }
+
+
+export interface UserToCreate {
+    name: string;
+    email: string;
+    password: string;
+    age: number;
+    role: 'admin' | 'researcher' | 'author';
+    gender: 'male' | 'female' | 'other';
+    permissions: string[];
+}
+
+
+export interface UserInterface {
+    id: string;
+    name: string;
+    email: string;
+    age: number;
+    role: 'admin' | 'researcher' | 'author';
+    gender:'male' | 'female' | 'other';
+    permissions: string[];
+    password: string;
+    created_at: Date;
+    updated_at: Date;
+}
+
+export interface sessionToCreate {
+    user_id: string;
+    user_agent: string;    
+}
+
+export interface session {
+    id: string;
+    user_id: string;
+    user_agent: string;
+    is_valid: boolean;
+    created_at: Date;
+    updated_at: Date;
+}

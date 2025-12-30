@@ -4,22 +4,22 @@ import upload from '@/middlewares/multer';
 import { validate } from '@/middlewares/validateResource';
 import { BookSchema, getBookSchema } from '@/schemas/book.schema';
 import { Router } from 'express';
+import BaseRoute from './base.route';
 
 // SOLID principles interpreted
 
 // All the route Class is a single responsability
 // interface segregation && liskov substitbution
-class BookRoute implements routes {
-    public path = '/books';
-    public router = Router();
+class BookRoute extends BaseRoute {
     private bookController: BookController; // composition over inheritance
 
     constructor() {
+        super('/books');
         this.bookController = new BookController();
-        this.initializeRoute();
+        this.initializeRoutes();
     }
 
-    private initializeRoute() {
+    protected initializeRoutes() {
         this.router.get(this.path, this.bookController.getBooksHandler);
         this.router.post(
             this.path,

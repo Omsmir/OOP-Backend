@@ -1,11 +1,12 @@
 import { sendEmailProps } from '@/interfaces/global.interface';
-import { APP_PASSWORD, SMTP_USER } from '@/config/defaults';
-import { createTransport } from 'nodemailer';
+import { APP_PASSWORD, PROJECT_NAME, SMTP_USER } from '@/config/defaults';
+import { createTransport, Transporter } from 'nodemailer';
 import path from 'path';
 import fs from 'fs';
 import Handlebars from 'handlebars';
 import { logger } from './logger';
 import { Command } from '@/classes/behavioral.class';
+import SMTPTransport from 'nodemailer/lib/smtp-transport';
 
 const renderTemplate = (templateName: string, context: object) => {
     const filePath = path.resolve(__dirname, `../templates/${templateName}`);
@@ -15,15 +16,7 @@ const renderTemplate = (templateName: string, context: object) => {
 };
 
 // this is the old version of the sendemail util, now let's refactor it in a class based clean code follows SOLID and Bevaioral command pattern
- const sendEmail = async ({
-    to,
-    link,
-    templateName,
-    appName,
-    year,
-    date,
-    otp,
-}: sendEmailProps) => {
+const sendEmail = async ({ to, link, templateName, appName, year, date, otp }: sendEmailProps) => {
     try {
         const transport = createTransport({
             host: 'smtp.gmail.com',
@@ -57,9 +50,11 @@ const renderTemplate = (templateName: string, context: object) => {
 
 // auth.controller.ts is used in sendVerficationEmailToUnverifiedUsers
 export class EmailUtils implements Command {
-    constructor(private EmailProps: sendEmailProps) {}
+    constructor(private readonly EmailProps: sendEmailProps) {}
 
-    public execute = async () => {
+    private transport = async (): Promise<
+        Transporter<SMTPTransport.SentMessageInfo, SMTPTransport.Options> | undefined
+    > => {
         try {
             const transport = createTransport({
                 host: 'smtp.gmail.com',
@@ -69,10 +64,23 @@ export class EmailUtils implements Command {
                     pass: APP_PASSWORD,
                 },
             });
-            const from = 'OOP';
-            const subject = 'OOP Email Verification';
+            return transport;
+        } catch (error: any) {
+            logger.error(error.message);
+        }
+    };
+    private renderTemplate = (templateName: string, context: object) => {
+        const filePath = path.resolve(__dirname, `../templates/${templateName}`);
+        const source = fs.readFileSync(filePath, 'utf-8');
+        const template = Handlebars.compile(source);
+        return template(context);
+    };
+    public execute = async () => {
+        try {
+            const from = PROJECT_NAME || 'OOP';
+            const subject = PROJECT_NAME + ' ' + this.EmailProps.subject;
 
-            const html = renderTemplate(`${this.EmailProps.templateName}`, {
+            const html = this.renderTemplate(`${this.EmailProps.templateName}`, {
                 to: this.EmailProps.to,
                 link: this.EmailProps.link,
                 appName: this.EmailProps.appName,
@@ -80,6 +88,14 @@ export class EmailUtils implements Command {
                 date: this.EmailProps.date,
                 otp: this.EmailProps.otp,
             });
+
+            const transport = await this.transport();
+
+            if (!transport) {
+                logger.error('Transporter could not be created');
+
+                return;
+            }
             await transport.sendMail({ from, subject, to: this.EmailProps.to, html });
 
             logger.info(

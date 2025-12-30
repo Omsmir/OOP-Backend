@@ -1,20 +1,18 @@
 import CarController from '@/controllers/car.controller';
-import { routes } from '@/interfaces/routes.interface';
 import upload from '@/middlewares/multer';
 import { validate } from '@/middlewares/validateResource';
 import { carSchema, deleteCarSchema, updateCarSchema } from '@/schemas/car.schema';
-import { logger } from '@/utils/logger';
-import { Router } from 'express';
+import BaseRoute from './base.route';
 
-class CarRoute implements routes {
-    public path = '/cars';
-    public router = Router();
+class CarRoute extends BaseRoute {
+
     private carController = new CarController();
     constructor() {
-        this.initializeRoute();
+        super('/cars');
+        this.initializeRoutes();
     }
 
-    private initializeRoute() {
+    protected initializeRoutes() {
         this.router.post(
             this.path,
             upload.none(),

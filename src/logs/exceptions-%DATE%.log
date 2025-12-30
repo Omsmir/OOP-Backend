@@ -5395,3 +5395,575 @@ Error: listen EADDRINUSE: address already in use :::8090
     at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6315569371531393.js:69:33)
     at node:internal/modules/cjs/loader:1706:10
     at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6315569371531393.js:114:20)
+2025:12:29 :: 21:05:39::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/auth.controller.ts(19,46): error TS1110: Type expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/auth.controller.ts(19,46): error TS1110: Type expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\auth.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:29 :: 21:05:54::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/auth.controller.ts(18,75): error TS1359: Identifier expected. 'in' is a reserved word that cannot be used here.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/auth.controller.ts(18,75): error TS1359: Identifier expected. 'in' is a reserved word that cannot be used here.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\auth.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:29 :: 21:06:51::error::uncaughtException: Unexpected token ';'
+C:\Users\omar\Documents\OOP\src\routes.ts:12
+const ;
+      ^
+
+SyntaxError: Unexpected token ';'
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1528:20)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:29 :: 21:07:04::error::uncaughtException: CommandInvoker is not defined
+ReferenceError: CommandInvoker is not defined
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:11:17)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:29 :: 21:07:15::error::uncaughtException: Missing initializer in const declaration
+C:\Users\omar\Documents\OOP\src\routes.ts:14
+const user;
+      ^^^^
+
+SyntaxError: Missing initializer in const declaration
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1528:20)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:29 :: 21:08:10::error::uncaughtException: Cannot read properties of undefined (reading 'login')
+TypeError: Cannot read properties of undefined (reading 'login')
+    at authRoute.initializeRoutes (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:23:33)
+    at new authRoute (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:16:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:25:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:12:29 :: 21:08:18::error::uncaughtException: Missing initializer in const declaration
+C:\Users\omar\Documents\OOP\src\routes.ts:19
+const post;
+      ^^^^
+
+SyntaxError: Missing initializer in const declaration
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1528:20)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:29 :: 21:08:28::error::uncaughtException: Auth is not defined
+ReferenceError: Auth is not defined
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:19:30)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:29 :: 21:08:31::error::uncaughtException: Cannot read properties of undefined (reading 'login')
+TypeError: Cannot read properties of undefined (reading 'login')
+    at authRoute.initializeRoutes (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:23:33)
+    at new authRoute (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:16:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:28:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:12:29 :: 21:08:38::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes.ts(24,1): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes.ts(24,1): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:29 :: 21:08:42::error::uncaughtException: p is not defined
+ReferenceError: p is not defined
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:22:12)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:29 :: 21:08:46::error::uncaughtException: Cannot read properties of undefined (reading 'login')
+TypeError: Cannot read properties of undefined (reading 'login')
+    at authRoute.initializeRoutes (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:23:33)
+    at new authRoute (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:16:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:33:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:12:29 :: 21:08:53::error::uncaughtException: Cannot read properties of undefined (reading 'login')
+TypeError: Cannot read properties of undefined (reading 'login')
+    at authRoute.initializeRoutes (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:23:33)
+    at new authRoute (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:16:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:33:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:12:29 :: 21:08:57::error::uncaughtException: Unexpected token ';'
+C:\Users\omar\Documents\OOP\src\routes.ts:22
+const ;
+      ^
+
+SyntaxError: Unexpected token ';'
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1528:20)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:29 :: 21:09:09::error::uncaughtException: aut is not defined
+ReferenceError: aut is not defined
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:25:22)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:29 :: 21:09:14::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes.ts(27,1): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes.ts(27,1): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:29 :: 21:09:19::error::uncaughtException: authr is not defined
+ReferenceError: authr is not defined
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:25:22)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:29 :: 21:09:29::error::uncaughtException: Cannot read properties of undefined (reading 'login')
+TypeError: Cannot read properties of undefined (reading 'login')
+    at authRoute.initializeRoutes (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:23:33)
+    at new authRoute (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:16:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:36:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:12:29 :: 21:09:37::error::uncaughtException: Cannot read properties of undefined (reading 'login')
+TypeError: Cannot read properties of undefined (reading 'login')
+    at authRoute.initializeRoutes (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:23:33)
+    at new authRoute (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:16:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:36:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:12:29 :: 21:09:46::error::uncaughtException: Cannot read properties of undefined (reading 'login')
+TypeError: Cannot read properties of undefined (reading 'login')
+    at authRoute.initializeRoutes (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:23:33)
+    at new authRoute (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:16:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:36:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:12:29 :: 21:09:51::error::uncaughtException: Cannot read properties of undefined (reading 'login')
+TypeError: Cannot read properties of undefined (reading 'login')
+    at authRoute.initializeRoutes (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:23:33)
+    at new authRoute (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:16:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:36:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:12:29 :: 21:10:00::error::uncaughtException: Cannot read properties of undefined (reading 'login')
+TypeError: Cannot read properties of undefined (reading 'login')
+    at authRoute.initializeRoutes (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:23:33)
+    at new authRoute (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:16:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:37:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:12:29 :: 21:10:06::error::uncaughtException: Cannot read properties of undefined (reading 'login')
+TypeError: Cannot read properties of undefined (reading 'login')
+    at authRoute.initializeRoutes (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:23:33)
+    at new authRoute (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:16:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:38:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:12:29 :: 21:10:11::error::uncaughtException: Cannot read properties of undefined (reading 'login')
+TypeError: Cannot read properties of undefined (reading 'login')
+    at authRoute.initializeRoutes (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:23:33)
+    at new authRoute (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:16:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:38:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:12:29 :: 21:10:19::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes.ts(33,1): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes.ts(33,1): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:29 :: 21:10:23::error::uncaughtException: deser is not defined
+ReferenceError: deser is not defined
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:31:21)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:29 :: 21:10:27::error::uncaughtException: Cannot read properties of undefined (reading 'login')
+TypeError: Cannot read properties of undefined (reading 'login')
+    at authRoute.initializeRoutes (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:23:33)
+    at new authRoute (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:16:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:40:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:12:29 :: 21:10:30::error::uncaughtException: Cannot read properties of undefined (reading 'login')
+TypeError: Cannot read properties of undefined (reading 'login')
+    at authRoute.initializeRoutes (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:23:33)
+    at new authRoute (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:16:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:40:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:12:29 :: 21:10:34::error::uncaughtException: Cannot read properties of undefined (reading 'login')
+TypeError: Cannot read properties of undefined (reading 'login')
+    at authRoute.initializeRoutes (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:23:33)
+    at new authRoute (C:\Users\omar\Documents\OOP\src\routes\auth.post.route.ts:16:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:40:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6581319732253652.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:12:30 :: 01:47:09::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/auth.controller.ts(179,21): error TS1003: Identifier expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/auth.controller.ts(179,21): error TS1003: Identifier expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\auth.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:30 :: 01:48:00::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/interfaces/global.interface.ts(14,1): error TS1005: '{' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/interfaces/global.interface.ts(14,1): error TS1005: '{' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\interfaces\global.interface.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:30 :: 01:51:00::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/auth.route.ts(41,13): error TS1005: ',' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/auth.route.ts(41,13): error TS1005: ',' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\auth.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:30 :: 01:51:08::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/auth.route.ts(41,13): error TS1005: ',' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/auth.route.ts(41,13): error TS1005: ',' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\auth.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:30 :: 01:51:15::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/auth.route.ts(41,13): error TS1005: ',' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/auth.route.ts(41,13): error TS1005: ',' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\auth.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:30 :: 01:51:22::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/routes/auth.route.ts(42,13): error TS1005: ',' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/routes/auth.route.ts(42,13): error TS1005: ',' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes\auth.route.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:30 :: 01:51:31::error::uncaughtException: Cannot read properties of undefined (reading 'requireLogin')
+TypeError: Cannot read properties of undefined (reading 'requireLogin')
+    at UserRoute.initializeRoutes (C:\Users\omar\Documents\OOP\src\routes\auth.route.ts:44:29)
+    at new UserRoute (C:\Users\omar\Documents\OOP\src\routes\auth.route.ts:20:14)
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\routes.ts:35:5)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+2025:12:30 :: 01:53:26::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/auth.controller.ts(164,13): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/auth.controller.ts(164,13): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\auth.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:30 :: 01:53:33::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/auth.controller.ts(165,16): error TS1109: Expression expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/auth.controller.ts(165,16): error TS1109: Expression expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\auth.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:30 :: 01:53:39::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/auth.controller.ts(166,13): error TS1005: ')' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/auth.controller.ts(166,13): error TS1005: ')' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\auth.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:30 :: 01:53:43::error::uncaughtException: Unexpected token 'const'
+C:\Users\omar\Documents\OOP\src\controllers\auth.controller.ts:123
+                const unverifiedUsers = await this.userService.getAllUsers({ verified: false });
+                ^^^^^
+
+SyntaxError: Unexpected token 'const'
+    at wrapSafe (node:internal/modules/cjs/loader:1486:18)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1528:20)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
+2025:12:30 :: 01:55:10::error::uncaughtException: ⨯ Unable to compile TypeScript:
+src/controllers/auth.controller.ts(165,15): error TS1005: '(' expected.
+
+Error: ⨯ Unable to compile TypeScript:
+src/controllers/auth.controller.ts(165,15): error TS1005: '(' expected.
+
+    at Object.<anonymous> (C:\Users\omar\Documents\OOP\src\controllers\auth.controller.ts:1:7)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1554:14)
+    at Module._compile (C:\Users\omar\Documents\OOP\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:69:33)
+    at node:internal/modules/cjs/loader:1706:10
+    at require.extensions..jsx.require.extensions..js (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:114:20)
+    at require.extensions.<computed> (C:\Users\omar\AppData\Local\Temp\ts-node-dev-hook-6978299451433698.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\omar\Documents\OOP\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1289:32)
+    at Function._load (node:internal/modules/cjs/loader:1108:12)
