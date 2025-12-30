@@ -64,6 +64,16 @@
             "date": 1752571106454,
             "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\debug\\application-2025-07-15.log",
             "hash": "caa2e1f9bbc1bae7876fd7445287709d7021306b70099cc3f053b897da275b13"
+        },
+        {
+            "date": 1767034976671,
+            "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\debug\\application-2025-12-29.log",
+            "hash": "ab650602b42fbefb4556afa4bf1361732c8866cd34875c1e8031071fba5ce233"
+        },
+        {
+            "date": 1767050237130,
+            "name": "C:\\Users\\omar\\Documents\\OOP\\src\\logs\\debug\\application-2025-12-30.log",
+            "hash": "3a7adb12dea18afe2f4a02a305b51817854c0f538807566d1fb763444fb85163"
         }
     ],
     "hashType": "sha256"

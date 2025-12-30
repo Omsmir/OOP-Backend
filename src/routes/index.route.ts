@@ -1,15 +1,15 @@
-import { routes } from '@/interfaces/routes.interface';
-import { json } from 'body-parser';
-import { Request, Response, Router } from 'express';
 
-class IndexRoute implements routes {
-    public path = '/';
-    public router = Router();
+import { Request, Response, Router } from 'express';
+import BaseRoute from './base.route';
+
+class IndexRoute extends BaseRoute {
+
     constructor() {
-        this.initializeRoute();
+        super('/');
+        this.initializeRoutes();
     }
 
-    private initializeRoute() {
+    protected initializeRoutes() {
         this.router.get(this.path, (req: Request, res: Response) => {
             const ip = req.headers['x-real-ip'];
             const headers = req.headers
