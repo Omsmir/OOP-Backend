@@ -44,9 +44,10 @@
             "@schemas/*": ["schemas/*"],
             "@services/*": ["services/*"],
             "@utils/*": ["utils/*"],
-            "@classes/*": ["classes/*"]
+            "@classes/*": ["classes/*"],
+            "@__tests__/`*": ["__tests__/*"]
         }
     },
     "include": [".env", "src/**/*.ts", "src/**/*.json"],
-    "exclude": ["node_modules", "src/logs", "src/tests"]
+    "exclude": ["node_modules", "src/logs"]
 }

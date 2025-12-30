@@ -19,4 +19,8 @@ export const loginSchema = z.object({
     ...payload,
 });
 
+export const logoutSchema = z.object({
+    ...params,
+});
 export type LoginSchemaInterface = z.infer<typeof loginSchema>;
+export type logoutSchemaInterface = z.infer<typeof logoutSchema>;

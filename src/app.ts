@@ -1,7 +1,15 @@
-import { BODYSIZELIMIT, LOG_FORMAT, NODE_ENV, ORIGIN, PORT } from './config/defaults';
+import {
+    APIS_MAIN_ENDPOINT,
+    APIS_VERSION,
+    BODYSIZELIMIT,
+    LOG_FORMAT,
+    NODE_ENV,
+    ORIGIN,
+    PORT,
+} from './config/defaults';
+import SentryWrapper from './utils/sentry';
 import express from 'express';
 import MongoConnection from './utils/MongoConnection';
-import { routes } from './interfaces/routes.interface';
 import morgan from 'morgan';
 import { logger, stream } from './utils/logger';
 import cors from 'cors';
@@ -14,9 +22,13 @@ import http from 'http';
 import { sanitizeRequest } from './middlewares/xss';
 import { CreationalClassesPattern } from './classes/creationalPatterns';
 import { BehavioralClassesPattern } from './classes/behavioral.class';
-import DeserializeMiddleware from './middlewares/deserializeUser';
+import DeserializeMiddleware, { DeserializeUser } from './middlewares/deserializeUser';
 import { developedBy, OOP, SIGNALS } from './utils/constants';
 import { gracefulShutdown } from './utils/gracefulEvents';
+import PostgresConnection from './utils/postgres';
+import BaseRoute from './routes/base.route';
+import { RunMigrations } from './database/mirgrations';
+import sessionRepository from './repository/session.repo';
 
 class App {
     public PORT: string | number;
@@ -24,16 +36,28 @@ class App {
     public app: express.Application;
     public server: http.Server;
     public mongoConnection: MongoConnection;
-    constructor(routes: routes[]) {
+    public postgresConnection: PostgresConnection;
+    private postgresMigrations: RunMigrations;
+    private deserializeUserMiddleware: DeserializeUser;
+    constructor(routes: BaseRoute[]) {
         this.PORT = PORT || 8090;
         this.env = NODE_ENV || 'development';
         this.app = express();
         this.server = http.createServer(this.app);
         this.mongoConnection = MongoConnection.getInstance();
+        this.postgresMigrations = RunMigrations.getInstance();
+
+        if (NODE_ENV !== 'test') {
+            this.initPostgresMigrations();
+        }
+        this.postgresConnection = PostgresConnection.getInstance();
+        this.deserializeUserMiddleware = new DeserializeUser(
+            new sessionRepository(this.postgresConnection)
+        );
 
         this.initializeMiddlewares();
-        this.initializeRoutes(routes);
         this.initializeDeserializers();
+        this.initializeRoutes(routes);
         this.initializeErrorMiddlewares();
         this.initializeClasses();
         this.setupGracefulShutdown();
@@ -49,15 +73,17 @@ class App {
         });
     }
 
-    private initializeRoutes(routes: routes[]) {
-        routes.forEach((route: routes) => {
-            this.app.use('/api', route.router);
+    private initializeRoutes(routes: BaseRoute[]) {
+        routes.forEach((route: BaseRoute) => {
+            this.app.use(`/${APIS_MAIN_ENDPOINT}/${APIS_VERSION}`, route.router);
         });
     }
 
     private async initializeMiddlewares() {
         this.app.use(morgan(LOG_FORMAT || 'dev', { stream }));
-        this.app.use(cors({ origin: ORIGIN, credentials: true }));
+        this.app.use(
+            cors({ origin: ORIGIN, credentials: true, allowedHeaders: ['authorization'] })
+        );
         this.app.use(hpp({ checkBody: true }));
         this.app.use(helmet());
         this.app.use(compression());
@@ -68,13 +94,13 @@ class App {
     }
 
     private async initializeDeserializers() {
-        this.app.use(DeserializeMiddleware.deserializeUser);
+        this.app.use(this.deserializeUserMiddleware.deserializeUser);
     }
     private initializeErrorMiddlewares() {
         this.app.use(ErrorHandler);
     }
 
-    static createInstance(routes: routes[]): App {
+    static createInstance(routes: BaseRoute[]): App {
         return new App(routes);
     }
 
@@ -95,6 +121,14 @@ class App {
         return this.app;
     }
 
+    private initPostgresMigrations = async () => {
+        await this.postgresMigrations.main();
+    };
+
+
+    private initSentry = () => {
+        return SentryWrapper.getInstance().initSentry()
+    }
     private async setupGracefulShutdown() {
         for (const signal of SIGNALS) {
             process.on(signal, async () => await gracefulShutdown.shutdown(signal));

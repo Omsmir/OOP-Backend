@@ -17,7 +17,18 @@ export const {
     ACCESSTOKENTTL,
     REFRESHTOKENTTL,
     APP_PASSWORD,
-    SMTP_USER
+    SMTP_USER,
+    POSTGRES_DB,
+    POSTGRES_HOST,
+    POSTGRES_PORT,
+    POSTGRES_USER,
+    POSTGRES_PWD,
+    POSTGRES_SSL,
+    APIS_MAIN_ENDPOINT,
+    APIS_VERSION,
+    SENTRY_DSN,
+    PROJECT_NAME
+
 } = process.env;
 
 export default {

@@ -10,7 +10,7 @@
     "build:tsc": "tsc && tsc-alias",
     "lint": "eslint  src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
-    "test": "jest"
+    "test": "cross-env NODE_ENV=test npx jest --detectOpenHandles"
   },
   "keywords": [],
   "author": "",
