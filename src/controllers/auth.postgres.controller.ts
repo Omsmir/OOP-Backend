@@ -1,21 +1,24 @@
 import UserRepository from '@/repository/auth.repo';
 import { BaseController } from './base.controller';
 import HttpException from '@/exceptions/httpException';
-import { UserToCreate } from '@/interfaces/models.interface';
-import { Request, Response } from 'express';
+import { profilePicture, UserToCreate } from '@/interfaces/models.interface';
+import { Request, response, Response } from 'express';
 import {
     createUserSchemaForPostgresInterface,
     getAllUserForPostGresSchemaInterface,
+    updateUserSchemaForPostgresInterface,
 } from '@/schemas/auth.schema';
 import { LoginSchemaInterface, logoutSchemaInterface } from '@/schemas/session.schema';
 import sessionRepository from '@/repository/session.repo';
 import { signJwt } from '@/utils/jwt.sign';
 import { ACCESSTOKENTTL, NODE_ENV, REFRESHTOKENTTL } from '@/config/defaults';
+import S3, { S3_DIRECTORIES, S3Services } from '@/utils/s3';
 
 class authController extends BaseController {
     constructor(
         private readonly userRepository: UserRepository,
-        private readonly sessionRepository: sessionRepository
+        private readonly sessionRepository: sessionRepository,
+        private readonly s3: S3Services
     ) {
         super();
     }
@@ -64,7 +67,7 @@ class authController extends BaseController {
 
             const session = await this.sessionRepository.createSession({
                 user_id: user.id,
-                user_agent: req.headers['user-agent'] as string || "test",
+                user_agent: (req.headers['user-agent'] as string) || 'test',
             });
 
             if (!session) {
@@ -129,6 +132,10 @@ class authController extends BaseController {
 
             await this.sessionRepository.updateSession(id, false);
 
+            res.clearCookie('accessToken');
+
+            res.clearCookie('refreshToken');
+
             res.status(200).json({ message: 'logged out ' });
         } catch (error) {
             this.handleError(res, error);
@@ -164,6 +171,57 @@ class authController extends BaseController {
             }
 
             res.status(200).json({ message: 'users found', users });
+        } catch (error) {
+            this.handleError(res, error);
+        }
+    };
+
+    public updateUserHandler = async (
+        req: Request<
+            updateUserSchemaForPostgresInterface['params'],
+            {},
+            updateUserSchemaForPostgresInterface['body']
+        >,
+        res: Response
+    ) => {
+        try {
+            const id = req.params.id;
+            const local_user = res.locals.user;
+            const file = req.file as Express.Multer.File;
+            let profile_picture: profilePicture | null = null;
+
+            if (String(local_user.id) !== id) {
+                throw new HttpException(409, 'unauthorized operation');
+            }
+            if (file) {
+                const Key = `${id}`;
+
+                const url = await this.s3.uploadFile({
+                    Key,
+                    Directory: S3_DIRECTORIES.PROFILE_PICTURES,
+                    ContentType: file.mimetype,
+                    Body: file.buffer,
+                });
+
+                if (!url) {
+                    throw new HttpException(400, 'Error upload profile picture');
+                }
+
+                profile_picture = {
+                    url,
+                    name: file.originalname,
+                    content_type: file.mimetype,
+                };
+
+                await this.userRepository.UpdateProfilePicture(id, profile_picture);
+            }
+
+            const updatedUser = await this.userRepository.updateUser(id, {
+                ...req.body,
+                age: (req.body.age && Number(req.body.age)) || undefined,
+            });
+
+            res.status(200).json({ message: 'user updated successfully', user: updatedUser });
         } catch (error) {
             this.handleError(res, error);
         }

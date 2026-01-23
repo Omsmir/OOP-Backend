@@ -1,4 +1,5 @@
 import { z } from 'zod';
+const validImageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
 
 const payload = {
     body: z.object({
@@ -42,6 +43,35 @@ const createUserPayload = {
         gender: z.enum(['male', 'female', 'other'], { required_error: 'please select a gender' }),
     }),
 };
+
+const updateUserPayload = {
+    body: z.object({
+        name: z.string().optional(),
+        gender: z.enum(['male', 'female', 'other']).optional(),
+        bio: z.string().optional(),
+        age: z.string().optional(),
+    }),
+    file: z
+        .object({
+            profileImg: z
+                .custom<Express.Multer.File | undefined>(
+                    (file) => file !== undefined && file !== null,
+                    {
+                        message: 'please select a profile picture',
+                    }
+                )
+                .refine(
+                    (file) => {
+                        if (!file) return false;
+                        const fileName = file.originalname.toLowerCase();
+                        const extension = fileName.split('.').pop();
+                        return validImageExtensions.includes(extension || '');
+                    },
+                    { message: 'Invalid image extension' }
+                ),
+        })
+        .optional(),
+};
 export const createUserSchema = z.object({
     ...params,
     ...payload,
@@ -57,7 +87,6 @@ export const updateUserSchema = z.object({
     ...updatePayload,
 });
 
-
 export const createUserSchemaForPostgres = z.object({
     ...createUserPayload,
 });
@@ -66,10 +95,14 @@ export const getAllUserForPostGresSchema = z.object({
     ...params,
 });
 
-
+export const updateUserSchemaForPostgres = z.object({
+    ...params,
+    ...updateUserPayload,
+});
 
 export type createUserSchemaInterface = z.infer<typeof createUserSchema>;
 export type deleteUserSchemaInterface = z.infer<typeof deleteUserSchema>;
 export type updateUserSchemaInterface = z.infer<typeof updateUserSchema>;
 export type createUserSchemaForPostgresInterface = z.infer<typeof createUserSchemaForPostgres>;
 export type getAllUserForPostGresSchemaInterface = z.infer<typeof getAllUserForPostGresSchema>;
+export type updateUserSchemaForPostgresInterface = z.infer<typeof updateUserSchemaForPostgres>;

@@ -27,8 +27,11 @@ export const {
     APIS_MAIN_ENDPOINT,
     APIS_VERSION,
     SENTRY_DSN,
-    PROJECT_NAME
-
+    PROJECT_NAME,
+    AWS_ACCESS_KEY,
+    AWS_SECRET_KEY,
+    AWS_REGION,
+    AWS_BUCKET_NAME,
 } = process.env;
 
 export default {

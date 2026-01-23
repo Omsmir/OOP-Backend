@@ -22,7 +22,7 @@ import http from 'http';
 import { sanitizeRequest } from './middlewares/xss';
 import { CreationalClassesPattern } from './classes/creationalPatterns';
 import { BehavioralClassesPattern } from './classes/behavioral.class';
-import DeserializeMiddleware, { DeserializeUser } from './middlewares/deserializeUser';
+import { DeserializeUser } from './middlewares/deserializeUser';
 import { developedBy, OOP, SIGNALS } from './utils/constants';
 import { gracefulShutdown } from './utils/gracefulEvents';
 import PostgresConnection from './utils/postgres';

@@ -17,7 +17,10 @@ export default async function globalSetup() {
 
     // Run migrations once
     const client = new Client({ connectionString });
+
+
     await client.connect();
+    
     await migrate(client);
 
     // Insert default admin user with hashed password

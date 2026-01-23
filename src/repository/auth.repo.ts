@@ -1,8 +1,9 @@
 import { SALTWORKFACTOR } from '@/config/defaults';
 import { PostgresInterface } from '@/interfaces/global.interface';
-import { UserInterface, UserToCreate } from '@/interfaces/models.interface';
+import { profilePicture, UserInterface, UserToCreate } from '@/interfaces/models.interface';
 import bcryptjs from 'bcryptjs';
-import { omit } from 'lodash';
+import { keys, omit } from 'lodash';
+import { object } from 'zod/v4';
 
 class UserRepository {
     constructor(private readonly DB: PostgresInterface) {}
@@ -18,10 +19,10 @@ class UserRepository {
         return user as UserInterface;
     };
 
-    public getAllUsers = async (id:string): Promise<UserInterface[] | null> => {
+    public getAllUsers = async (id: string): Promise<UserInterface[] | null> => {
         const query = `SELECT * FROM users WHERE id != $1`;
 
-        const result = await this.DB.query(query,[id]);
+        const result = await this.DB.query(query, [id]);
 
         if (result.rowCount === 0) return null;
 
@@ -39,10 +40,10 @@ class UserRepository {
         return isAdmin;
     };
     public createUser = async (payload: UserToCreate) => {
-        const query = `INSERT INTO users (name,email,password,gender,age,role,permissions) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *`;
+        const query = `INSERT INTO users (name,email,password,gender,age,role,permissions,bio) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *`;
 
         const salt = await bcryptjs.genSalt(parseInt(SALTWORKFACTOR as string));
-        
+
         const hashedPassword = bcryptjs.hashSync(payload.password, salt);
 
         const res = await this.DB.query(query, [
@@ -53,10 +54,42 @@ class UserRepository {
             payload.age,
             payload.role,
             payload.permissions,
+            payload.bio || null,
         ]);
 
         const createdUser = omit(res.rows[0], 'password');
         return createdUser;
+    };
+
+    public UpdateProfilePicture = async (id: string, profile_picture: profilePicture | null) => {
+        const query = `UPDATE users SET profile_picture = $1 WHERE id = $2 RETURNING *`;
+
+        const res = await this.DB.query(query, [JSON.stringify(profile_picture), id]);
+
+        if (res.rowCount === 0) return null;
+
+        const updated_user = omit(res.rows[0], 'password') as UserInterface;
+
+        return updated_user;
+    };
+
+    public updateUser = async (id: string, updatedFields: Partial<UserToCreate>) => {
+        let query = 'UPDATE users SET ';
+
+        Object.entries(updatedFields).forEach(([key, value], index) => {
+            if (value) {
+                query += `${key} = $${index + 1} ${index + 1 < keys(updatedFields).length ? ',' : ''} `;
+            }
+        });
+        query += ` WHERE id = $${keys(updatedFields).length + 1} RETURNING *`;
+
+        const res = await this.DB.query(query, [...Object.values(updatedFields), id]);
+
+        if (res.rowCount === 0) return null;
+
+        const updated_user = omit(res.rows[0], 'password') as UserInterface;
+
+        return updated_user;
     };
 
     public getUserById = async (id: string): Promise<UserInterface | undefined> => {

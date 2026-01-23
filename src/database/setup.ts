@@ -19,14 +19,18 @@ export const migrate = async (client: Client) => {
 
         for (const file of files) {
             const res = await client.query(`SELECT 1 FROM _migrations WHERE name = $1`, [file]);
+
             if (res.rowCount && res.rowCount > 0) {
                 console.log(`Skipping already run migration: ${file}`);
                 continue;
             }
+
             console.log(`Running migration: ${file}`);
+
             const sql = readFileSync(join(dir, file), 'utf8');
 
             await client.query(sql);
+
             await client.query(`INSERT INTO _migrations(name) VALUES ($1)`, [file]);
         }
     } catch (error: any) {

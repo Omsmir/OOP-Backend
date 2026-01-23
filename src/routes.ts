@@ -14,6 +14,7 @@ import IndexRoute from './routes/index.route';
 import SessionRoute from './routes/session.route';
 import UserService from './services/auth.service';
 import PostgresConnection from './utils/postgres';
+import S3, { S3Services } from './utils/s3';
 
 const invoker = new CommandInvoker();
 const userService = new UserService();
@@ -24,7 +25,11 @@ const DB = PostgresConnection.getInstance();
 const users_respository = new UserRepository(DB);
 const session_respository = new sessionRepository(DB);
 
-const post_auth_controller = new authController(users_respository, session_respository);
+const s3 = new S3();
+
+const S3Service = new S3Services(s3)
+
+const post_auth_controller = new authController(users_respository, session_respository, S3Service);
 const middlewares = new DeserializeMiddleware();
 
 export const Routes = [

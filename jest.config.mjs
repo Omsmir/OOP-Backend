@@ -6,9 +6,9 @@ export default {
     globalSetup: '<rootDir>/src/__tests__/globalSetup.ts',
     globalTeardown: '<rootDir>/src/__tests__/globalTeardown.ts',
     moduleNameMapper: {
+        '^app$': '<rootDir>/src/app',
         '^@/(.*)$': '<rootDir>/src/$1',
         '^__tests__/(.*)$': '<rootDir>/src/__tests__/$1',
-        '^app$': '<rootDir>/src/app',
     },
 };
 
