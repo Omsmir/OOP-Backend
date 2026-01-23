@@ -32,6 +32,12 @@ export interface sessionInput {
 }
 
 
+export type profilePicture = {
+    url: string;
+    name: string;
+    content_type: string;
+}
+
 export interface UserToCreate {
     name: string;
     email: string;
@@ -39,6 +45,7 @@ export interface UserToCreate {
     age: number;
     role: 'admin' | 'researcher' | 'author';
     gender: 'male' | 'female' | 'other';
+    bio?:string;
     permissions: string[];
 }
 
@@ -51,7 +58,10 @@ export interface UserInterface {
     role: 'admin' | 'researcher' | 'author';
     gender:'male' | 'female' | 'other';
     permissions: string[];
+    verified: boolean;
     password: string;
+    profile_picture?: profilePicture;
+    bio: string;
     created_at: Date;
     updated_at: Date;
 }

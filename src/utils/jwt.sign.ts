@@ -40,6 +40,7 @@ export const verifyJwt = async (
                       'base64'
                   ).toString('ascii');
 
+
         const decoded = jwt.verify(token, publicKey);
 
         return {

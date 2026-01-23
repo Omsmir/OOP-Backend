@@ -37,6 +37,7 @@ export class RunMigrations {
             logger.info('running migrations started');
 
             await this.client.query('BEGIN');
+            
             await migrate(this.client);
 
             await this.client.query('COMMIT');

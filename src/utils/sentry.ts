@@ -26,7 +26,7 @@ class SentryWrapper {
                     nodeProfilingIntegration(),
                     Sentry.consoleLoggingIntegration({ levels: ['log', 'warn', 'error'] }),
                 ],
-                tracesSampleRate: NODE_ENV === 'production' ? 0.2 : 1.0,
+                tracesSampleRate: NODE_ENV === 'production' ? 1.0 : 1.0,
                 profilesSampleRate: 1.0,
                 release: 'oop@1.0.0',
                 enableLogs: true,

@@ -66,14 +66,13 @@ class PostgresConnection implements PostgresInterface {
 
             if (checkResult.rowCount === 0) {
                 await adminPool.query(`CREATE DATABASE "${POSTGRES_DB}"`);
-                logger.info(`🆕 Database "${POSTGRES_DB}" created successfully.`);
+                logger.info(`Database "${POSTGRES_DB}" created successfully.`);
             } else {
-                logger.info(`✅ Database "${POSTGRES_DB}" already exists.`);
+                logger.info(`Database "${POSTGRES_DB}" already exists.`);
             }
 
             await adminPool.end();
         } catch (error: any) {
-            ``;
             throw new Error(error.message);
         }
     };
@@ -81,7 +80,7 @@ class PostgresConnection implements PostgresInterface {
     private initializePostgres = async () => {
         try {
             if (NODE_ENV === 'test') return; // Skip in test environment
-            
+
             await this.initializeDatabaseIfNotExists();
             const client = this.getClient();
 
