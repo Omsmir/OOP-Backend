@@ -4,26 +4,20 @@ import mongoose from 'mongoose';
 
 // Singleton Design Pattern
 class MongoConnection {
-    private static MONGO_DB_URI: string;
-    private static MONGO_DB_NAME: string;
     private static instance: MongoConnection;
 
     private constructor() {
-        MongoConnection.MONGO_DB_URI =
-            MONGO_DB_URI || 'mongodb+srv://cluster0.y7dljqp.mongodb.net/';
-        MongoConnection.MONGO_DB_NAME = MONGO_DB || 'test';
-
         this.initializeConnection();
     }
 
-    static getInstance(): MongoConnection {
+    public static getInstance(): MongoConnection {
         if (!MongoConnection.instance) {
             MongoConnection.instance = new MongoConnection();
         }
         return MongoConnection.instance;
     }
 
-    static async CloseConnection() {
+    public static async CloseConnection() {
         if (MongoConnection.instance) {
             await mongoose.connection
                 .close()
@@ -37,10 +31,10 @@ class MongoConnection {
     private async initializeConnection() {
         try {
             await mongoose
-                .connect(MongoConnection.MONGO_DB_URI, {
+                .connect(MONGO_DB_URI || 'mongodb+srv://cluster0.y7dljqp.mongodb.net/', {
                     user: MONGO_DB_USER,
                     pass: MONGO_DB_PASSWD,
-                    dbName: MongoConnection.MONGO_DB_NAME,
+                    dbName: MONGO_DB || 'test',
                 })
                 .then((conn) =>
                     logger.info(`Mongodb is connected to database:${conn.connection.name}`)

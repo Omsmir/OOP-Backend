@@ -1,11 +1,14 @@
 import upload from '@/middlewares/multer';
 import BaseRoute from './base.route';
 import { validate } from '@/middlewares/validateResource';
-import { createUserSchemaForPostgres, getAllUserForPostGresSchema } from '@/schemas/auth.schema';
+import {
+    createUserSchemaForPostgres,
+    getAllUserForPostGresSchema,
+    updateUserSchemaForPostgres,
+} from '@/schemas/auth.schema';
 import authController from '@/controllers/auth.postgres.controller';
 import { loginSchema, logoutSchema } from '@/schemas/session.schema';
 import DeserializeMiddleware from '@/middlewares/deserializeUser';
-
 
 class authRoute extends BaseRoute {
     constructor(
@@ -38,6 +41,13 @@ class authRoute extends BaseRoute {
             this.middlewares.requireLogin,
             validate(getAllUserForPostGresSchema),
             this.userController.getAllUsersHandler
+        );
+        this.router.put(
+            `${this.path}/:id`,
+            this.middlewares.requireLogin,
+            upload.single('profileImg'),
+            validate(updateUserSchemaForPostgres),
+            this.userController.updateUserHandler
         );
     }
 }

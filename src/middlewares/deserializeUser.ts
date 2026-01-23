@@ -15,11 +15,10 @@ class DeserializeMiddleware extends BaseController {
             const user = res.locals.user;
 
             if (!user) {
-                res.status(401).json({ message: 'Expired session', sessionState: false });
+                res.status(401).json({ message: 'You need to login again', sessionState: false });
                 return;
             }
 
-            console.log('deserialized user', user);
             res.locals.user = user;
             return next();
         } catch (error) {
@@ -37,6 +36,7 @@ export class DeserializeUser extends BaseController {
         const accessToken = get(req, 'headers.authorization', '')?.replace(/^Bearer\s/, '');
 
         const refreshToken = req.cookies['refreshToken'];
+
 
         if (!accessToken) {
             return next();
