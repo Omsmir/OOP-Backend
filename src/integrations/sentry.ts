@@ -1,7 +1,7 @@
 import { NODE_ENV, SENTRY_DSN } from '@/config/defaults';
 import * as Sentry from '@sentry/node';
 import { nodeProfilingIntegration } from '@sentry/profiling-node';
-import { logger } from './logger';
+import { logger } from '@/utils/logger';
 
 class SentryWrapper {
     private static instance: SentryWrapper;

@@ -2,15 +2,15 @@ CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 
 
-CREATE TYPE gender AS ENUM ('male','female','other');
-CREATE TYPE role_key AS ENUM ('admin','author','researcher');
+CREATE TYPE gender_type AS ENUM ('male','female','other');
+CREATE TYPE role_type AS ENUM ('admin','user','guest');
 CREATE TABLE IF NOT EXISTS users (
         id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
         name VARCHAR(50) NOT NULL,
         email VARCHAR(100) UNIQUE NOT NULL,
         age INT CHECK (age > 0) NOT NULL,
-        gender gender,
-        role role_key,
+        gender gender_type,
+        role role_type,
         password TEXT NOT NULL,
         permissions text[] NOT NULL,
         verified BOOLEAN DEFAULT false,

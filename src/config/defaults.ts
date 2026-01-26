@@ -32,6 +32,11 @@ export const {
     AWS_SECRET_KEY,
     AWS_REGION,
     AWS_BUCKET_NAME,
+    SEEDED_USER_NAME,
+    SEEDED_USER_PASSWORD,
+    REDIS_DATABASE,
+    REDIS_PWD,
+    REDIS_DEV_URI,
 } = process.env;
 
 export default {

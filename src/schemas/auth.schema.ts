@@ -39,7 +39,7 @@ const createUserPayload = {
             .email({ message: 'not a valid email' }),
         password: z.string({ required_error: 'password is required' }),
         age: z.string({ required_error: 'age is required' }),
-        role: z.enum(['admin', 'researcher', 'author'], { required_error: 'role is required' }),
+        role: z.enum(['admin', 'user', 'guest'], { required_error: 'role is required' }),
         gender: z.enum(['male', 'female', 'other'], { required_error: 'please select a gender' }),
     }),
 };
@@ -72,6 +72,12 @@ const updateUserPayload = {
         })
         .optional(),
 };
+
+export enum CHANGE_KEY_QUERY {
+    PROFILE_PICTURE = 'PROFILE_PICTURE',
+    PROFILEANDOTHER = 'PROFILEANDOTHER',
+    OTHER = 'OTHER',
+}
 export const createUserSchema = z.object({
     ...params,
     ...payload,

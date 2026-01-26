@@ -1,3 +1,4 @@
+import { UserFactory } from '@/classes/creationalPatterns';
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
 import { Client } from 'pg';
@@ -32,6 +33,22 @@ export const migrate = async (client: Client) => {
             await client.query(sql);
 
             await client.query(`INSERT INTO _migrations(name) VALUES ($1)`, [file]);
+
+            const seeded_admin = UserFactory.seeding_admin();
+
+            const query = `INSERT INTO users (name,email,password,role,permissions,age,gender) VALUES ($1,$2,$3,$4,$5,$6,$7)`;
+
+            await client.query(query, [
+                seeded_admin.name,
+                seeded_admin.email,
+                seeded_admin.password,
+                seeded_admin.role,
+                seeded_admin.permissions,
+                seeded_admin.age,
+                seeded_admin.gender,
+            ]);
+
+            console.log(`Migration ${file} completed successfully.`);
         }
     } catch (error: any) {
         console.error(error.message);

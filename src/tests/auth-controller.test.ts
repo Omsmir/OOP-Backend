@@ -10,6 +10,7 @@ import { Client } from 'pg';
 import request from 'supertest';
 import { createUserPayload } from './mocks/auth.mock';
 import DeserializeMiddleware from '@/middlewares/deserializeUser';
+import S3, { S3Services } from '@/integrations/s3';
 
 describe('auth controller tests', () => {
     let app: App;
@@ -27,8 +28,11 @@ describe('auth controller tests', () => {
 
         const user_repository = new UserRepository(DB);
         const session_repository = new sessionRepository(DB);
+        const s3 = S3.getInstance()
 
-        const auth_controller = new authController(user_repository, session_repository);
+        const S3Service = new S3Services(s3)
+
+        const auth_controller = new authController(user_repository, session_repository,S3Service);
 
         const auth_route = new authRoute(auth_controller, middlewares);
 

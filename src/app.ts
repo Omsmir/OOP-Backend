@@ -7,9 +7,9 @@ import {
     ORIGIN,
     PORT,
 } from './config/defaults';
-import SentryWrapper from './utils/sentry';
+import SentryWrapper from '@/integrations/sentry';
 import express from 'express';
-import MongoConnection from './utils/MongoConnection';
+import MongoConnection from './utils/mongo.connection';
 import morgan from 'morgan';
 import { logger, stream } from './utils/logger';
 import cors from 'cors';
@@ -25,10 +25,12 @@ import { BehavioralClassesPattern } from './classes/behavioral.class';
 import { DeserializeUser } from './middlewares/deserializeUser';
 import { developedBy, OOP, SIGNALS } from './utils/constants';
 import { gracefulShutdown } from './utils/gracefulEvents';
-import PostgresConnection from './utils/postgres';
+import PostgresConnection from './utils/postgresql.connection';
 import BaseRoute from './routes/base.route';
 import { RunMigrations } from './database/mirgrations';
 import sessionRepository from './repository/session.repo';
+import { RedisConnection } from './utils/redis';
+import loadSheddings from './middlewares/shedding';
 
 class App {
     public PORT: string | number;
@@ -37,8 +39,10 @@ class App {
     public server: http.Server;
     public mongoConnection: MongoConnection;
     public postgresConnection: PostgresConnection;
+    private redisConnection: RedisConnection;
     private postgresMigrations: RunMigrations;
     private deserializeUserMiddleware: DeserializeUser;
+    private sheddingMiddleware: loadSheddings;
     constructor(routes: BaseRoute[]) {
         this.PORT = PORT || 8090;
         this.env = NODE_ENV || 'development';
@@ -46,6 +50,8 @@ class App {
         this.server = http.createServer(this.app);
         this.mongoConnection = MongoConnection.getInstance();
         this.postgresMigrations = RunMigrations.getInstance();
+        this.redisConnection = RedisConnection.getInstance();
+        this.sheddingMiddleware = new loadSheddings();
 
         if (NODE_ENV !== 'test') {
             this.initPostgresMigrations();
@@ -94,6 +100,7 @@ class App {
     }
 
     private async initializeDeserializers() {
+        this.app.use(this.sheddingMiddleware.sheddingMiddleware);
         this.app.use(this.deserializeUserMiddleware.deserializeUser);
     }
     private initializeErrorMiddlewares() {
@@ -125,10 +132,9 @@ class App {
         await this.postgresMigrations.main();
     };
 
-
     private initSentry = () => {
-        return SentryWrapper.getInstance().initSentry()
-    }
+        return SentryWrapper.getInstance().initSentry();
+    };
     private async setupGracefulShutdown() {
         for (const signal of SIGNALS) {
             process.on(signal, async () => await gracefulShutdown.shutdown(signal));

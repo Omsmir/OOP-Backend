@@ -1,4 +1,5 @@
 import { UserDocument } from '@/models/auth.model';
+import { PERMISSIONS } from './permissions';
 
 export interface CarInput {
     name: string;
@@ -42,11 +43,11 @@ export interface UserToCreate {
     name: string;
     email: string;
     password: string;
-    age: number;
-    role: 'admin' | 'researcher' | 'author';
+    age: number ;
+    role: 'admin' | 'user' | 'guest';
     gender: 'male' | 'female' | 'other';
     bio?:string;
-    permissions: string[];
+    permissions: PERMISSIONS[];
 }
 
 
@@ -55,9 +56,9 @@ export interface UserInterface {
     name: string;
     email: string;
     age: number;
-    role: 'admin' | 'researcher' | 'author';
+    role: 'admin' | 'user' | 'guest';
     gender:'male' | 'female' | 'other';
-    permissions: string[];
+    permissions: PERMISSIONS[];
     verified: boolean;
     password: string;
     profile_picture?: profilePicture;

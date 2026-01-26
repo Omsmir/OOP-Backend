@@ -8,7 +8,7 @@ import {
     updateUserSchemaInterface,
 } from '@/schemas/auth.schema';
 import { UserFactory } from '@/classes/creationalPatterns';
-import { EmailUtils } from '@/utils/send.email';
+import { EmailUtils } from '@/utils/mail-service';
 import { CommandInvoker, EventBus, LoggerSubscriber } from '@/classes/behavioral.class';
 import { EMAIL_TEMPLATES, SUBJECT_TYPES } from '@/interfaces/global.interface';
 
@@ -56,8 +56,8 @@ class UserController extends BaseController {
 
             const user = {
                 ...req.body,
-                role: createdUserInstance.role as 'admin' | 'user' | 'guest', // factory design pattern usage
-                permissions: createdUserInstance.permessions(), // factory design pattern usage
+                role: createdUserInstance.role , // factory design pattern usage
+                permissions: createdUserInstance.permissions(), // factory design pattern usage
             };
 
             const createdUser = await this.userService.createUser(user);
@@ -106,8 +106,8 @@ class UserController extends BaseController {
             }
 
             const user = {
-                role: updatedUserInstance.role as 'admin' | 'user' | 'guest', // factory design pattern usage
-                permissions: updatedUserInstance.permessions(), // factory design pattern usage
+                role: updatedUserInstance.role, // factory design pattern usage
+                permissions: updatedUserInstance.permissions(), // factory design pattern usage
             };
 
             const updatedUser = await this.userService.updateUser({ _id: userId }, user, {
@@ -163,7 +163,7 @@ class UserController extends BaseController {
             const local_user = res.locals.user;
 
             if (local_user.role !== 'admin' || !local_user.id) {
-                throw new HttpException(401, 'unauthorized access');
+                throw new HttpException(403, 'unauthorized access');
             }
             const unverifiedUsers = await this.userService.getAllUsers({ verified: false });
 

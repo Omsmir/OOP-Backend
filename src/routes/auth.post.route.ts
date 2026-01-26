@@ -9,6 +9,8 @@ import {
 import authController from '@/controllers/auth.postgres.controller';
 import { loginSchema, logoutSchema } from '@/schemas/session.schema';
 import DeserializeMiddleware from '@/middlewares/deserializeUser';
+import { PERMISSIONS } from '@/interfaces/permissions';
+import RateLimiters from '@/middlewares/rateLimiters';
 
 class authRoute extends BaseRoute {
     constructor(
@@ -27,6 +29,8 @@ class authRoute extends BaseRoute {
         );
         this.router.post(
             `${this.path}`,
+            this.middlewares.requireLogin,
+            this.middlewares.authorize([PERMISSIONS.USER_CREATE, PERMISSIONS.USER_DELETE]),
             upload.none(),
             validate(createUserSchemaForPostgres),
             this.userController.createUser
@@ -39,12 +43,23 @@ class authRoute extends BaseRoute {
         this.router.get(
             `${this.path}/:id`,
             this.middlewares.requireLogin,
+            this.middlewares.authorize([
+                PERMISSIONS.USER_CREATE,
+                PERMISSIONS.USER_DELETE,
+                PERMISSIONS.USER_READ,
+            ]),
             validate(getAllUserForPostGresSchema),
             this.userController.getAllUsersHandler
         );
         this.router.put(
             `${this.path}/:id`,
             this.middlewares.requireLogin,
+            RateLimiters.create({
+                windowMs: 15 * 60 * 1000,
+                max: 5,
+                message: 'Too many profile update requests from this IP, please try again later.',
+            }),
+            this.middlewares.authorize([PERMISSIONS.USER_PROFILE_UPDATE]),
             upload.single('profileImg'),
             validate(updateUserSchemaForPostgres),
             this.userController.updateUserHandler
