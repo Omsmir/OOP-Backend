@@ -49,7 +49,13 @@ const sendEmail = async ({ to, link, templateName, appName, year, date, otp }: s
 // this will be used inside the constructor of the class Invoker from behavoiral command pattern
 
 // auth.controller.ts is used in sendVerficationEmailToUnverifiedUsers
-export class EmailUtils implements Command {
+
+
+
+
+
+
+export class EMAIL_SERVICES implements Command {
     constructor(private readonly EmailProps: sendEmailProps) {}
 
     private transport = async (): Promise<

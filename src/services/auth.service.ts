@@ -25,7 +25,7 @@ class UserService {
     };
 
     public findUser = async (query: FilterQuery<UserDocument>) => {
-        return await this.userModel.findOne(query).lean();
+        return await this.userModel.findOne(query);
     };
     public getAllUsers = async (query?: FilterQuery<UserDocument>) => {
         return await this.userModel.find(query ? query : {});
@@ -43,7 +43,7 @@ class UserService {
             }
 
 
-            const isValid = await bcryptjs.compare(password, (user as UserDocument).password);
+            const isValid = await bcryptjs.compare(password, user.password);
 
             if (!isValid) {
                 return false;

@@ -31,6 +31,8 @@ import { RunMigrations } from './database/mirgrations';
 import sessionRepository from './repository/session.repo';
 import { RedisConnection } from './utils/redis';
 import loadSheddings from './middlewares/shedding';
+import refreshTokenRepository from './repository/refresh_token.repo';
+import UserRepository from './repository/auth.repo';
 
 class App {
     public PORT: string | number;
@@ -58,7 +60,12 @@ class App {
         }
         this.postgresConnection = PostgresConnection.getInstance();
         this.deserializeUserMiddleware = new DeserializeUser(
-            new sessionRepository(this.postgresConnection)
+            new sessionRepository(this.postgresConnection),
+            new refreshTokenRepository(
+                this.postgresConnection,
+                new UserRepository(this.postgresConnection),
+                new sessionRepository(this.postgresConnection)
+            )
         );
 
         this.initializeMiddlewares();
@@ -100,7 +107,7 @@ class App {
     }
 
     private async initializeDeserializers() {
-        this.app.use(this.sheddingMiddleware.sheddingMiddleware);
+        this.app.use(this.sheddingMiddleware.sheddingMiddleware); // before the user even hit the server routes and make any achieveble requests.
         this.app.use(this.deserializeUserMiddleware.deserializeUser);
     }
     private initializeErrorMiddlewares() {

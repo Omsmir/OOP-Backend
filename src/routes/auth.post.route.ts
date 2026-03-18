@@ -37,16 +37,20 @@ class authRoute extends BaseRoute {
         );
         this.router.put(
             `${this.path}/logout/:id`,
+            this.middlewares.requireLogin,
+            this.middlewares.tamperingMiddleware,
             validate(logoutSchema),
             this.userController.logout
         );
         this.router.get(
             `${this.path}/:id`,
             this.middlewares.requireLogin,
+            this.middlewares.tamperingMiddleware,
             this.middlewares.authorize([
                 PERMISSIONS.USER_CREATE,
                 PERMISSIONS.USER_DELETE,
-                PERMISSIONS.USER_READ,
+                PERMISSIONS.USER_READ, // or can be
+                PERMISSIONS.ROOT_ADMIN, // this only if it has to be for admin
             ]),
             validate(getAllUserForPostGresSchema),
             this.userController.getAllUsersHandler
@@ -54,6 +58,7 @@ class authRoute extends BaseRoute {
         this.router.put(
             `${this.path}/:id`,
             this.middlewares.requireLogin,
+            this.middlewares.tamperingMiddleware,
             RateLimiters.create({
                 windowMs: 15 * 60 * 1000,
                 max: 5,

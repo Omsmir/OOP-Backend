@@ -8,3 +8,16 @@ export enum PERMISSIONS {
 
     ROOT_ADMIN = 'ROOT:ADMIN',
 }
+
+export enum HASHING_ALGORITHMS {
+    RS256 = 'RS256',
+    HS512 = 'HS512',
+}
+
+export enum JWT_SECRET_KEYS {
+    ACCESS_TOKEN_PRIVATE_KEY = 'accessTokenPrivateKey',
+    ACCESS_TOKEN_PUBLIC_KEY = 'accessTokenPublicKey',
+    REFRESH_TOKEN_PRIVATE_KEY = 'refreshTokenPrivateKey',
+    REFRESH_TOKEN_PUBLIC_KEY = 'refreshTokenPublicKey',
+    VERIFICATION_TOKEN = 'VERIFICATION_TOKEN',
+}

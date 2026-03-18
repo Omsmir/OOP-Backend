@@ -19,6 +19,17 @@ class UserRepository {
         return user as UserInterface;
     };
 
+    public findUserById = async ({ id }: { id: string }): Promise<UserInterface | null> => {
+        const query = `SELECT * FROM users WHERE id = $1 LIMIT 1`;
+        const result = await this.DB.query(query, [id]);
+
+        if (!result.rowCount) return null;
+
+        const user = omit(result.rows[0], 'password');
+
+        return user as UserInterface;
+    };
+
     public getAllUsers = async (id: string): Promise<UserInterface[] | null> => {
         const query = `SELECT * FROM users WHERE id != $1`;
 

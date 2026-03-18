@@ -6,6 +6,7 @@ import UserService from '@/services/auth.service';
 import { LoginSchemaInterface } from '@/schemas/session.schema';
 import { signJwt } from '@/utils/jwt.sign';
 import { ACCESSTOKENTTL, REFRESHTOKENTTL } from '@/config/defaults';
+import { HASHING_ALGORITHMS, JWT_SECRET_KEYS } from '@/interfaces/permissions';
 
 class SessionController extends BaseController {
     private sessionService: SessionService;
@@ -37,8 +38,8 @@ class SessionController extends BaseController {
 
             const accessToken = await signJwt(
                 { ...sessionObj, email: user.email },
-                'accessTokenPrivateKey',
-                'RS256',
+                JWT_SECRET_KEYS.ACCESS_TOKEN_PRIVATE_KEY,
+                HASHING_ALGORITHMS.RS256,
                 {
                     expiresIn: parseInt(ACCESSTOKENTTL as string),
                 }
@@ -46,8 +47,8 @@ class SessionController extends BaseController {
 
             const refreshToken = await signJwt(
                 { ...sessionObj, email: user.email },
-                'refreshTokenPrivateKey',
-                'RS256',
+                JWT_SECRET_KEYS.REFRESH_TOKEN_PRIVATE_KEY,
+                HASHING_ALGORITHMS.RS256,
                 {
                     expiresIn: parseInt(REFRESHTOKENTTL as string),
                 }

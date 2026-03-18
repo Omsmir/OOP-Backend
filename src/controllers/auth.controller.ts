@@ -8,7 +8,7 @@ import {
     updateUserSchemaInterface,
 } from '@/schemas/auth.schema';
 import { UserFactory } from '@/classes/creationalPatterns';
-import { EmailUtils } from '@/utils/mail-service';
+import { EMAIL_SERVICES } from '@/utils/mail-service';
 import { CommandInvoker, EventBus, LoggerSubscriber } from '@/classes/behavioral.class';
 import { EMAIL_TEMPLATES, SUBJECT_TYPES } from '@/interfaces/global.interface';
 
@@ -174,7 +174,7 @@ class UserController extends BaseController {
             for (const user of unverifiedUsers) {
                 this.invoker.addCommand(
                     // command behavoiral pattern
-                    new EmailUtils({
+                    new EMAIL_SERVICES({
                         to: user.email,
                         templateName: EMAIL_TEMPLATES.EMAIL_VERIFICATION_ALERT,
                         appName: 'OOP',

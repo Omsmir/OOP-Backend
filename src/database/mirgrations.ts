@@ -1,4 +1,4 @@
-import { migrate } from './setup';
+import { migrate, seeding } from './setup';
 import { Client } from 'pg';
 import {
     POSTGRES_DB,
@@ -37,8 +37,10 @@ export class RunMigrations {
             logger.info('running migrations started');
 
             await this.client.query('BEGIN');
-            
+
             await migrate(this.client);
+
+            await seeding(this.client);
 
             await this.client.query('COMMIT');
 

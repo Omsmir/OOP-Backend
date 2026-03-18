@@ -48,12 +48,14 @@ export const closeDatabase = async (client: Client) => {
 
 export const resetDatabase = async (client: Client) => {
     // Only truncate tables that are populated during tests, keep the initial state
-//     await client.query(`
-//     TRUNCATE TABLE
-//     sessions
-//     RESTART IDENTITY CASCADE
-//   `);
-    await client.query(`DELETE FROM users WHERE email != 'admin@example.com'`);
+        await client.query(`
+        TRUNCATE TABLE
+        sessions
+        RESTART IDENTITY CASCADE
+      `);
+    await client.query(
+        `DELETE FROM users WHERE email NOT IN ('omarsamiir@outlook.com','omarsamir232@gmail.com');`
+    );
 };
 
 export const login_request = async (app: App, email: string, password: string) => {

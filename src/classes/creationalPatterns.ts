@@ -1,4 +1,3 @@
-import { SEEDED_USER_NAME, SEEDED_USER_PASSWORD } from '@/config/defaults';
 import { PERMISSIONS } from '@/interfaces/permissions';
 import { hashing_password } from '@/utils/hashing';
 import { logger } from '@/utils/logger';
@@ -29,6 +28,12 @@ export class CreationalClassesPattern {
 // You want to centralize object creation.
 
 type role = 'admin' | 'user' | 'guest';
+export type seeding_props = {
+    name: string;
+    email: string;
+    password: string;
+    instance: User;
+};
 interface User {
     role: role;
     permissions: () => PERMISSIONS[];
@@ -63,7 +68,7 @@ export class NormalUser implements User {
 
 export class UserFactory {
     // NOTE: example for usage used in auth.controllers.ts for assigning roles and permissions
-    public create(role: string): User | Error {
+    public create(role: role): User | Error {
         switch (role) {
             case 'admin':
                 return new Admin();
@@ -76,14 +81,13 @@ export class UserFactory {
         }
     }
 
-    public static seeding_admin() {
-        const admin = new Admin();
+    public static async seeding_user({ name, instance, email, password }: seeding_props) {
         return {
-            name: 'omar fouad',
-            email: SEEDED_USER_NAME,
-            password: hashing_password(SEEDED_USER_PASSWORD as string),
-            role: admin.role,
-            permissions: admin.permissions(),
+            name,
+            email,
+            password: await hashing_password(password),
+            role: instance.role,
+            permissions: instance.permissions(),
             age: 30,
             gender: 'male',
         };

@@ -16,12 +16,17 @@ import { ACCESSTOKENTTL, NODE_ENV, REFRESHTOKENTTL } from '@/config/defaults';
 import { S3_DIRECTORIES, S3Services } from '@/integrations/s3';
 import { UserFactory } from '@/classes/creationalPatterns';
 import { CACHE_TTL, REDIS_CACHE_KEYS, RedisServices } from '@/utils/redis';
+import BullWorkers, { WORKER_TYPES } from '@/integrations/workers';
+import refreshTokenRepository from '@/repository/refresh_token.repo';
+import { logger } from '@/utils/logger';
 
 class authController extends BaseController {
     constructor(
         private readonly userRepository: UserRepository,
+        private readonly refreshTokenRepository: refreshTokenRepository,
         private readonly sessionRepository: sessionRepository,
         private readonly redis_services: RedisServices,
+        private readonly workers: BullWorkers,
         private readonly s3: S3Services,
         private readonly user_factory: UserFactory
     ) {
@@ -33,6 +38,7 @@ class authController extends BaseController {
     ) => {
         try {
             const existedUser = await this.userRepository.findUserByEmail(req.body.email);
+            const queue = this.workers.getQueue(WORKER_TYPES.EMAIL_VERIFICATION);
 
             if (existedUser) {
                 throw new HttpException(
@@ -41,10 +47,10 @@ class authController extends BaseController {
                 );
             }
 
-            const createdUserInstance = this.user_factory.create(req.body.role);
+            const createdUserInstance = this.user_factory.create(req.body.role); // methodololgy for an internal system not intended for public use.
 
             if (createdUserInstance instanceof Error) {
-                throw new HttpException(400, 'error creating user instance');
+                throw new HttpException(400, 'error creating user instance'); // will fail at validation before it hits the factory
             }
 
             const user: UserToCreate = {
@@ -56,9 +62,9 @@ class authController extends BaseController {
 
             const createdUser = await this.userRepository.createUser(user);
 
-            if (!createdUser) {
-                throw new HttpException(400, 'error creaing user');
-            }
+            await queue.add('EMAIL_VERIFICATION_MESSAGE', {
+                email: createdUser.email,
+            });
 
             res.status(201).json({ message: 'user created successfully', createdUser });
         } catch (error) {
@@ -73,58 +79,95 @@ class authController extends BaseController {
 
             const user = await this.userRepository.validateUser(email, password);
 
+            const login_attempts = await this.redis_services.checkHash({
+                redis_cache_key: REDIS_CACHE_KEYS.LOGIN_ATTEMPTS,
+                hash_name: email,
+                value: 'attempts',
+            });
+
+            const loginAttemptsHashCreating = async (login_attempts?: string) => {
+                await this.redis_services.createHash({
+                    redis_cache_key: REDIS_CACHE_KEYS.LOGIN_ATTEMPTS,
+                    hash_name: email,
+                    content: { attempts: String(parseInt(login_attempts || '0') + 1) },
+                    expire: CACHE_TTL.TEN_MINUTES,
+                });
+            };
+            if (login_attempts && parseInt(login_attempts) >= 5) {
+                throw new HttpException(429, 'too many login attempts, please try again later');
+            }
             if (!user) {
+                if (login_attempts) {
+                    await loginAttemptsHashCreating(login_attempts);
+                } else {
+                    await loginAttemptsHashCreating();
+                }
                 throw new HttpException(403, 'invalid email or password');
             }
+
+            await this.redis_services.DelHash({
+                redis_cache_key: REDIS_CACHE_KEYS.LOGIN_ATTEMPTS,
+                hash_name: email,
+                value: 'attempts',
+            });
+
+            // invalidating all pervious sessions for security hardening
+            await this.sessionRepository.updateSession(user.id, false);
 
             const session = await this.sessionRepository.createSession({
                 user_id: user.id,
                 user_agent: (req.headers['user-agent'] as string) || 'test',
             });
 
+            const TOKEN = await this.refreshTokenRepository.findRefreshTokensByUserIdAndOther({
+                userId: user.id,
+                is_valid: true,
+            });
+
+            if (TOKEN) {
+                await this.refreshTokenRepository.invalidateRefreshToken({ tokenId: TOKEN.id });
+            } else {
+                logger.warn(
+                    `no valid refresh token found for user with id ${user.id} during login, creating a new one`
+                ); // should be refactored to apply to OWSAP for audit logging and monitoring for first time logins
+            }
+
             if (!session) {
                 throw new HttpException(400, 'error occurred while logging in');
             }
 
-            const sessionObj = {
-                id: user.id,
-                permissions: user.permissions,
-                name: user.name,
-                role: user.role,
-                gender: user.gender,
-                session: session.id,
-            };
+            const { refreshToken, accessToken } =
+                await this.refreshTokenRepository.signRefreshAndAccessToken({
+                    userId: user.id,
+                    sessionId: session.id,
+                    first_time: true,
+                });
 
-            const accessToken = await signJwt(
-                { ...sessionObj, email: user.email },
-                'accessTokenPrivateKey',
-                'RS256',
-                {
-                    expiresIn: parseInt(ACCESSTOKENTTL as string),
-                }
-            );
+            const hashed_token = await this.refreshTokenRepository.hashRefreshToken(refreshToken);
 
-            const refreshToken = await signJwt(
-                { ...sessionObj, email: user.email },
-                'refreshTokenPrivateKey',
-                'RS256',
-                {
-                    expiresIn: parseInt(REFRESHTOKENTTL as string),
-                }
-            );
+            if (TOKEN) {
+                await this.refreshTokenRepository.findAndUpdateRefreshTokenReplacedBy({
+                    newToken: hashed_token,
+                    tokenId: TOKEN.id,
+                });
+            }
+            await this.refreshTokenRepository.StoreRefreshToken({
+                userId: user.id,
+                token: hashed_token,
+            });
 
             res.cookie('refreshToken', refreshToken, {
                 sameSite: 'strict',
                 httpOnly: true,
                 secure: NODE_ENV === 'production',
-                maxAge: 30 * 24 * 60 * 60 * 1000,
+                maxAge: parseInt(REFRESHTOKENTTL as string) * 1000, // 24 hours
             });
 
             res.cookie('accessToken', accessToken, {
                 sameSite: 'strict',
                 httpOnly: true,
                 secure: NODE_ENV === 'production',
-                maxAge: 900 * 1000,
+                maxAge: parseInt(ACCESSTOKENTTL as string) * 1000,
             });
 
             res.status(200).json({ message: 'logged in successfully', accessToken });
@@ -135,12 +178,7 @@ class authController extends BaseController {
 
     public logout = async (req: Request<logoutSchemaInterface['params']>, res: Response) => {
         try {
-            const local_user = res.locals.user;
             const id = req.params.id;
-
-            if (String(local_user.id) !== id) {
-                throw new HttpException(403, 'unauthorized operation');
-            }
 
             await this.sessionRepository.updateSession(id, false);
 
@@ -159,12 +197,7 @@ class authController extends BaseController {
         res: Response
     ) => {
         try {
-            const id = req.params.id;
             const local_user = res.locals.user;
-
-            if (id !== String(local_user.id)) {
-                throw new HttpException(403, 'unauthorized operation');
-            }
 
             const cached_users = await this.redis_services.checkHash({
                 redis_cache_key: REDIS_CACHE_KEYS.USERS_KEY,
@@ -178,7 +211,7 @@ class authController extends BaseController {
                 return;
             }
 
-            const users = await this.userRepository.getAllUsers(id);
+            const users = await this.userRepository.getAllUsers(local_user.id);
 
             if (!users || users.length < 1) {
                 throw new HttpException(404, 'No user found');
@@ -186,7 +219,7 @@ class authController extends BaseController {
 
             await this.redis_services.createHash({
                 redis_cache_key: REDIS_CACHE_KEYS.USERS_KEY,
-                hash_name: local_user.role,
+                hash_name: local_user.role, // any user with the same role will be having the same privileges so we can cache them together
                 content: { users: JSON.stringify(users) },
                 expire: CACHE_TTL.TEN_MINUTES, // 10 minutes
             });
@@ -207,15 +240,10 @@ class authController extends BaseController {
     ) => {
         try {
             const id = req.params.id;
-            const local_user = res.locals.user;
             const file = req.file as Express.Multer.File;
             let updatedUser: UserInterface | null = null;
             let change_key;
             const other_values = [];
-
-            if (String(local_user.id) !== id) {
-                throw new HttpException(403, 'unauthorized operation');
-            }
 
             Object.entries(req.body).forEach(([_, value]) => {
                 if (value) {
