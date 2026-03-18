@@ -16,6 +16,8 @@ export const {
     SALTWORKFACTOR,
     ACCESSTOKENTTL,
     REFRESHTOKENTTL,
+    REFRESH_TOKEN_MAX_ITERATIONS,
+    VERIFICATION_TOKEN_TTL,
     APP_PASSWORD,
     SMTP_USER,
     POSTGRES_DB,
@@ -32,6 +34,13 @@ export const {
     AWS_SECRET_KEY,
     AWS_REGION,
     AWS_BUCKET_NAME,
+    SEEDED_USER_NAME,
+    SEEDED_USER_PASSWORD,
+    TEST_SEEDED_EMAIL,
+    REDIS_DATABASE,
+    REDIS_PWD,
+    REDIS_DEV_URI,
+    FRONTEND_URL,
 } = process.env;
 
 export default {
@@ -39,4 +48,5 @@ export default {
     accessTokenPrivateKey: process.env.ACCESS_TOKEN_PRIVATE_KEY,
     refreshTokenPrivateKey: process.env.REFRESH_PRIVATE_KEY,
     refreshTokenPublicKey: process.env.REFRESH_PUBLIC_KEY,
+    VERIFICATION_TOKEN: process.env.VERIFICATION_TOKEN,
 };

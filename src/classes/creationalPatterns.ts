@@ -1,7 +1,9 @@
+import { PERMISSIONS } from '@/interfaces/permissions';
+import { hashing_password } from '@/utils/hashing';
 import { logger } from '@/utils/logger';
 
 // base class to use in initializeClasses method in app.ts to witness results in console logs
-// note: use the getInstance method for getting instance of the class or just use any pattern class in any server dependent code files 
+// note: use the getInstance method for getting instance of the class or just use any pattern class in any server dependent code files
 export class CreationalClassesPattern {
     private static instance: CreationalClassesPattern;
     constructor() {
@@ -25,35 +27,48 @@ export class CreationalClassesPattern {
 // You have many subclasses of a type.
 // You want to centralize object creation.
 
+type role = 'admin' | 'user' | 'guest';
+export type seeding_props = {
+    name: string;
+    email: string;
+    password: string;
+    instance: User;
+};
 interface User {
-    role: string;
-    permessions: () => string[];
+    role: role;
+    permissions: () => PERMISSIONS[];
 }
 
 export class Admin implements User {
-    role = 'admin';
-    permessions() {
-        return ['read', 'write', 'delete', 'update'];
+    role: role = 'admin';
+    permissions() {
+        return [
+            PERMISSIONS.USER_READ,
+            PERMISSIONS.USER_CREATE,
+            PERMISSIONS.USER_DELETE,
+            PERMISSIONS.USER_UPDATE,
+            PERMISSIONS.ROOT_ADMIN,
+        ];
     }
 }
 
 export class Guest implements User {
-    role = 'guest';
-    permessions() {
-        return ['read'];
+    role: role = 'guest';
+    permissions() {
+        return [PERMISSIONS.USER_READ];
     }
 }
 
 export class NormalUser implements User {
-    role = 'user';
-    permessions() {
-        return ['read', 'write'];
+    role: role = 'user';
+    permissions() {
+        return [PERMISSIONS.USER_READ, PERMISSIONS.USER_CREATE, PERMISSIONS.USER_PROFILE_UPDATE];
     }
 }
 
 export class UserFactory {
     // NOTE: example for usage used in auth.controllers.ts for assigning roles and permissions
-    public create(role: string): User | Error {
+    public create(role: role): User | Error {
         switch (role) {
             case 'admin':
                 return new Admin();
@@ -65,11 +80,23 @@ export class UserFactory {
                 throw new Error('this role has no instance to be created');
         }
     }
+
+    public static async seeding_user({ name, instance, email, password }: seeding_props) {
+        return {
+            name,
+            email,
+            password: await hashing_password(password),
+            role: instance.role,
+            permissions: instance.permissions(),
+            age: 30,
+            gender: 'male',
+        };
+    }
 }
 
 // const user = UserFactory.create('admin');
 
-// console.log(user.permessions());
+// console.log(user.permissions());
 
 // Factory Design Pattern
 
@@ -178,7 +205,7 @@ const report = new ReportBuilder()
     .setFooter('design patterns')
     .build();
 
-// console.log(report); // usage 
+// console.log(report); // usage
 
 // Report {
 // title: 'bulider pattern',

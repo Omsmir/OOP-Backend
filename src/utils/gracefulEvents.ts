@@ -1,5 +1,5 @@
 import { logger } from './logger';
-import MongoConnection from './MongoConnection';
+import MongoConnection from './mongo.connection';
 
 class GracefulShutdown {
     private listeners: { [event: string]: Function[] };

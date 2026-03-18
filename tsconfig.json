@@ -45,6 +45,7 @@
             "@services/*": ["services/*"],
             "@utils/*": ["utils/*"],
             "@classes/*": ["classes/*"],
+            "@integrations/*": ["integrations/*"],
             "@__tests__/`*": ["__tests__/*"]
         }
     },

@@ -5,6 +5,7 @@ import { get } from 'lodash';
 import { FilterQuery, QueryOptions, UpdateQuery } from 'mongoose';
 import UserService from './auth.service';
 import { ACCESSTOKENTTL } from '@/config/defaults';
+import { HASHING_ALGORITHMS, JWT_SECRET_KEYS } from '@/interfaces/permissions';
 // SOLID principles interpreted
 
 // All the route Class is a single responsability
@@ -37,7 +38,11 @@ class SessionService {
     };
 
     public reIssueAccessToken = async (refreshToken: string) => {
-        const { decoded } = await verifyJwt(refreshToken, 'refreshTokenPublicKey', 'RS256');
+        const { decoded } = await verifyJwt(
+            refreshToken,
+            JWT_SECRET_KEYS.REFRESH_TOKEN_PUBLIC_KEY,
+            HASHING_ALGORITHMS.RS256
+        );
 
         if (!decoded || !get(decoded, 'session')) return false;
 
@@ -51,8 +56,8 @@ class SessionService {
 
         const accessToken = signJwt(
             { ...user, session: session?._id },
-            'accessTokenPrivateKey',
-            'RS256',
+            JWT_SECRET_KEYS.ACCESS_TOKEN_PRIVATE_KEY,
+            HASHING_ALGORITHMS.RS256,
             { expiresIn: parseInt(ACCESSTOKENTTL as string) }
         );
 

@@ -38,6 +38,15 @@ const logger = winston.createLogger({
             zippedArchive: true,
             maxSize: '20m',
         }),
+        new winston_daily({
+            level: 'info',
+            maxFiles: 30,
+            filename: join(logDir, 'info-%DATE%.log'),
+            dirname: logDir + '/info',
+            datePattern: 'YYYY-MM-DD',
+            zippedArchive: true,
+            maxSize: '20m',
+        }),
     ],
 });
 

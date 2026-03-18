@@ -2,7 +2,7 @@ import { SALTWORKFACTOR } from '@/config/defaults';
 import { PostgresInterface } from '@/interfaces/global.interface';
 import { profilePicture, UserInterface, UserToCreate } from '@/interfaces/models.interface';
 import bcryptjs from 'bcryptjs';
-import { keys, omit } from 'lodash';
+import { keys, omit, values } from 'lodash';
 import { object } from 'zod/v4';
 
 class UserRepository {
@@ -11,6 +11,17 @@ class UserRepository {
     public findUserByEmail = async (filter: string): Promise<UserInterface | null> => {
         const query = `SELECT * FROM users WHERE email = $1 LIMIT 1`;
         const result = await this.DB.query(query, [filter]);
+
+        if (!result.rowCount) return null;
+
+        const user = omit(result.rows[0], 'password');
+
+        return user as UserInterface;
+    };
+
+    public findUserById = async ({ id }: { id: string }): Promise<UserInterface | null> => {
+        const query = `SELECT * FROM users WHERE id = $1 LIMIT 1`;
+        const result = await this.DB.query(query, [id]);
 
         if (!result.rowCount) return null;
 
@@ -75,15 +86,22 @@ class UserRepository {
 
     public updateUser = async (id: string, updatedFields: Partial<UserToCreate>) => {
         let query = 'UPDATE users SET ';
+        const key_value: Record<string, unknown> = {};
 
         Object.entries(updatedFields).forEach(([key, value], index) => {
-            if (value) {
-                query += `${key} = $${index + 1} ${index + 1 < keys(updatedFields).length ? ',' : ''} `;
+            if (!value || value === undefined || value === null || value === '') {
+                delete updatedFields[key as keyof UserToCreate];
             }
+            if (value) key_value[key] = value;
         });
-        query += ` WHERE id = $${keys(updatedFields).length + 1} RETURNING *`;
 
-        const res = await this.DB.query(query, [...Object.values(updatedFields), id]);
+        Object.entries(key_value).forEach(([key, _], index) => {
+            query += `${key} = $${index + 1} ${index + 1 < keys(key_value).length ? ',' : ''} `;
+        });
+
+        query += ` WHERE id = $${keys(key_value).length + 1} RETURNING *`;
+
+        const res = await this.DB.query(query, [...Object.values(key_value), id]);
 
         if (res.rowCount === 0) return null;
 

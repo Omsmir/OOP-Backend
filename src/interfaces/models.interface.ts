@@ -1,4 +1,5 @@
 import { UserDocument } from '@/models/auth.model';
+import { PERMISSIONS } from './permissions';
 
 export interface CarInput {
     name: string;
@@ -18,7 +19,7 @@ export interface BookInput {
 
 export interface UserInput {
     name: string;
-    verified?:boolean;
+    verified?: boolean;
     email: string;
     password: string;
     role: 'admin' | 'user' | 'guest';
@@ -31,33 +32,31 @@ export interface sessionInput {
     valid?: boolean;
 }
 
-
 export type profilePicture = {
     url: string;
     name: string;
     content_type: string;
-}
+};
 
 export interface UserToCreate {
     name: string;
     email: string;
     password: string;
     age: number;
-    role: 'admin' | 'researcher' | 'author';
+    role: 'admin' | 'user' | 'guest';
     gender: 'male' | 'female' | 'other';
-    bio?:string;
-    permissions: string[];
+    bio?: string;
+    permissions: PERMISSIONS[];
 }
-
 
 export interface UserInterface {
     id: string;
     name: string;
     email: string;
     age: number;
-    role: 'admin' | 'researcher' | 'author';
-    gender:'male' | 'female' | 'other';
-    permissions: string[];
+    role: 'admin' | 'user' | 'guest';
+    gender: 'male' | 'female' | 'other';
+    permissions: PERMISSIONS[];
     verified: boolean;
     password: string;
     profile_picture?: profilePicture;
@@ -68,7 +67,7 @@ export interface UserInterface {
 
 export interface sessionToCreate {
     user_id: string;
-    user_agent: string;    
+    user_agent: string;
 }
 
 export interface session {
@@ -78,4 +77,23 @@ export interface session {
     is_valid: boolean;
     created_at: Date;
     updated_at: Date;
+}
+
+export interface RefreshToken {
+    id: string;
+    user_id: string;
+    token: string;
+    is_valid: boolean;
+    replaced_by: string | null;
+    iterations: number;
+    created_at: Date;
+    updated_at: Date;
+    expired_at: Date;
+}
+
+
+export interface refreshTokenInput {
+    user_id: string;
+    token: string;
+    expired_at: Date;
 }

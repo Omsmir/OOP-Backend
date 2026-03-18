@@ -1,4 +1,5 @@
 import type { QueryResult, QueryConfig, QueryResultRow, QueryConfigValues, PoolClient } from 'pg';
+import { Embedding, EmbedResult } from 'ai';
 
 export enum SUBJECT_TYPES {
     EMAIL_VERIFICATION = 'Email Verification',
@@ -6,13 +7,9 @@ export enum SUBJECT_TYPES {
     WELCOME_EMAIL = 'Welcome Email',
 }
 
-
-
-
 export enum EMAIL_TEMPLATES {
-  EMAIL_VERIFICATION = 'emailVerification.hbs',
-  EMAIL_VERIFICATION_ALERT = 'emailVerificationAlert.hbs',
-
+    EMAIL_VERIFICATION = 'emailVerification.hbs',
+    EMAIL_VERIFICATION_ALERT = 'emailVerificationAlert.hbs',
 }
 
 export interface sendEmailProps {
@@ -33,4 +30,9 @@ export interface PostgresInterface {
     ): Promise<QueryResult<R>>;
 
     getClient: () => Promise<PoolClient>;
+}
+
+export interface EmbeddingService {
+    generateEmbeddings(value: string): Promise<Embedding[]>;
+    generateEmbedding(value: string): Promise<EmbedResult | null>;
 }

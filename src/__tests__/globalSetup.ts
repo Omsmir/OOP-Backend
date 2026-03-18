@@ -1,7 +1,8 @@
+import 'tsconfig-paths/register';
 import { PostgreSqlContainer, StartedPostgreSqlContainer } from '@testcontainers/postgresql';
 import { Client } from 'pg';
 import bcryptjs from 'bcryptjs';
-import { migrate } from '../database/setup';
+import { migrate, seeding } from '../database/setup';
 
 let postgresContainer: StartedPostgreSqlContainer;
 let connectionString: string;
@@ -18,10 +19,11 @@ export default async function globalSetup() {
     // Run migrations once
     const client = new Client({ connectionString });
 
-
     await client.connect();
-    
+
     await migrate(client);
+
+    await seeding(client);
 
     // Insert default admin user with hashed password
     const salt = await bcryptjs.genSalt(10);

@@ -40,31 +40,6 @@ class sessionRepository {
 
         return result.rows[0];
     };
-
-    public reIssueAccessToken = async (refreshToken: string) => {
-        const { decoded } = await verifyJwt(refreshToken, 'refreshTokenPublicKey', 'RS256');
-
-        if (!decoded || !get(decoded, 'session')) return false;
-
-        const session = await this.getSession(get(decoded, 'session'));
-
-        console.log("session",session)
-
-        if (!session || !session.is_valid) return false;
-
-        const user = await this.userRepository.findUserByEmail(get(decoded, 'email'));
-
-        if (!user) return false;
-
-        const accessToken = signJwt(
-            { ...user, session: session.id },
-            'accessTokenPrivateKey',
-            'RS256',
-            { expiresIn: parseInt(ACCESSTOKENTTL as string) }
-        );
-
-        return accessToken;
-    };
 }
 
 export default sessionRepository;
