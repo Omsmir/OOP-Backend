@@ -16,7 +16,6 @@ import UserService from '@/services/auth.service';
 import PostgresConnection from '@/utils/postgresql.connection';
 import S3, { S3Services } from '@/integrations/s3';
 import { RedisConnection, RedisServices } from './utils/redis';
-import RateLimiters from './middlewares/rateLimiters';
 import BullWorkers, { Workers } from './integrations/workers';
 import refreshTokenRepository from './repository/refresh_token.repo';
 

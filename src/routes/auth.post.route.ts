@@ -1,11 +1,7 @@
 import upload from '@/middlewares/multer';
 import BaseRoute from './base.route';
 import { validate } from '@/middlewares/validateResource';
-import {
-    createUserSchemaForPostgres,
-    getAllUserForPostGresSchema,
-    updateUserSchemaForPostgres,
-} from '@/schemas/auth.schema';
+import { createUserSchemaForPostgres, getAllUserForPostGresSchema, sendEmailSchema, updateUserSchemaForPostgres } from '@/schemas/auth.schema';
 import authController from '@/controllers/auth.postgres.controller';
 import { loginSchema, logoutSchema } from '@/schemas/session.schema';
 import DeserializeMiddleware from '@/middlewares/deserializeUser';
@@ -21,12 +17,7 @@ class authRoute extends BaseRoute {
         this.initializeRoutes();
     }
     protected initializeRoutes(): void {
-        this.router.post(
-            `${this.path}/login`,
-            upload.none(),
-            validate(loginSchema),
-            this.userController.login
-        );
+        this.router.post(`${this.path}/login`, upload.none(), validate(loginSchema), this.userController.login);
         this.router.post(
             `${this.path}`,
             this.middlewares.requireLogin,
@@ -68,6 +59,14 @@ class authRoute extends BaseRoute {
             upload.single('profileImg'),
             validate(updateUserSchemaForPostgres),
             this.userController.updateUserHandler
+        );
+        this.router.post(
+            `${this.path}/emails/testing/:id`,
+            this.middlewares.requireLogin,
+            this.middlewares.tamperingMiddleware,
+            this.middlewares.authorize([PERMISSIONS.EMAIL_SENDING]),
+            validate(sendEmailSchema),
+            this.userController.sendEmailsHandler
         );
     }
 }

@@ -24,11 +24,7 @@ export class DeserializeUser extends BaseController {
             if (!accessToken) {
                 return next();
             }
-            const { decoded, valid } = await verifyJwt(
-                accessToken,
-                JWT_SECRET_KEYS.ACCESS_TOKEN_PUBLIC_KEY,
-                HASHING_ALGORITHMS.RS256
-            );
+            const { decoded, valid } = await verifyJwt(accessToken, JWT_SECRET_KEYS.ACCESS_TOKEN_PUBLIC_KEY, HASHING_ALGORITHMS.RS256);
 
             if (decoded) {
                 res.locals.user = decoded;
@@ -43,21 +39,15 @@ export class DeserializeUser extends BaseController {
                     IS_VALID_ERROR,
                 } = await this.refreshTokenRepo.reissueAccessToken({ refreshToken });
 
-                if (EXPIRATION_ERROR || ITERATIONS_REACHED || IS_VALID_ERROR) {
+                if (EXPIRATION_ERROR || ITERATIONS_REACHED || IS_VALID_ERROR?.IS_INVALID) {
                     if (EXPIRATION_ERROR) {
                         throw new HttpException(401, 'EXPIRED REFRESH TOKEN, please login again');
                     }
                     if (ITERATIONS_REACHED) {
-                        throw new HttpException(
-                            401,
-                            'REFRESH TOKEN ITERATIONS LIMIT REACHED, possible token compromise, please login again'
-                        );
+                        throw new HttpException(401, 'REFRESH TOKEN ITERATIONS LIMIT REACHED, possible token compromise, please login again');
                     }
-                    if (IS_VALID_ERROR) {
-                        throw new HttpException(
-                            401,
-                            'EXPIRED SESSION OR EXPIRED REFRESH TOKEN, please login again'
-                        );
+                    if (IS_VALID_ERROR?.IS_INVALID) {
+                        throw new HttpException(401, IS_VALID_ERROR.error);
                     }
                 }
                 if (newAccessToken) {
@@ -71,11 +61,7 @@ export class DeserializeUser extends BaseController {
                     });
                 }
 
-                const { decoded } = await verifyJwt(
-                    newAccessToken as string,
-                    JWT_SECRET_KEYS.ACCESS_TOKEN_PUBLIC_KEY,
-                    HASHING_ALGORITHMS.RS256
-                );
+                const { decoded } = await verifyJwt(newAccessToken as string, JWT_SECRET_KEYS.ACCESS_TOKEN_PUBLIC_KEY, HASHING_ALGORITHMS.RS256);
 
                 res.locals.user = decoded;
 
@@ -139,9 +125,7 @@ class DeserializeMiddleware extends BaseController {
                     return next();
                 }
 
-                const hasPermission = requiredPermissions.every((permission) =>
-                    userPermissions.includes(permission)
-                );
+                const hasPermission = requiredPermissions.every((permission) => userPermissions.includes(permission));
 
                 if (!hasPermission) {
                     res.status(403).json({

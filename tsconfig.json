@@ -46,6 +46,9 @@
             "@utils/*": ["utils/*"],
             "@classes/*": ["classes/*"],
             "@integrations/*": ["integrations/*"],
+            "@types/*": ["types/*"],
+            "@repository/*": ["repository/*"],
+            "@database/*": ["database/*"],
             "@__tests__/`*": ["__tests__/*"]
         }
     },

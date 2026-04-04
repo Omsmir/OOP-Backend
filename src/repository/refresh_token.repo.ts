@@ -8,6 +8,7 @@ import { get } from 'lodash';
 import sessionRepository from './session.repo';
 import { RefreshToken } from '@/interfaces/models.interface';
 import {
+    TVALID,
     checkRefreshTokenValidityProps,
     findAndUpdateRefreshTokenReplacedByProps,
     findRefreshTokenByIdProps,
@@ -15,9 +16,11 @@ import {
     hashAndStoreRefreshTokenProps,
     refreshTokenReissueResult,
     signRefreshAndAccessTokenProps,
+    TOKEN_INVALID_ERROR,
 } from '@/interfaces/repo.interface';
 import { hashing_password } from '@/utils/hashing';
-import { HASHING_ALGORITHMS, JWT_SECRET_KEYS } from '@/interfaces/permissions';
+import { HASHING_ALGORITHMS, JWT_SECRET_KEYS, TOKEN_INVALIDATION_ERROR_MESSAGE } from '@/interfaces/permissions';
+import { TOKEN_INVALIDATION_MESSAGE } from '@/types';
 
 class refreshTokenRepository {
     constructor(
@@ -48,49 +51,31 @@ class refreshTokenRepository {
             email: user.email,
         };
         console.log(session_object);
-        const refreshToken = await signJwt(
-            session_object,
-            JWT_SECRET_KEYS.REFRESH_TOKEN_PRIVATE_KEY,
-            HASHING_ALGORITHMS.RS256,
-            {
-                expiresIn: parseInt(REFRESHTOKENTTL as string),
-            }
-        );
+        const refreshToken = await signJwt(session_object, JWT_SECRET_KEYS.REFRESH_TOKEN_PRIVATE_KEY, HASHING_ALGORITHMS.RS256, {
+            expiresIn: parseInt(REFRESHTOKENTTL as string),
+        });
         let accessToken: string | null = null;
 
         if (first_time) {
-            accessToken = await signJwt(
-                session_object,
-                JWT_SECRET_KEYS.ACCESS_TOKEN_PRIVATE_KEY,
-                HASHING_ALGORITHMS.RS256,
-                {
-                    expiresIn: parseInt(ACCESSTOKENTTL as string),
-                }
-            );
+            accessToken = await signJwt(session_object, JWT_SECRET_KEYS.ACCESS_TOKEN_PRIVATE_KEY, HASHING_ALGORITHMS.RS256, {
+                expiresIn: parseInt(ACCESSTOKENTTL as string),
+            });
         }
 
         return { refreshToken, accessToken };
     };
 
-    public findRefreshTokenById = async ({
-        tokenId,
-    }: findRefreshTokenByIdProps): Promise<RefreshToken | null> => {
+    public findRefreshTokenById = async ({ tokenId }: findRefreshTokenByIdProps): Promise<RefreshToken | null> => {
         const query = `SELECT * FROM refresh_tokens WHERE id = $1 LIMIT 1`;
         const result = await this.DB.query(query, [tokenId]);
 
         if (result.rowCount === 0) return null;
         return result.rows[0] as RefreshToken;
     };
-    public StoreRefreshToken = async ({
-        userId,
-        token,
-    }: hashAndStoreRefreshTokenProps): Promise<RefreshToken | undefined> => {
+    public StoreRefreshToken = async ({ userId, token }: hashAndStoreRefreshTokenProps): Promise<RefreshToken | undefined> => {
         const query = `INSERT INTO refresh_tokens (user_id, token, expired_at) VALUES ($1, $2, $3) RETURNING *`;
 
-        const expired_at = addDays(
-            new Date(),
-            parseInt(REFRESHTOKENTTL as string) / (24 * 60 * 60)
-        ); // 1 days expiration
+        const expired_at = addDays(new Date(), parseInt(REFRESHTOKENTTL as string) / (24 * 60 * 60)); // 1 days expiration
 
         const values = [userId, token, expired_at];
 
@@ -100,10 +85,7 @@ class refreshTokenRepository {
 
         return result.rows[0] as RefreshToken;
     };
-    public findRefreshTokensByUserIdAndOther = async ({
-        userId,
-        is_valid,
-    }: findRefreshTokensByUserIdProps): Promise<RefreshToken | null> => {
+    public findRefreshTokensByUserIdAndOther = async ({ userId, is_valid }: findRefreshTokensByUserIdProps): Promise<RefreshToken | null> => {
         const query = `SELECT * FROM refresh_tokens WHERE user_id = $1 AND is_valid = $2 LIMIT 1`;
 
         const values = [userId, is_valid];
@@ -115,11 +97,7 @@ class refreshTokenRepository {
         return result.rows[0] as RefreshToken;
     };
 
-    public findRefreshTokensByUserId = async ({
-        userId,
-    }: {
-        userId: string;
-    }): Promise<RefreshToken | null> => {
+    public findRefreshTokensByUserId = async ({ userId }: { userId: string }): Promise<RefreshToken | null> => {
         const query = `SELECT * FROM refresh_tokens WHERE user_id = $1  LIMIT 1`;
 
         const value = [userId];
@@ -131,9 +109,7 @@ class refreshTokenRepository {
         return result.rows[0] as RefreshToken;
     };
 
-    public invalidateRefreshToken = async ({
-        tokenId,
-    }: findRefreshTokenByIdProps): Promise<RefreshToken | null> => {
+    public invalidateRefreshToken = async ({ tokenId }: findRefreshTokenByIdProps): Promise<RefreshToken | null> => {
         const query = `UPDATE refresh_tokens SET is_valid = false WHERE id = $1 RETURNING * `;
 
         const result = await this.DB.query(query, [tokenId]);
@@ -143,15 +119,10 @@ class refreshTokenRepository {
         return result.rows[0] as RefreshToken;
     };
 
-    public findAndUpdateRefreshTokenIterations = async ({
-        tokenId,
-    }: findRefreshTokenByIdProps): Promise<RefreshToken | null> => {
+    public findAndUpdateRefreshTokenIterations = async ({ tokenId }: findRefreshTokenByIdProps): Promise<RefreshToken | null> => {
         const query = `UPDATE refresh_tokens SET iterations = $1 WHERE id = $2 RETURNING *`;
 
-        const exitedRefreshToken = await this.DB.query(
-            `SELECT * FROM refresh_tokens WHERE id = $1 LIMIT 1`,
-            [tokenId]
-        );
+        const exitedRefreshToken = await this.DB.query(`SELECT * FROM refresh_tokens WHERE id = $1 LIMIT 1`, [tokenId]);
 
         if (exitedRefreshToken.rowCount === 0) return null;
 
@@ -176,10 +147,7 @@ class refreshTokenRepository {
     }: findAndUpdateRefreshTokenReplacedByProps): Promise<RefreshToken | null> => {
         const query = `UPDATE refresh_tokens SET replaced_by = $1 WHERE id = $2 RETURNING *`;
 
-        const newRefreshToken = await this.DB.query(
-            `SELECT * FROM refresh_tokens WHERE id = $1 LIMIT 1`,
-            [tokenId]
-        );
+        const newRefreshToken = await this.DB.query(`SELECT * FROM refresh_tokens WHERE id = $1 LIMIT 1`, [tokenId]);
 
         if (newRefreshToken.rowCount === 0) return null;
 
@@ -190,63 +158,50 @@ class refreshTokenRepository {
         return result.rows[0] as RefreshToken;
     };
 
-    public checkRefreshTokenValidity = async ({
+    public checkRefreshTokenValidity = async <T>({
         tokenId,
         refreshToken,
-    }: checkRefreshTokenValidityProps): Promise<{
-        EXPIRATION_ERROR: boolean;
-        IS_VALID_ERROR: boolean;
-        ITERATIONS_REACHED: boolean;
-    }> => {
+    }: checkRefreshTokenValidityProps): Promise<TVALID<Boolean, TOKEN_INVALID_ERROR<boolean, TOKEN_INVALIDATION_MESSAGE>>> => {
         const existed_token = await this.findRefreshTokenById({ tokenId });
 
         if (!existed_token || !existed_token.is_valid)
-            return { EXPIRATION_ERROR: false, IS_VALID_ERROR: true, ITERATIONS_REACHED: false };
+            return {
+                IS_VALID_ERROR: { IS_INVALID: true, error: TOKEN_INVALIDATION_ERROR_MESSAGE.REFRESH_EXPIRED },
+            };
 
         const bcrypt_validation = await bcryptjs.compare(refreshToken, existed_token.token);
-        if (!bcrypt_validation)
-            return { EXPIRATION_ERROR: false, IS_VALID_ERROR: true, ITERATIONS_REACHED: false };
+        if (!bcrypt_validation) return { IS_VALID_ERROR: { IS_INVALID: true, error: TOKEN_INVALIDATION_ERROR_MESSAGE.HASHING_ERROR } };
 
-        const isMaxIterationsReached =
-            existed_token.iterations >= parseInt(REFRESH_TOKEN_MAX_ITERATIONS as string);
-        if (isMaxIterationsReached)
-            return { EXPIRATION_ERROR: false, IS_VALID_ERROR: false, ITERATIONS_REACHED: true };
+        const isMaxIterationsReached = existed_token.iterations >= parseInt(REFRESH_TOKEN_MAX_ITERATIONS as string);
+        if (isMaxIterationsReached) return { ITERATIONS_REACHED: true };
 
         const db_expiration = existed_token.expired_at > new Date();
 
-        const { valid } = await verifyJwt(
-            refreshToken,
-            JWT_SECRET_KEYS.REFRESH_TOKEN_PUBLIC_KEY,
-            HASHING_ALGORITHMS.RS256
-        );
-        if (!db_expiration || !valid)
-            return { EXPIRATION_ERROR: true, IS_VALID_ERROR: false, ITERATIONS_REACHED: false };
+        const { valid } = await verifyJwt(refreshToken, JWT_SECRET_KEYS.REFRESH_TOKEN_PUBLIC_KEY, HASHING_ALGORITHMS.RS256);
+        if (!db_expiration || !valid) return { EXPIRATION_ERROR: true };
 
-        return { EXPIRATION_ERROR: false, IS_VALID_ERROR: false, ITERATIONS_REACHED: false };
+        return {
+            EXPIRATION_ERROR: false,
+            IS_VALID_ERROR: { IS_INVALID: false, error: TOKEN_INVALIDATION_ERROR_MESSAGE.NULL },
+            ITERATIONS_REACHED: false,
+        };
     };
 
-    public reissueAccessToken = async ({
-        refreshToken,
-    }: {
-        refreshToken: string;
-    }): Promise<refreshTokenReissueResult> => {
+    public reissueAccessToken = async ({ refreshToken }: { refreshToken: string }): Promise<refreshTokenReissueResult> => {
         let accessToken: string | null = null;
-        const { decoded } = await verifyJwt(
-            refreshToken,
-            JWT_SECRET_KEYS.REFRESH_TOKEN_PUBLIC_KEY,
-            HASHING_ALGORITHMS.RS256
-        );
+        const { decoded } = await verifyJwt(refreshToken, JWT_SECRET_KEYS.REFRESH_TOKEN_PUBLIC_KEY, HASHING_ALGORITHMS.RS256);
 
         if (!decoded || !get(decoded, 'session'))
-            return { accessToken: null, IS_VALID_ERROR: true };
+            return { accessToken: null, IS_VALID_ERROR: { IS_INVALID: true, error: TOKEN_INVALIDATION_ERROR_MESSAGE.NULL } };
 
         const session = await this.sessionRepository.getSession(get(decoded, 'session'));
 
-        if (!session || !session.is_valid) return { accessToken: null, IS_VALID_ERROR: true };
+        if (!session || !session.is_valid)
+            return { accessToken: null, IS_VALID_ERROR: { IS_INVALID: true, error: TOKEN_INVALIDATION_ERROR_MESSAGE.SESSION_ERROR } };
 
         const user = await this.userRepository.findUserByEmail(get(decoded, 'email'));
 
-        if (!user) return { accessToken: null, IS_VALID_ERROR: true };
+        if (!user) return { accessToken: null, IS_VALID_ERROR: { IS_INVALID: true, error: TOKEN_INVALIDATION_ERROR_MESSAGE.USER_ERROR } };
 
         // find user valid refresh tokens
         const TOKEN = await this.findRefreshTokensByUserIdAndOther({
@@ -254,13 +209,12 @@ class refreshTokenRepository {
             is_valid: true,
         });
 
-        if (!TOKEN) return { accessToken: null, IS_VALID_ERROR: true };
+        if (!TOKEN) return { accessToken: null, IS_VALID_ERROR: { IS_INVALID: true, error: TOKEN_INVALIDATION_ERROR_MESSAGE.REFRESH_EXPIRED } };
 
         // checking the validity of the refresh token (expiration, iterations, validations)
-        const { EXPIRATION_ERROR, ITERATIONS_REACHED, IS_VALID_ERROR } =
-            await this.checkRefreshTokenValidity({ tokenId: TOKEN.id, refreshToken });
+        const { EXPIRATION_ERROR, ITERATIONS_REACHED, IS_VALID_ERROR } = await this.checkRefreshTokenValidity({ tokenId: TOKEN.id, refreshToken });
 
-        if (EXPIRATION_ERROR || ITERATIONS_REACHED || IS_VALID_ERROR) {
+        if (EXPIRATION_ERROR || ITERATIONS_REACHED || IS_VALID_ERROR?.IS_INVALID) {
             // invalidate all refresh tokens of the user and invalidate the session
             await this.invalidateRefreshToken({ tokenId: TOKEN.id });
             // invalidate user session
@@ -268,15 +222,12 @@ class refreshTokenRepository {
 
             if (EXPIRATION_ERROR) return { accessToken: null, EXPIRATION_ERROR: true };
             if (ITERATIONS_REACHED) return { accessToken: null, ITERATIONS_REACHED: true };
-            if (IS_VALID_ERROR) return { accessToken: null, IS_VALID_ERROR: true };
+            if (IS_VALID_ERROR?.IS_INVALID) return { accessToken: null, IS_VALID_ERROR: { IS_INVALID: true, error: IS_VALID_ERROR.error } };
         }
 
-        accessToken = await signJwt(
-            { ...user, session: session.id },
-            JWT_SECRET_KEYS.ACCESS_TOKEN_PRIVATE_KEY,
-            HASHING_ALGORITHMS.RS256,
-            { expiresIn: parseInt(ACCESSTOKENTTL as string) }
-        );
+        accessToken = await signJwt({ ...user, session: session.id }, JWT_SECRET_KEYS.ACCESS_TOKEN_PRIVATE_KEY, HASHING_ALGORITHMS.RS256, {
+            expiresIn: parseInt(ACCESSTOKENTTL as string),
+        });
         // update refresh token iterations
         await this.findAndUpdateRefreshTokenIterations({ tokenId: TOKEN.id });
 

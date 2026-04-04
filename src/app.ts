@@ -33,6 +33,7 @@ import { RedisConnection } from './utils/redis';
 import loadSheddings from './middlewares/shedding';
 import refreshTokenRepository from './repository/refresh_token.repo';
 import UserRepository from './repository/auth.repo';
+import Generics from './types/types';
 
 class App {
     public PORT: string | number;
@@ -130,6 +131,9 @@ class App {
         BehavioralClassesPattern.getInstance();
     }
 
+    private initializeGenerics() {
+         Generics.getInstance();
+    }
     public getServer() {
         // specfic for testing
         return this.app;

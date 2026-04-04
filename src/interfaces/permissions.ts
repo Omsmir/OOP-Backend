@@ -7,6 +7,7 @@ export enum PERMISSIONS {
     USER_PROFILE_UPDATE = 'USER_PROFILE:UPDATE',
 
     ROOT_ADMIN = 'ROOT:ADMIN',
+    EMAIL_SENDING = 'USER:EMAIL_SENDING'
 }
 
 export enum HASHING_ALGORITHMS {
@@ -21,3 +22,13 @@ export enum JWT_SECRET_KEYS {
     REFRESH_TOKEN_PUBLIC_KEY = 'refreshTokenPublicKey',
     VERIFICATION_TOKEN = 'VERIFICATION_TOKEN',
 }
+
+export enum TOKEN_INVALIDATION_ERROR_MESSAGE {
+    REFRESH_EXPIRED = 'Refresh Token Has Expired or Not Found',
+    HASHING_ERROR = 'Refresh Token Hashing Error',
+    SESSION_ERROR = 'Session Is Invalid or Has Been Expired',
+    USER_ERROR = 'User Is Not Found or Something Went Wrong',
+    NULL = '',
+}
+
+
