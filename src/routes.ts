@@ -16,7 +16,6 @@ import UserService from '@/services/auth.service';
 import PostgresConnection from '@/utils/postgresql.connection';
 import S3, { S3Services } from '@/integrations/s3';
 import { RedisConnection, RedisServices } from './utils/redis';
-import RateLimiters from './middlewares/rateLimiters';
 import BullWorkers, { Workers } from './integrations/workers';
 import refreshTokenRepository from './repository/refresh_token.repo';
 
@@ -34,11 +33,11 @@ const users_respository = new UserRepository(DB);
 
 const session_respository = new sessionRepository(DB);
 
-const refresh_token_repository = new refreshTokenRepository(DB, users_respository,session_respository);
+const refresh_token_repository = new refreshTokenRepository(DB, users_respository, session_respository);
 
 const s3 = S3.getInstance();
 
-const S3Service = new S3Services(s3);
+const S3Service = new S3Services(s3.getS3Client());
 
 const post_auth_controller = new authController(
     users_respository,
@@ -51,9 +50,9 @@ const post_auth_controller = new authController(
 );
 const middlewares = new DeserializeMiddleware();
 
-new Workers(workers, users_respository, redis_services).worker_initiatition();
+new Workers(workers, users_respository, redis_services, S3Service).worker_initiatition();
 export const Routes = [
-    new IndexRoute(),
+    new IndexRoute(post_auth_controller),
     new CarRoute(),
     new BookRoute(),
     new SessionRoute(new SessionController()),

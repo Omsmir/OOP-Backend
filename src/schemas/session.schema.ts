@@ -2,16 +2,14 @@ import { z } from 'zod';
 
 const payload = {
     body: z.object({
-        email: z
-            .string({ required_error: 'please write down your email' })
-            .email({ message: 'not a vaild email' }),
-        password: z.string({ required_error: 'please write down your password' }),
+        email: z.string({ error: 'please write down your email' }).email({ message: 'not a vaild email' }),
+        password: z.string({ error: 'please write down your password' }),
     }),
 };
 
 const params = {
     params: z.object({
-        id: z.string({ required_error: 'user id is required' }),
+        id: z.string({ error: 'user id is required' }),
     }),
 };
 

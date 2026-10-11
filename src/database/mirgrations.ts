@@ -1,13 +1,6 @@
 import { migrate, seeding } from './setup';
 import { Client } from 'pg';
-import {
-    POSTGRES_DB,
-    POSTGRES_HOST,
-    POSTGRES_PORT,
-    POSTGRES_PWD,
-    POSTGRES_SSL,
-    POSTGRES_USER,
-} from '@/config/defaults';
+import { POSTGRES_DB, POSTGRES_HOST, POSTGRES_PORT, POSTGRES_PWD, POSTGRES_SSL, POSTGRES_USER } from '@/config/defaults';
 import { logger } from '@/utils/logger';
 import { allowDisallowPostgresSsl } from './utils';
 
@@ -47,9 +40,7 @@ export class RunMigrations {
             logger.info('PostgreSQL migrations completed successfully.');
         } catch (error: any) {
             await this.client.query('ROLLBACK').catch(() => {}); // safety
-            throw new Error(
-                `error occurred during connecting a client to postgres: ${error.message}`
-            );
+            throw new Error(`error occurred during connecting a client to postgres: ${error.message}`);
         } finally {
             await this.client.end();
         }

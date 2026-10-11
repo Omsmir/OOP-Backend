@@ -16,10 +16,7 @@ class SessionController extends BaseController {
         this.sessionService = new SessionService();
         this.userService = new UserService();
     }
-    public loginHandler = async (
-        req: Request<{}, {}, LoginSchemaInterface['body']>,
-        res: Response
-    ) => {
+    public loginHandler = async (req: Request<{}, {}, LoginSchemaInterface['body']>, res: Response) => {
         try {
             const email = req.body.email;
             const password = req.body.password;

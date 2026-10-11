@@ -1,7 +1,7 @@
 import { logger as log } from '@/utils/logger';
 
 // base class to use in initializeClasses method in app.ts to witness results in console logs
-// note: use the getInstance method for getting instance of the class or just use any pattern class in any server dependent code files 
+// note: use the getInstance method for getting instance of the class or just use any pattern class in any server dependent code files
 export class StructuralClassesPattern {
     private static instance: StructuralClassesPattern;
     constructor() {

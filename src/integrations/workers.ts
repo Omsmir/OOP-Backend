@@ -1,10 +1,4 @@
-import {
-    FRONTEND_URL,
-    PROJECT_NAME,
-    REDIS_DEV_URI,
-    REDIS_PWD,
-    VERIFICATION_TOKEN_TTL,
-} from '@/config/defaults';
+import { FRONTEND_URL, PROJECT_NAME, REDIS_DEV_URI, REDIS_PWD, VERIFICATION_TOKEN_TTL } from '@/config/defaults';
 import { Queue, Worker } from 'bullmq';
 import IoRedis, { Redis } from 'ioredis';
 import { logger } from '@/utils/logger';
@@ -14,6 +8,10 @@ import { EMAIL_SERVICES } from '@/utils/mail-service';
 import { EMAIL_TEMPLATES, SUBJECT_TYPES } from '@/interfaces/global.interface';
 import { signJwt } from '@/utils/jwt.sign';
 import { HASHING_ALGORITHMS, JWT_SECRET_KEYS } from '@/interfaces/permissions';
+import { mainError } from '@/types';
+import { profilePicture } from '@/interfaces/models.interface';
+import { S3_DIRECTORIES, S3Services, S3Worker } from './s3';
+import { BufferToString } from '@/utils/auxillaries';
 
 export type CreateWorkerProps = {
     name: string;
@@ -28,6 +26,7 @@ export type WORKER_RESULT = {
 
 export enum WORKERS_RESULT_TYPES {
     EMAIL_VERIFICATION = 'EMAIL_VERIFICATION',
+    UPLOAD_DONE = 'UPLOAD DONE',
 }
 
 export enum WORKER_TYPES {
@@ -35,9 +34,15 @@ export enum WORKER_TYPES {
     UPLOAD = 'UPLOAD',
 }
 
+type Job<T, P extends S3Worker = S3Worker> = {
+    data: {
+        email?: T;
+        profileImage?: P & { id: string };
+    };
+};
 class BullWorkers {
     private static redisConnection: Redis;
-    private queues: Map<string, Queue> = new Map();
+    private queues: Map<WORKER_TYPES, Queue> = new Map();
 
     constructor() {
         if (!BullWorkers.redisConnection) {
@@ -57,7 +62,7 @@ class BullWorkers {
     /**
      * Get or create a BullMQ queue
      */
-    public getQueue(queueName: string): Queue {
+    public getQueue(queueName: WORKER_TYPES): Queue {
         if (!this.queues.has(queueName)) {
             const queue = new Queue(queueName, { connection: BullWorkers.redisConnection });
             this.queues.set(queueName, queue);
@@ -68,16 +73,21 @@ class BullWorkers {
     /**
      * Create a BullMQ worker for a queue
      */
-    public createWorker(queueName: string, processor: (job: any) => Promise<any>) {
+    public createWorker(queueName: WORKER_TYPES, processor: (job: Job<string>) => Promise<any>) {
         const worker = new Worker(queueName, processor, {
             connection: BullWorkers.redisConnection,
         });
 
         worker.on('completed', (job: any, result: WORKER_RESULT) => {
             const { type, userId } = result;
+
+            // should be encapsulated seperately to reduce hassle or code traffic
             switch (type) {
                 case WORKERS_RESULT_TYPES.EMAIL_VERIFICATION:
                     logger.info('email verification worker performed an event successfully');
+                    break;
+                case WORKERS_RESULT_TYPES.UPLOAD_DONE:
+                    logger.info('upload worker performed an event successfully');
                     break;
                 default:
                     logger.error('invalid or unknown bull result type');
@@ -85,9 +95,7 @@ class BullWorkers {
             }
 
             // should be refactored to be more specific for single resposibility
-            logger.info(
-                ` Job ${job.id} on queue "${queueName}" completed. Result: ${JSON.stringify(result)}`
-            );
+            logger.info(` Job ${job.id} on queue "${queueName}" completed. Result: ${JSON.stringify(result)}`);
         });
 
         worker.on('failed', (job, err, result) => {
@@ -109,7 +117,8 @@ export class Workers {
     constructor(
         private readonly bullWorkers: BullWorkers,
         private readonly userService: UserRepository,
-        private readonly redisService: RedisServices
+        private readonly redisService: RedisServices,
+        private readonly s3: S3Services
     ) {
         this.listen();
     }
@@ -121,12 +130,54 @@ export class Workers {
 
     public worker_initiatition = () => {
         this.sendMailsWorker();
+        this.uploadToS3();
+    };
+
+    private uploadToS3 = async () => {
+        this.bullWorkers.createWorker(WORKER_TYPES.UPLOAD, async (job: Job<string, S3Worker>) => {
+            try {
+                const { profileImage } = job.data;
+
+                if (!profileImage) {
+                    throw new Error(`no data for the upload worker to proccess`);
+                }
+
+                const id = profileImage.id;
+                const body = profileImage.Body;
+                const bodyBuffer = await BufferToString(body);
+                const url = await this.s3.uploadFile({
+                    Key: id,
+                    Directory: S3_DIRECTORIES.PROFILE_PICTURES,
+                    ContentType: profileImage.ContentType,
+                    Body: bodyBuffer,
+                });
+
+                if (!url) {
+                    logger.error('Error upload profile picture through s3 worker');
+                    return;
+                }
+
+                const profile_picture = {
+                    url,
+                    name: profileImage.originalname,
+                    content_type: profileImage.ContentType,
+                };
+
+                await this.userService.UpdateProfilePicture(id, profile_picture);
+
+                return { type: WORKERS_RESULT_TYPES.UPLOAD_DONE, success: true };
+            } catch (error: any) {
+                logger.error(`s3 worker error: ${error.message}`);
+            }
+        });
     };
 
     private sendMailsWorker = () => {
-        this.bullWorkers.createWorker(WORKER_TYPES.EMAIL_VERIFICATION, async (job) => {
+        this.bullWorkers.createWorker(WORKER_TYPES.EMAIL_VERIFICATION, async (job: Job<string>) => {
             try {
                 const { email } = job.data;
+
+                if (!email) return;
 
                 const user = await this.userService.findUserByEmail(email);
 
@@ -156,12 +207,9 @@ export class Workers {
 
                     send_email(email, link).execute();
                 }
-                const VERIFICATION_TOKEN = await signJwt(
-                    { id: user.id, email },
-                    JWT_SECRET_KEYS.VERIFICATION_TOKEN,
-                    HASHING_ALGORITHMS.HS512,
-                    { expiresIn: parseInt(VERIFICATION_TOKEN_TTL as string) * 24 }
-                );
+                const VERIFICATION_TOKEN = await signJwt({ id: user.id, email }, JWT_SECRET_KEYS.VERIFICATION_TOKEN, HASHING_ALGORITHMS.HS512, {
+                    expiresIn: parseInt(VERIFICATION_TOKEN_TTL as string) * 24,
+                });
 
                 const link = `${FRONTEND_URL}/dashboard/verify/${VERIFICATION_TOKEN}`; // example
 
@@ -174,7 +222,7 @@ export class Workers {
                     content: { VERIFICATION_TOKEN },
                 });
 
-                return { type: WORKERS_RESULT_TYPES.EMAIL_VERIFICATION, sucess: true };
+                return { type: WORKERS_RESULT_TYPES.EMAIL_VERIFICATION, success: true };
             } catch (error: any) {
                 throw new Error(error.message);
             }

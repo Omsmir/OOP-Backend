@@ -34,14 +34,14 @@ export default [
         rules: {
             ...tsPlugin.configs.recommended.rules,
             ...prettierConfig.rules,
-            'prettier/prettier': 'error',
-            '@typescript-eslint/no-explicit-any': 'off',
+            'prettier/prettier': 'warn',
             '@typescript-eslint/explicit-function-return-type': 'off',
             '@typescript-eslint/no-unused-vars': ['warn', {
                 argsIgnorePattern: '^_',
                 varsIgnorePattern: '^_'
             }],
             '@typescript-eslint/no-empty-object-type': 'off',
+            
             '@typescript-eslint/no-floating-promises': 'off',
             '@typescript-eslint/no-misused-promises': 'off',
             'no-console': 'warn',

@@ -55,9 +55,7 @@ export class RedisConnection {
 
     private initializeConnection = async () => {
         try {
-            this.redisClient.on('connect', () =>
-                logger.info(`connected to redis: ${REDIS_DATABASE}`)
-            );
+            this.redisClient.on('connect', () => logger.info(`connected to redis: ${REDIS_DATABASE}`));
 
             this.redisClient.on('error', (err) => logger.error('error connecting to redis', err));
 
@@ -82,12 +80,7 @@ export class RedisConnection {
 export class RedisServices {
     constructor(private readonly redisClient: RedisClientType) {}
 
-    public createHash = async ({
-        redis_cache_key,
-        hash_name,
-        content,
-        expire,
-    }: CreateHashProps) => {
+    public createHash = async ({ redis_cache_key, hash_name, content, expire }: CreateHashProps) => {
         await this.redisClient.hSet(`${redis_cache_key}:${hash_name}`, content);
 
         if (expire) {

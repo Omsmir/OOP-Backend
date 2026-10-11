@@ -6,20 +6,14 @@ interface UploadParams {
     Directory: S3_DIRECTORIES;
     Key: string;
     Body: Buffer | Uint8Array | Blob | string;
-    ContentType:
-        | 'application/json'
-        | 'image/png'
-        | 'image/jpeg'
-        | 'video/mp4'
-        | 'application/pdf'
-        | string;
+    ContentType: 'application/json' | 'image/png' | 'image/jpeg' | 'video/mp4' | 'application/pdf' | string;
 }
+
+export type S3Worker = Omit<UploadParams, 'Directory' | 'Key'> & { originalname: string };
 
 export enum S3_DIRECTORIES {
     PROFILE_PICTURES = 'profile-pictures/',
 }
-
-
 
 export enum S3_EVENT_TYPE {
     UPLOAD = 'upload',
@@ -51,13 +45,13 @@ class S3 {
         logger.info('S3 Service has been initialized');
     };
 
-    public getS3Client = async (): Promise<S3Client> => {
+    public getS3Client = (): S3Client => {
         return this.s3Client;
     };
 }
 
 export class S3Services {
-    constructor(private readonly s3: S3) {}
+    constructor(private readonly s3Client: S3Client) {}
 
     private eject_file = ({ Key, Directory, Body, ContentType }: UploadParams) => {
         const command = new PutObjectCommand({
@@ -77,22 +71,17 @@ export class S3Services {
         return command;
     };
 
-    
-
     public uploadFile = async (params: UploadParams) => {
         try {
             const command = this.eject_file(params);
             if (!command) {
                 throw new Error('S3 command is not initialized. Call upload() first.');
             }
-            const s3 = await this.s3.getS3Client();
 
-            const result = await s3.send(command);
+            const result = await this.s3Client.send(command);
 
             if (result.$metadata.httpStatusCode !== 200) {
-                throw new Error(
-                    `Failed to upload file to AWS S3: ${result.$metadata.httpStatusCode}`
-                );
+                throw new Error(`Failed to upload file to AWS S3: ${result.$metadata.httpStatusCode}`);
             }
 
             logger.info(`Uploading file with name ${command.input.Key} to S3`);
@@ -102,7 +91,6 @@ export class S3Services {
             return url;
         } catch (error: any) {
             logger.error(`Error uploading file to S3: ${error.message}`);
-            console.log(error.message);
         }
     };
 }

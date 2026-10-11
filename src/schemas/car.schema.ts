@@ -4,26 +4,23 @@ const payload = {
     body: z.object({
         name: z
             .string({
-                required_error: 'Car name is required',
-                invalid_type_error: 'Car name must be a string',
+                error: 'Car name is required',
             })
             .min(1, 'Car name cannot be empty'),
 
         type: z
             .string({
-                required_error: 'Car type is required',
-                invalid_type_error: 'Car type must be a string',
+                error: 'Car type is required',
             })
             .min(1, 'Car type cannot be empty'),
 
         color: z
             .string({
-                required_error: 'Car color is required',
-                invalid_type_error: 'Car color must be a string',
+                error: 'Car color is required',
             })
             .min(1, 'Car color cannot be empty'),
 
-        price: z.string({ required_error: 'car price is required' }).min(1),
+        price: z.string({ error: 'car price is required' }).min(1),
 
         seats: z.string().optional(),
     }),
@@ -35,14 +32,14 @@ const updatePayload = {
         type: z.string().optional(),
         color: z.string().optional(),
 
-        price: z.string({ required_error: 'at least price needed for editing' }),
+        price: z.string({ error: 'at least price needed for editing' }),
 
         seats: z.string().optional(),
     }),
 };
 const params = {
     params: z.object({
-        id: z.string({ required_error: 'car id is required' }),
+        id: z.string({ error: 'car id is required' }),
     }),
 };
 

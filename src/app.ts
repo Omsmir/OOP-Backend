@@ -1,18 +1,10 @@
-import {
-    APIS_MAIN_ENDPOINT,
-    APIS_VERSION,
-    BODYSIZELIMIT,
-    LOG_FORMAT,
-    NODE_ENV,
-    ORIGIN,
-    PORT,
-} from './config/defaults';
-import SentryWrapper from '@/integrations/sentry';
+import { APIS_MAIN_ENDPOINT, APIS_VERSION, BODYSIZELIMIT, LOG_FORMAT, NODE_ENV, ORIGIN, PORT } from '@/config/defaults';
+// import SentryWrapper from '@/integrations/sentry';
 import express from 'express';
 import MongoConnection from './utils/mongo.connection';
 import morgan from 'morgan';
 import { logger, stream } from './utils/logger';
-import cors from 'cors';
+import cors, { CorsOptions } from 'cors';
 import hpp from 'hpp';
 import helmet from 'helmet';
 import compression from 'compression';
@@ -33,6 +25,7 @@ import { RedisConnection } from './utils/redis';
 import loadSheddings from './middlewares/shedding';
 import refreshTokenRepository from './repository/refresh_token.repo';
 import UserRepository from './repository/auth.repo';
+import Generics from './types/types';
 
 class App {
     public PORT: string | number;
@@ -94,9 +87,13 @@ class App {
 
     private async initializeMiddlewares() {
         this.app.use(morgan(LOG_FORMAT || 'dev', { stream }));
-        this.app.use(
-            cors({ origin: ORIGIN, credentials: true, allowedHeaders: ['authorization'] })
-        );
+        const corsOptions: CorsOptions = {
+            origin: ORIGIN,
+            credentials: true,
+            allowedHeaders: ['Authorization', 'Content-Type'],
+        };
+
+        // this.app.use(cors(corsOptions));
         this.app.use(hpp({ checkBody: true }));
         this.app.use(helmet());
         this.app.use(compression());
@@ -130,6 +127,9 @@ class App {
         BehavioralClassesPattern.getInstance();
     }
 
+    private initializeGenerics() {
+        Generics.getInstance();
+    }
     public getServer() {
         // specfic for testing
         return this.app;
@@ -139,9 +139,9 @@ class App {
         await this.postgresMigrations.main();
     };
 
-    private initSentry = () => {
-        return SentryWrapper.getInstance().initSentry();
-    };
+    // private initSentry = () => {
+    //     return SentryWrapper.getInstance().initSentry();
+    // };
     private async setupGracefulShutdown() {
         for (const signal of SIGNALS) {
             process.on(signal, async () => await gracefulShutdown.shutdown(signal));

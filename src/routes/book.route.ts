@@ -21,19 +21,10 @@ class BookRoute extends BaseRoute {
 
     protected initializeRoutes() {
         this.router.get(this.path, this.bookController.getBooksHandler);
-        this.router.post(
-            this.path,
-            upload.none(),
-            validate(BookSchema),
-            this.bookController.CreateBookHandler
-        );
+        this.router.post(this.path, upload.none(), validate(BookSchema), this.bookController.CreateBookHandler);
         this.router.put(this.path, validate(getBookSchema), this.bookController.BorrowBookHandler);
 
-        this.router.delete(
-            this.path,
-            validate(getBookSchema),
-            this.bookController.DeleteBookHandler
-        );
+        this.router.delete(this.path, validate(getBookSchema), this.bookController.DeleteBookHandler);
     }
 }
 

@@ -1,9 +1,4 @@
-import {
-    NODE_ENV,
-    SEEDED_USER_NAME,
-    SEEDED_USER_PASSWORD,
-    TEST_SEEDED_EMAIL,
-} from '@/config/defaults';
+import { NODE_ENV, SEEDED_USER_NAME, SEEDED_USER_PASSWORD, TEST_SEEDED_EMAIL } from '@/config/defaults';
 import { Admin, NormalUser, UserFactory } from '../classes/creationalPatterns';
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
@@ -72,16 +67,8 @@ export const seeding = async (client: Client) => {
                 email: String(TEST_SEEDED_EMAIL),
                 password: String(SEEDED_USER_PASSWORD),
             });
-            
-            await client.query(query, [
-                user.name,
-                user.email,
-                user.password,
-                user.role,
-                user.permissions,
-                user.age,
-                user.gender,
-            ]);
+
+            await client.query(query, [user.name, user.email, user.password, user.role, user.permissions, user.age, user.gender]);
             logger.info('seeding test users');
         }
 

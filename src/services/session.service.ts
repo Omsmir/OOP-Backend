@@ -2,7 +2,7 @@ import { sessionInput } from '@/interfaces/models.interface';
 import { sessionDocument, SessionModel } from '@/models/session.model';
 import { signJwt, verifyJwt } from '@/utils/jwt.sign';
 import { get } from 'lodash';
-import { FilterQuery, QueryOptions, UpdateQuery } from 'mongoose';
+import { QueryFilter, QueryOptions, UpdateQuery } from 'mongoose';
 import UserService from './auth.service';
 import { ACCESSTOKENTTL } from '@/config/defaults';
 import { HASHING_ALGORITHMS, JWT_SECRET_KEYS } from '@/interfaces/permissions';
@@ -21,28 +21,20 @@ class SessionService {
         return await this.sessionModel.create(input);
     };
 
-    public getSession = async (query: FilterQuery<sessionDocument>) => {
+    public getSession = async (query: QueryFilter<sessionDocument>) => {
         return await this.sessionModel.findOne(query);
     };
 
-    public updateSession = async (
-        query: FilterQuery<sessionDocument>,
-        update: UpdateQuery<sessionDocument>,
-        options?: QueryOptions
-    ) => {
+    public updateSession = async (query: QueryFilter<sessionDocument>, update: UpdateQuery<sessionDocument>, options?: QueryOptions) => {
         return await this.sessionModel.findOneAndUpdate(query, update, options);
     };
 
-    public deleteSession = async (query: FilterQuery<sessionDocument>) => {
+    public deleteSession = async (query: QueryFilter<sessionDocument>) => {
         return await this.sessionModel.findOneAndDelete(query);
     };
 
     public reIssueAccessToken = async (refreshToken: string) => {
-        const { decoded } = await verifyJwt(
-            refreshToken,
-            JWT_SECRET_KEYS.REFRESH_TOKEN_PUBLIC_KEY,
-            HASHING_ALGORITHMS.RS256
-        );
+        const { decoded } = await verifyJwt(refreshToken, JWT_SECRET_KEYS.REFRESH_TOKEN_PUBLIC_KEY, HASHING_ALGORITHMS.RS256);
 
         if (!decoded || !get(decoded, 'session')) return false;
 
@@ -54,12 +46,9 @@ class SessionService {
 
         if (!user) return false;
 
-        const accessToken = signJwt(
-            { ...user, session: session?._id },
-            JWT_SECRET_KEYS.ACCESS_TOKEN_PRIVATE_KEY,
-            HASHING_ALGORITHMS.RS256,
-            { expiresIn: parseInt(ACCESSTOKENTTL as string) }
-        );
+        const accessToken = signJwt({ ...user, session: session?._id }, JWT_SECRET_KEYS.ACCESS_TOKEN_PRIVATE_KEY, HASHING_ALGORITHMS.RS256, {
+            expiresIn: parseInt(ACCESSTOKENTTL as string),
+        });
 
         return accessToken;
     };

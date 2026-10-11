@@ -21,29 +21,10 @@ class UserRoute extends BaseRoute {
     }
 
     protected initializeRoutes() {
-        this.router.post(
-            `${this.path}/:id`,
-            upload.none(),
-            validate(createUserSchema),
-            this.userController.createUserHandler
-        );
-        this.router.delete(
-            `${this.path}/:id`,
-            upload.none(),
-            validate(deleteUserSchema),
-            this.userController.deleteUserHandler
-        );
-        this.router.put(
-            `${this.path}/:id`,
-            upload.none(),
-            validate(updateUserSchema),
-            this.userController.updateUserHandler
-        );
-        this.router.post(
-            `${this.path}/send/email`,
-            this.middleware.requireLogin,
-            this.userController.sendVerficationEmailToUnverifiedUsers
-        );
+        this.router.post(`${this.path}/:id`, upload.none(), validate(createUserSchema), this.userController.createUserHandler);
+        this.router.delete(`${this.path}/:id`, upload.none(), validate(deleteUserSchema), this.userController.deleteUserHandler);
+        this.router.put(`${this.path}/:id`, upload.none(), validate(updateUserSchema), this.userController.updateUserHandler);
+        this.router.post(`${this.path}/send/email`, this.middleware.requireLogin, this.userController.sendVerficationEmailToUnverifiedUsers);
     }
 }
 

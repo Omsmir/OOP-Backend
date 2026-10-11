@@ -50,17 +50,10 @@ const sendEmail = async ({ to, link, templateName, appName, year, date, otp }: s
 
 // auth.controller.ts is used in sendVerficationEmailToUnverifiedUsers
 
-
-
-
-
-
 export class EMAIL_SERVICES implements Command {
     constructor(private readonly EmailProps: sendEmailProps) {}
 
-    private transport = async (): Promise<
-        Transporter<SMTPTransport.SentMessageInfo, SMTPTransport.Options> | undefined
-    > => {
+    private transport = async (): Promise<Transporter<SMTPTransport.SentMessageInfo, SMTPTransport.Options> | undefined> => {
         try {
             const transport = createTransport({
                 host: 'smtp.gmail.com',
@@ -104,9 +97,7 @@ export class EMAIL_SERVICES implements Command {
             }
             await transport.sendMail({ from, subject, to: this.EmailProps.to, html });
 
-            logger.info(
-                `Email sent to ${this.EmailProps.to} with template ${this.EmailProps.templateName}`
-            );
+            logger.info(`Email sent to ${this.EmailProps.to} with template ${this.EmailProps.templateName}`);
         } catch (error: any) {
             logger.error(error.message);
         }

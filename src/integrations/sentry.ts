@@ -6,7 +6,7 @@ import { logger } from '@/utils/logger';
 class SentryWrapper {
     private static instance: SentryWrapper;
     constructor() {
-        this.initSentry();
+        // this.initSentry();
     }
 
     public static getInstance = (): SentryWrapper => {
@@ -22,14 +22,10 @@ class SentryWrapper {
                 dsn: SENTRY_DSN,
                 environment: NODE_ENV,
                 enabled: NODE_ENV !== 'test',
-                integrations: [
-                    nodeProfilingIntegration(),
-                    Sentry.consoleLoggingIntegration({ levels: ['log', 'warn', 'error'] }),
-                ],
+                integrations: [nodeProfilingIntegration(), Sentry.consoleLoggingIntegration({ levels: ['log', 'warn', 'error'] })],
                 tracesSampleRate: NODE_ENV === 'production' ? 1.0 : 1.0,
                 profilesSampleRate: 1.0,
                 release: 'oop@1.0.0',
-                enableLogs: true,
             });
 
             logger.info('sentry is connected for monitoring');

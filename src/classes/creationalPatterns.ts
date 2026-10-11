@@ -42,13 +42,7 @@ interface User {
 export class Admin implements User {
     role: role = 'admin';
     permissions() {
-        return [
-            PERMISSIONS.USER_READ,
-            PERMISSIONS.USER_CREATE,
-            PERMISSIONS.USER_DELETE,
-            PERMISSIONS.USER_UPDATE,
-            PERMISSIONS.ROOT_ADMIN,
-        ];
+        return [PERMISSIONS.USER_READ, PERMISSIONS.USER_CREATE, PERMISSIONS.USER_DELETE, PERMISSIONS.USER_UPDATE, PERMISSIONS.ROOT_ADMIN];
     }
 }
 

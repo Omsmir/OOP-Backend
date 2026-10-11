@@ -1,4 +1,4 @@
-import { FilterQuery, QueryOptions, SchemaTypeOptions, UpdateQuery } from 'mongoose';
+import { QueryFilter, QueryOptions, SchemaTypeOptions, UpdateQuery } from 'mongoose';
 import UserModel, { UserDocument } from '@/models/auth.model';
 import { omit } from 'lodash';
 import { UserInput } from '@/interfaces/models.interface';
@@ -16,21 +16,17 @@ class UserService {
         return omit(user.toJSON(), 'password');
     };
 
-    public updateUser = async (
-        query: FilterQuery<UserDocument>,
-        update: UpdateQuery<UserDocument>,
-        options?: QueryOptions
-    ) => {
+    public updateUser = async (query: QueryFilter<UserDocument>, update: UpdateQuery<UserDocument>, options?: QueryOptions) => {
         return await this.userModel.findOneAndUpdate(query, update, options);
     };
 
-    public findUser = async (query: FilterQuery<UserDocument>) => {
+    public findUser = async (query: any) => {
         return await this.userModel.findOne(query);
     };
-    public getAllUsers = async (query?: FilterQuery<UserDocument>) => {
+    public getAllUsers = async (query?: QueryFilter<UserDocument>) => {
         return await this.userModel.find(query ? query : {});
     };
-    public deleteUser = async (query: FilterQuery<UserDocument>) => {
+    public deleteUser = async (query: QueryFilter<UserDocument>) => {
         return await this.userModel.findOneAndDelete(query);
     };
 
@@ -42,14 +38,13 @@ class UserService {
                 return false;
             }
 
-
             const isValid = await bcryptjs.compare(password, user.password);
 
             if (!isValid) {
                 return false;
             }
 
-            return user
+            return user;
         } catch (error: any) {
             throw new Error(`validate service error ${error.message}`);
         }

@@ -1,6 +1,6 @@
 import { BookInput } from '@/interfaces/models.interface';
 import BookModel, { BookDocument } from '@/models/book.model';
-import { FilterQuery, QueryOptions, UpdateQuery } from 'mongoose';
+import { QueryFilter, QueryOptions, UpdateQuery } from 'mongoose';
 
 // SOLID principles interpreted
 
@@ -14,21 +14,17 @@ class BookService {
         return await this.bookModel.create(input);
     }
 
-    public async GetAllBooks(query: FilterQuery<BookDocument>) {
+    public async GetAllBooks(query: QueryFilter<BookDocument>) {
         return await this.bookModel.find(query);
     }
-    public async GetBook(query: FilterQuery<BookDocument>): Promise<BookDocument | null> {
+    public async GetBook(query: QueryFilter<BookDocument>): Promise<BookDocument | null> {
         return await this.bookModel.findOne(query);
     }
-    public async UpdateBook(
-        query: FilterQuery<BookDocument>,
-        update: UpdateQuery<BookDocument>,
-        options?: QueryOptions
-    ) {
+    public async UpdateBook(query: QueryFilter<BookDocument>, update: UpdateQuery<BookDocument>, options?: QueryOptions) {
         return await this.bookModel.findOneAndUpdate(query, update, options);
     }
 
-    public async DeleteBook(query: FilterQuery<BookDocument>) {
+    public async DeleteBook(query: QueryFilter<BookDocument>) {
         return await this.bookModel.deleteOne(query);
     }
 }

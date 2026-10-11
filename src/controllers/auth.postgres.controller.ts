@@ -7,18 +7,20 @@ import {
     CHANGE_KEY_QUERY,
     createUserSchemaForPostgresInterface,
     getAllUserForPostGresSchemaInterface,
+    sendEmailSchemaInterface,
     updateUserSchemaForPostgresInterface,
 } from '@/schemas/auth.schema';
 import { LoginSchemaInterface, logoutSchemaInterface } from '@/schemas/session.schema';
 import sessionRepository from '@/repository/session.repo';
-import { signJwt } from '@/utils/jwt.sign';
-import { ACCESSTOKENTTL, NODE_ENV, REFRESHTOKENTTL } from '@/config/defaults';
-import { S3_DIRECTORIES, S3Services } from '@/integrations/s3';
+import { ACCESSTOKENTTL, NODE_ENV, PORT, PROJECT_NAME, REFRESHTOKENTTL } from '@/config/defaults';
+import { S3_DIRECTORIES, S3Services, S3Worker } from '@/integrations/s3';
 import { UserFactory } from '@/classes/creationalPatterns';
 import { CACHE_TTL, REDIS_CACHE_KEYS, RedisServices } from '@/utils/redis';
 import BullWorkers, { WORKER_TYPES } from '@/integrations/workers';
 import refreshTokenRepository from '@/repository/refresh_token.repo';
 import { logger } from '@/utils/logger';
+import { EMAIL_TEMPLATES, SUBJECT_TYPES } from '@/interfaces/global.interface';
+import { EMAIL_SERVICES } from '@/utils/mail-service';
 
 class authController extends BaseController {
     constructor(
@@ -32,19 +34,13 @@ class authController extends BaseController {
     ) {
         super();
     }
-    public createUser = async (
-        req: Request<{}, {}, createUserSchemaForPostgresInterface['body']>,
-        res: Response
-    ) => {
+    public createUser = async (req: Request<{}, {}, createUserSchemaForPostgresInterface['body']>, res: Response) => {
         try {
             const existedUser = await this.userRepository.findUserByEmail(req.body.email);
             const queue = this.workers.getQueue(WORKER_TYPES.EMAIL_VERIFICATION);
 
             if (existedUser) {
-                throw new HttpException(
-                    403,
-                    `user with email:${existedUser.email} is already exist`
-                );
+                throw new HttpException(403, `user with email:${existedUser.email} is already exist`);
             }
 
             const createdUserInstance = this.user_factory.create(req.body.role); // methodololgy for an internal system not intended for public use.
@@ -127,21 +123,19 @@ class authController extends BaseController {
             if (TOKEN) {
                 await this.refreshTokenRepository.invalidateRefreshToken({ tokenId: TOKEN.id });
             } else {
-                logger.warn(
-                    `no valid refresh token found for user with id ${user.id} during login, creating a new one`
-                ); // should be refactored to apply to OWSAP for audit logging and monitoring for first time logins
+                // should be refactored to apply to OWSAP for audit logging and monitoring for first time logins
+                logger.warn(`no valid refresh token found for user with id ${user.id} during login, creating a new one`);
             }
 
             if (!session) {
-                throw new HttpException(400, 'error occurred while logging in');
+                throw new HttpException(404, 'error creating a session');
             }
 
-            const { refreshToken, accessToken } =
-                await this.refreshTokenRepository.signRefreshAndAccessToken({
-                    userId: user.id,
-                    sessionId: session.id,
-                    first_time: true,
-                });
+            const { refreshToken, accessToken } = await this.refreshTokenRepository.signRefreshAndAccessToken({
+                userId: user.id,
+                sessionId: session.id,
+                first_time: true,
+            });
 
             const hashed_token = await this.refreshTokenRepository.hashRefreshToken(refreshToken);
 
@@ -192,10 +186,7 @@ class authController extends BaseController {
         }
     };
 
-    public getAllUsersHandler = async (
-        req: Request<getAllUserForPostGresSchemaInterface['params']>,
-        res: Response
-    ) => {
+    public getAllUsersHandler = async (req: Request<getAllUserForPostGresSchemaInterface['params']>, res: Response) => {
         try {
             const local_user = res.locals.user;
 
@@ -231,11 +222,7 @@ class authController extends BaseController {
     };
 
     public updateUserHandler = async (
-        req: Request<
-            updateUserSchemaForPostgresInterface['params'],
-            {},
-            updateUserSchemaForPostgresInterface['body']
-        >,
+        req: Request<updateUserSchemaForPostgresInterface['params'], {}, updateUserSchemaForPostgresInterface['body']>,
         res: Response
     ) => {
         try {
@@ -243,6 +230,7 @@ class authController extends BaseController {
             const file = req.file as Express.Multer.File;
             let updatedUser: UserInterface | null = null;
             let change_key;
+            const uploadQueue = this.workers.getQueue(WORKER_TYPES.UPLOAD);
             const other_values = [];
 
             Object.entries(req.body).forEach(([_, value]) => {
@@ -260,46 +248,29 @@ class authController extends BaseController {
             }
 
             const upload_profile_picture = async () => {
-                let profile_picture: profilePicture | null = null;
                 if (file) {
-                    const Key = `${id}`;
-
-                    const url = await this.s3.uploadFile({
-                        Key,
-                        Directory: S3_DIRECTORIES.PROFILE_PICTURES,
+                    const profileImage: S3Worker & { id: string } = {
+                        id,
                         ContentType: file.mimetype,
-                        Body: file.buffer,
-                    });
-
-                    if (!url) {
-                        throw new HttpException(400, 'Error upload profile picture');
-                    }
-
-                    profile_picture = {
-                        url,
-                        name: file.originalname,
-                        content_type: file.mimetype,
+                        Body: file.buffer.toString('base64'),
+                        originalname: file.originalname,
                     };
+
+                    await uploadQueue.add('PROFILE_PICTURE:UPLOAD', {
+                        profileImage,
+                    });
                 }
-                return profile_picture;
             };
 
             switch (change_key) {
                 case CHANGE_KEY_QUERY.PROFILE_PICTURE:
-                    const profile_picture = await upload_profile_picture();
+                    await upload_profile_picture();
 
-                    updatedUser = await this.userRepository.UpdateProfilePicture(
-                        id,
-                        profile_picture
-                    );
-
-                    break;
+                    throw new HttpException(200, 'profile picture is been uploaded');
                 case CHANGE_KEY_QUERY.PROFILEANDOTHER:
-                    if (file) {
-                        const profile_picture = await upload_profile_picture();
+                    
+                    await upload_profile_picture();
 
-                        await this.userRepository.UpdateProfilePicture(id, profile_picture);
-                    }
                     updatedUser = await this.userRepository.updateUser(id, {
                         ...req.body,
                         age: Number(req.body.age),
@@ -313,10 +284,77 @@ class authController extends BaseController {
                     break;
             }
 
-            if (!updatedUser) {
-                throw new HttpException(200, 'no changes were made');
-            }
             res.status(200).json({ message: 'user updated successfully', user: updatedUser });
+        } catch (error) {
+            this.handleError(res, error);
+        }
+    };
+    public sendEmailsHandler = async (
+        req: Request<sendEmailSchemaInterface['params'], {}, sendEmailSchemaInterface['body'], sendEmailSchemaInterface['query']>,
+        res: Response
+    ) => {
+        try {
+            const template_name = req.query.template_name as EMAIL_TEMPLATES;
+            const subject = req.query.subject as SUBJECT_TYPES;
+
+            const to = req.body.email;
+
+            const user = await this.userRepository.findUserByEmail(to);
+
+            if (!user) {
+                throw new HttpException(404, 'error finding the relevant address');
+            }
+
+            const hash_name = `${template_name}:${to}`;
+
+            const createOrIncrementAttempts = async (attempts?: string) => {
+                await this.redis_services.createHash({
+                    redis_cache_key: REDIS_CACHE_KEYS.EMAIL_VERIFICATION,
+                    hash_name,
+                    content: { attempts: String(parseInt(attempts || '0') + 1) },
+                    expire: CACHE_TTL.FIVE_MINUTES,
+                });
+            };
+
+            const rate_attempts = await this.redis_services.checkHash({
+                redis_cache_key: REDIS_CACHE_KEYS.EMAIL_VERIFICATION,
+                hash_name,
+                value: 'attempts',
+            });
+
+            if (rate_attempts) {
+                if (Number(rate_attempts) >= 3) {
+                    throw new HttpException(427, 'Too Many Attempts');
+                }
+            }
+
+            const send_email = (to: string) => {
+                return new EMAIL_SERVICES({
+                    to,
+                    appName: String(PROJECT_NAME),
+                    templateName: template_name,
+                    year: new Date().toLocaleString(),
+                    subject,
+                });
+            };
+
+            await send_email(to).execute();
+
+            if (rate_attempts) {
+                createOrIncrementAttempts(rate_attempts);
+            } else {
+                createOrIncrementAttempts();
+            }
+
+            res.status(201).json({ message: `email with template: ${template_name} has been sent to: ${to} successfully` });
+        } catch (error) {
+            this.handleError(res, error);
+        }
+    };
+
+    public IndexRoute = async (req: Request, res: Response) => {
+        try {
+            res.status(200).json({ message: `server is listening on port ${PORT}` });
         } catch (error) {
             this.handleError(res, error);
         }

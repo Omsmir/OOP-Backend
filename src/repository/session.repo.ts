@@ -1,8 +1,5 @@
 import { PostgresInterface } from '@/interfaces/global.interface';
 import { session, sessionToCreate } from '@/interfaces/models.interface';
-import { signJwt, verifyJwt } from '@/utils/jwt.sign';
-import { get } from 'lodash';
-import { ACCESSTOKENTTL } from '@/config/defaults';
 import UserRepository from './auth.repo';
 
 class sessionRepository {
