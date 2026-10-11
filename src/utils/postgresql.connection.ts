@@ -1,12 +1,4 @@
-import {
-    NODE_ENV,
-    POSTGRES_DB,
-    POSTGRES_HOST,
-    POSTGRES_PORT,
-    POSTGRES_PWD,
-    POSTGRES_SSL,
-    POSTGRES_USER,
-} from '@/config/defaults';
+import { NODE_ENV, POSTGRES_DB, POSTGRES_HOST, POSTGRES_PORT, POSTGRES_PWD, POSTGRES_SSL, POSTGRES_USER } from '@/config/defaults';
 import { PostgresInterface } from '@/interfaces/global.interface';
 import { Pool, QueryConfig, QueryConfigValues, QueryResult, QueryResultRow } from 'pg';
 import { logger } from './logger';
@@ -89,7 +81,6 @@ class PostgresConnection implements PostgresInterface {
 
             logger.info(`connected to postgres:${POSTGRES_DB} ${(await res).rows[0].now}`);
         } catch (error: any) {
-            console.log('from postgres connection');
             logger.error(`${error.message}`);
         }
     };

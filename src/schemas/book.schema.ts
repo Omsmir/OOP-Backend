@@ -4,25 +4,24 @@ const payload = {
     body: z.object({
         title: z
             .string({
-                required_error: 'book title is required',
-                invalid_type_error: 'book title must be a string',
+                error: 'book title is required',
             })
             .min(1, 'book title cannot be empty'),
 
-        price: z.string({ required_error: 'Book price is required' }).min(1),
+        price: z.string({ error: 'Book price is required' }).min(1),
 
-        quantity: z.string({ required_error: 'Book quantity is required' }).min(1),
+        quantity: z.string({ error: 'Book quantity is required' }).min(1),
     }),
 };
 
 const params = {
     params: z.object({
-        id: z.string({ required_error: 'user id is required' }),
+        id: z.string({ error: 'user id is required' }),
     }),
 };
 const querys = {
     query: z.object({
-        title: z.string({ required_error: 'Book title is required' }),
+        title: z.string({ error: 'Book title is required' }),
     }),
 };
 export const BookSchema = z.object({

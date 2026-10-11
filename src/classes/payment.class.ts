@@ -8,8 +8,7 @@ abstract class Payment {
 }
 class PayWithCredit extends Payment implements Refundable {
     public pay(amount: number): void {
-        if (amount > this.balance)
-            throw new Error('there is no enough fund in your current balance');
+        if (amount > this.balance) throw new Error('there is no enough fund in your current balance');
         this.balance -= amount;
     }
     public refund(): void {}

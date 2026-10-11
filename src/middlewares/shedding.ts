@@ -23,7 +23,7 @@ class loadSheddings extends BaseController {
         console.log(`memory used ${(usedMemory / 1024 / 1024).toFixed(2)} MB`);
     };
 
-    public isOverloaded = (): Boolean => {
+    public isOverloaded = (): boolean => {
         const MEMORY = process.memoryUsage().rss;
 
         const EVENT_LOOP_DELAY = performance.eventLoopUtilization().utilization * 1000;
@@ -33,7 +33,6 @@ class loadSheddings extends BaseController {
 
     public sheddingMiddleware = async (req: Request, res: Response, next: NextFunction) => {
         try {
-            
             if (this.isOverloaded()) {
                 // 50% chance of rejecting to smooth out spikes
                 if (Math.random() < 0.5) {

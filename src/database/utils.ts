@@ -15,5 +15,5 @@ export const allowDisallowPostgresSsl = ({ POSTGRES_SSL }: sslPropsType) => {
         default:
             throw new Error(`${POSTGRES_SSL} is not a valid value`);
     }
-    return connection_parameter
+    return connection_parameter;
 };

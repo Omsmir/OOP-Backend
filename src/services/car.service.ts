@@ -1,6 +1,6 @@
 import { CarInput } from '@/interfaces/models.interface';
 import CarModel, { CarDocument } from '@/models/car.model';
-import { FilterQuery, QueryOptions, UpdateQuery } from 'mongoose';
+import { QueryFilter, QueryOptions, UpdateQuery } from 'mongoose';
 
 // SOLID principles interpreted
 
@@ -14,23 +14,19 @@ class CarService {
         return await this.carModel.create(input);
     }
 
-    public async getCar(query: FilterQuery<CarDocument>): Promise<CarDocument | null> {
+    public async getCar(query: QueryFilter<CarDocument>): Promise<CarDocument | null> {
         return await this.carModel.findOne(query);
     }
 
-    public async getAllCars(query: FilterQuery<CarDocument>) {
+    public async getAllCars(query: QueryFilter<CarDocument>) {
         return await this.carModel.find(query);
     }
 
-    public async editCar(
-        query: FilterQuery<CarDocument>,
-        update: UpdateQuery<CarDocument>,
-        options?: QueryOptions
-    ) {
+    public async editCar(query: QueryFilter<CarDocument>, update: UpdateQuery<CarDocument>, options?: QueryOptions) {
         return await this.carModel.findOneAndUpdate(query, update, options);
     }
 
-    public async deleteCar(query: FilterQuery<CarDocument>) {
+    public async deleteCar(query: QueryFilter<CarDocument>) {
         return await this.carModel.deleteOne(query);
     }
 }

@@ -12,9 +12,8 @@ import {
 } from '@/schemas/auth.schema';
 import { LoginSchemaInterface, logoutSchemaInterface } from '@/schemas/session.schema';
 import sessionRepository from '@/repository/session.repo';
-import { signJwt } from '@/utils/jwt.sign';
-import { ACCESSTOKENTTL, NODE_ENV, PROJECT_NAME, REFRESHTOKENTTL } from '@/config/defaults';
-import { S3_DIRECTORIES, S3Services } from '@/integrations/s3';
+import { ACCESSTOKENTTL, NODE_ENV, PORT, PROJECT_NAME, REFRESHTOKENTTL } from '@/config/defaults';
+import { S3_DIRECTORIES, S3Services, S3Worker } from '@/integrations/s3';
 import { UserFactory } from '@/classes/creationalPatterns';
 import { CACHE_TTL, REDIS_CACHE_KEYS, RedisServices } from '@/utils/redis';
 import BullWorkers, { WORKER_TYPES } from '@/integrations/workers';
@@ -124,11 +123,12 @@ class authController extends BaseController {
             if (TOKEN) {
                 await this.refreshTokenRepository.invalidateRefreshToken({ tokenId: TOKEN.id });
             } else {
-                logger.warn(`no valid refresh token found for user with id ${user.id} during login, creating a new one`); // should be refactored to apply to OWSAP for audit logging and monitoring for first time logins
+                // should be refactored to apply to OWSAP for audit logging and monitoring for first time logins
+                logger.warn(`no valid refresh token found for user with id ${user.id} during login, creating a new one`);
             }
 
             if (!session) {
-                throw new HttpException(400, 'error occurred while logging in');
+                throw new HttpException(404, 'error creating a session');
             }
 
             const { refreshToken, accessToken } = await this.refreshTokenRepository.signRefreshAndAccessToken({
@@ -230,6 +230,7 @@ class authController extends BaseController {
             const file = req.file as Express.Multer.File;
             let updatedUser: UserInterface | null = null;
             let change_key;
+            const uploadQueue = this.workers.getQueue(WORKER_TYPES.UPLOAD);
             const other_values = [];
 
             Object.entries(req.body).forEach(([_, value]) => {
@@ -247,43 +248,29 @@ class authController extends BaseController {
             }
 
             const upload_profile_picture = async () => {
-                let profile_picture: profilePicture | null = null;
                 if (file) {
-                    const Key = `${id}`;
-
-                    const url = await this.s3.uploadFile({
-                        Key,
-                        Directory: S3_DIRECTORIES.PROFILE_PICTURES,
+                    const profileImage: S3Worker & { id: string } = {
+                        id,
                         ContentType: file.mimetype,
-                        Body: file.buffer,
-                    });
-
-                    if (!url) {
-                        throw new HttpException(400, 'Error upload profile picture');
-                    }
-
-                    profile_picture = {
-                        url,
-                        name: file.originalname,
-                        content_type: file.mimetype,
+                        Body: file.buffer.toString('base64'),
+                        originalname: file.originalname,
                     };
+
+                    await uploadQueue.add('PROFILE_PICTURE:UPLOAD', {
+                        profileImage,
+                    });
                 }
-                return profile_picture;
             };
 
             switch (change_key) {
                 case CHANGE_KEY_QUERY.PROFILE_PICTURE:
-                    const profile_picture = await upload_profile_picture();
+                    await upload_profile_picture();
 
-                    updatedUser = await this.userRepository.UpdateProfilePicture(id, profile_picture);
-
-                    break;
+                    throw new HttpException(200, 'profile picture is been uploaded');
                 case CHANGE_KEY_QUERY.PROFILEANDOTHER:
-                    if (file) {
-                        const profile_picture = await upload_profile_picture();
+                    
+                    await upload_profile_picture();
 
-                        await this.userRepository.UpdateProfilePicture(id, profile_picture);
-                    }
                     updatedUser = await this.userRepository.updateUser(id, {
                         ...req.body,
                         age: Number(req.body.age),
@@ -297,9 +284,6 @@ class authController extends BaseController {
                     break;
             }
 
-            if (!updatedUser) {
-                throw new HttpException(200, 'no changes were made');
-            }
             res.status(200).json({ message: 'user updated successfully', user: updatedUser });
         } catch (error) {
             this.handleError(res, error);
@@ -363,6 +347,14 @@ class authController extends BaseController {
             }
 
             res.status(201).json({ message: `email with template: ${template_name} has been sent to: ${to} successfully` });
+        } catch (error) {
+            this.handleError(res, error);
+        }
+    };
+
+    public IndexRoute = async (req: Request, res: Response) => {
+        try {
+            res.status(200).json({ message: `server is listening on port ${PORT}` });
         } catch (error) {
             this.handleError(res, error);
         }

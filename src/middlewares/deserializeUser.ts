@@ -74,6 +74,7 @@ export class DeserializeUser extends BaseController {
         }
     };
 }
+
 class DeserializeMiddleware extends BaseController {
     constructor() {
         super();

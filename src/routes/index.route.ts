@@ -1,20 +1,14 @@
-
-import { Request, Response, Router } from 'express';
 import BaseRoute from './base.route';
+import authController from '@/controllers/auth.postgres.controller';
 
 class IndexRoute extends BaseRoute {
-
-    constructor() {
+    constructor(private readonly controller: authController) {
         super('/');
         this.initializeRoutes();
     }
 
     protected initializeRoutes() {
-        this.router.get(this.path, (req: Request, res: Response) => {
-            const ip = req.headers['x-real-ip'];
-            const headers = req.headers
-            res.status(200).json({ message: 'server is responding', ip ,headers,msg:"hello"});
-        });
+        this.router.get(this.path, this.controller.IndexRoute);
     }
 }
 

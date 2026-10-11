@@ -1,4 +1,4 @@
-import { PERMISSIONS } from "@/interfaces/permissions";
+import { PERMISSIONS } from '@/interfaces/permissions';
 
 export const createUserPayload = (email: string) => {
     return {
@@ -8,6 +8,6 @@ export const createUserPayload = (email: string) => {
         gender: 'male',
         role: 'user',
         password: 'password',
-        permissions: [PERMISSIONS.USER_READ,PERMISSIONS.USER_CREATE,PERMISSIONS.USER_PROFILE_UPDATE],
+        permissions: [PERMISSIONS.USER_READ, PERMISSIONS.USER_CREATE, PERMISSIONS.USER_PROFILE_UPDATE],
     };
 };

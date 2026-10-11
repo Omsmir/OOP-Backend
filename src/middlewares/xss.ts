@@ -18,7 +18,7 @@ function sanitizeInput(obj: any): any {
 
 export function sanitizeRequest(req: Request, res: Response, next: NextFunction) {
     // req.body = sanitizeInput(req.body);
-    req.query = sanitizeInput(req.query);
+    sanitizeInput(req.query);
     req.params = sanitizeInput(req.params);
     next();
 }

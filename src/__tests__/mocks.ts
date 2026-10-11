@@ -12,4 +12,3 @@ export const createMockDatabaseService = (client: Client): PostgresInterface => 
             }) as unknown as PoolClient,
     };
 };
-

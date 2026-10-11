@@ -10,15 +10,10 @@ if (!existsSync(logDir)) {
     mkdirSync(logDir, { recursive: true });
 }
 
-const loggerFormat = winston.format.printf(
-    ({ timestamp, level, message }) => `${timestamp}::${level}::${message}`
-);
+const loggerFormat = winston.format.printf(({ timestamp, level, message }) => `${timestamp}::${level}::${message}`);
 
 const logger = winston.createLogger({
-    format: winston.format.combine(
-        winston.format.timestamp({ format: 'YYYY:MM:DD :: HH:mm:ss' }),
-        loggerFormat
-    ),
+    format: winston.format.combine(winston.format.timestamp({ format: 'YYYY:MM:DD :: HH:mm:ss' }), loggerFormat),
     transports: [
         new winston_daily({
             level: 'debug',
@@ -50,19 +45,12 @@ const logger = winston.createLogger({
     ],
 });
 
-logger.exceptions.handle(
-    new winston.transports.File({ filename: join(logDir, 'exceptions-%DATE%.log') })
-);
-logger.rejections.handle(
-    new winston.transports.File({ filename: join(logDir, 'rejections-%DATE%.log') })
-);
+logger.exceptions.handle(new winston.transports.File({ filename: join(logDir, 'exceptions-%DATE%.log') }));
+logger.rejections.handle(new winston.transports.File({ filename: join(logDir, 'rejections-%DATE%.log') }));
 
 logger.add(
     new winston.transports.Console({
-        format: winston.format.combine(
-            winston.format.splat(),
-            winston.format.colorize({ all: true })
-        ),
+        format: winston.format.combine(winston.format.splat(), winston.format.colorize({ all: true })),
     })
 );
 

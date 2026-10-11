@@ -14,6 +14,7 @@ class MongoConnection {
         if (!MongoConnection.instance) {
             MongoConnection.instance = new MongoConnection();
         }
+
         return MongoConnection.instance;
     }
 
@@ -22,9 +23,7 @@ class MongoConnection {
             await mongoose.connection
                 .close()
                 .then(() => logger.info('Mongodb connection closed successfully'))
-                .catch((error: any) =>
-                    logger.error(`Error closing MongoDB connection: ${error.message}`)
-                );
+                .catch((error: any) => logger.error(`Error closing MongoDB connection: ${error.message}`));
         }
         logger.warn('mongo connection is not initialized');
     }
@@ -36,9 +35,7 @@ class MongoConnection {
                     pass: MONGO_DB_PASSWD,
                     dbName: MONGO_DB || 'test',
                 })
-                .then((conn) =>
-                    logger.info(`Mongodb is connected to database:${conn.connection.name}`)
-                )
+                .then((conn) => logger.info(`Mongodb is connected to database:${conn.connection.name}`))
                 .catch((error: any) => {
                     logger.error(`Error connecting to MongoDB: ${error.message}`);
                 });

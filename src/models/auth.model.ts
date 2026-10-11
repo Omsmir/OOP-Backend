@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema<UserDocument>(
     { timestamps: true }
 );
 
-userSchema.pre('save', async function (next) {
+userSchema.pre('save', async function () {
     const user = this as UserDocument;
 
     if (user.isModified('password')) {
@@ -35,11 +35,9 @@ userSchema.pre('save', async function (next) {
             user.password = hash;
         } catch (error: any) {
             logger.error(error.message);
-            return next(error);
+            throw error;
         }
     }
-
-    next();
 });
 
 userSchema.methods.comparePassword = async function (candidatePassword: string): Promise<boolean> {

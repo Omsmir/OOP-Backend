@@ -2,12 +2,7 @@ import HttpException from '@/exceptions/httpException';
 import { logger } from '@/utils/logger';
 import { Request, Response, NextFunction } from 'express';
 
-export const ErrorHandler = async (
-    Error: HttpException,
-    req: Request,
-    res: Response,
-    next: NextFunction
-) => {
+export const ErrorHandler = async (Error: HttpException, req: Request, res: Response, next: NextFunction) => {
     try {
         const status: number = Error.status || 500;
         const message: string = Error.message || 'Something went wrong';

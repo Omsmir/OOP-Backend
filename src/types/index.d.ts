@@ -55,5 +55,6 @@ type failure<E> = { success: false; error: E };
 
 declare type result<T, E = string> = success<T> | failure<E>;
 
-
-
+declare interface mainError<E = unknown> {
+    message: E;
+}

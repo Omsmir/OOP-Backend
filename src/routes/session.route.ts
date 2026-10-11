@@ -9,7 +9,6 @@ import BaseRoute from './base.route';
 // All the route Class is a single responsability
 // interface segregation && liskov substitbution
 class SessionRoute extends BaseRoute {
-
     // dependency injection: composition over inheritance
     constructor(private sessionController: SessionController) {
         super('/auth');
@@ -17,12 +16,7 @@ class SessionRoute extends BaseRoute {
     }
 
     protected initializeRoutes() {
-        this.router.post(
-            this.path,
-            upload.none(),
-            validate(loginSchema),
-            this.sessionController.loginHandler
-        );
+        this.router.post(this.path, upload.none(), validate(loginSchema), this.sessionController.loginHandler);
     }
 }
 

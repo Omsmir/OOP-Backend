@@ -1,28 +1,20 @@
 import HttpException from '@/exceptions/httpException';
-import {
-    carSchemaInterface,
-    deleteCarSchemaInterface,
-    getCarSchemaInterface,
-    UpdateCarSchemaInterface,
-} from '@/schemas/car.schema';
+import { carSchemaInterface, deleteCarSchemaInterface, getCarSchemaInterface, UpdateCarSchemaInterface } from '@/schemas/car.schema';
 import CarService from '@/services/car.service';
 import { Request, Response } from 'express';
 import { BaseController } from './base.controller';
 import { EventBus, LoggerSubscriber } from '@/classes/behavioral.class';
 class CarController extends BaseController {
     private carService: CarService;
-    private subcriber: EventBus = new EventBus()
+    private subcriber: EventBus = new EventBus();
     constructor() {
         super();
         this.carService = new CarService();
         this.subcriber = new EventBus();
-        this.subcriber.subcribe(new LoggerSubscriber()) // observer behavoiral pattern subscriber
+        this.subcriber.subcribe(new LoggerSubscriber()); // observer behavoiral pattern subscriber
     }
 
-    public createCarHandler = async (
-        req: Request<{}, {}, carSchemaInterface['body']>,
-        res: Response
-    ) => {
+    public createCarHandler = async (req: Request<{}, {}, carSchemaInterface['body']>, res: Response) => {
         try {
             const name = req.body.name;
             const type = req.body.type;
@@ -31,15 +23,12 @@ class CarController extends BaseController {
             const existedCar = await this.carService.getCar({ name, type });
 
             if (existedCar) {
-                throw new HttpException(
-                    403,
-                    `car with name:${name} and type:${type} already exists`
-                );
+                throw new HttpException(403, `car with name:${name} and type:${type} already exists`);
             }
 
             const newCar = await this.carService.createCar({ ...req.body, price: parseInt(price) });
 
-            this.subcriber.notify(`car with id ${newCar.id} has been created`); // we have subcribed for event of successfully creating car
+            this.subcriber.notify(`car with id ${(newCar as any).id} has been created`); // we have subcribed for event of successfully creating car
 
             res.status(201).json({ message: 'new car has been created successfully', newCar });
         } catch (error: any) {
@@ -47,10 +36,7 @@ class CarController extends BaseController {
         }
     };
 
-    public getCarController = async (
-        req: Request<getCarSchemaInterface['params']>,
-        res: Response
-    ) => {
+    public getCarController = async (req: Request<getCarSchemaInterface['params']>, res: Response) => {
         try {
             const carId = req.params.id;
 
@@ -65,10 +51,7 @@ class CarController extends BaseController {
         }
     };
 
-    public updateCarHandler = async (
-        req: Request<UpdateCarSchemaInterface['params'], {}, UpdateCarSchemaInterface['body']>,
-        res: Response
-    ) => {
+    public updateCarHandler = async (req: Request<UpdateCarSchemaInterface['params'], {}, UpdateCarSchemaInterface['body']>, res: Response) => {
         try {
             const id = req.params.id;
 
@@ -79,11 +62,7 @@ class CarController extends BaseController {
             }
             const price = parseInt((req.body.price as any) || car?.price);
 
-            const updatedCar = await this.carService.editCar(
-                { _id: id },
-                { ...req.body, price },
-                { runValidators: true, new: true }
-            );
+            const updatedCar = await this.carService.editCar({ _id: id }, { ...req.body, price }, { runValidators: true, new: true });
 
             if (!updatedCar) {
                 throw new HttpException(400, 'error updating car');
@@ -96,10 +75,7 @@ class CarController extends BaseController {
         }
     };
 
-    public deleteCarHandler = async (
-        req: Request<deleteCarSchemaInterface['params']>,
-        res: Response
-    ) => {
+    public deleteCarHandler = async (req: Request<deleteCarSchemaInterface['params']>, res: Response) => {
         try {
             const id = req.params.id;
 

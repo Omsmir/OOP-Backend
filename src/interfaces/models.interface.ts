@@ -38,6 +38,7 @@ export type profilePicture = {
     content_type: string;
 };
 
+
 export interface UserToCreate {
     name: string;
     email: string;
@@ -90,7 +91,6 @@ export interface RefreshToken {
     updated_at: Date;
     expired_at: Date;
 }
-
 
 export interface refreshTokenInput {
     user_id: string;

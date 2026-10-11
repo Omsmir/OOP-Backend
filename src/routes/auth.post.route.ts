@@ -62,6 +62,7 @@ class authRoute extends BaseRoute {
         );
         this.router.post(
             `${this.path}/emails/testing/:id`,
+            upload.none(),
             this.middlewares.requireLogin,
             this.middlewares.tamperingMiddleware,
             this.middlewares.authorize([PERMISSIONS.EMAIL_SENDING]),

@@ -161,7 +161,7 @@ class refreshTokenRepository {
     public checkRefreshTokenValidity = async <T>({
         tokenId,
         refreshToken,
-    }: checkRefreshTokenValidityProps): Promise<TVALID<Boolean, TOKEN_INVALID_ERROR<boolean, TOKEN_INVALIDATION_MESSAGE>>> => {
+    }: checkRefreshTokenValidityProps): Promise<TVALID<boolean, TOKEN_INVALID_ERROR<boolean, TOKEN_INVALIDATION_MESSAGE>>> => {
         const existed_token = await this.findRefreshTokenById({ tokenId });
 
         if (!existed_token || !existed_token.is_valid)

@@ -2,15 +2,14 @@ import { SALTWORKFACTOR } from '@/config/defaults';
 import { PostgresInterface } from '@/interfaces/global.interface';
 import { profilePicture, UserInterface, UserToCreate } from '@/interfaces/models.interface';
 import bcryptjs from 'bcryptjs';
-import { keys, omit, values } from 'lodash';
-import { object } from 'zod/v4';
+import { keys, omit } from 'lodash';
 
 class UserRepository {
     constructor(private readonly DB: PostgresInterface) {}
 
-    public findUserByEmail = async (filter: string): Promise<UserInterface | null> => {
+    public findUserByEmail = async (email: string): Promise<UserInterface | null> => {
         const query = `SELECT * FROM users WHERE email = $1 LIMIT 1`;
-        const result = await this.DB.query(query, [filter]);
+        const result = await this.DB.query(query, [email]);
 
         if (!result.rowCount) return null;
 
@@ -121,10 +120,7 @@ class UserRepository {
         return user;
     };
 
-    public validateUser = async (
-        email: string,
-        password: string
-    ): Promise<undefined | UserInterface> => {
+    public validateUser = async (email: string, password: string): Promise<undefined | UserInterface> => {
         const query = 'SELECT * FROM users WHERE email = $1';
 
         const result = await this.DB.query(query, [email]);

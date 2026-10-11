@@ -7,7 +7,7 @@ export enum PERMISSIONS {
     USER_PROFILE_UPDATE = 'USER_PROFILE:UPDATE',
 
     ROOT_ADMIN = 'ROOT:ADMIN',
-    EMAIL_SENDING = 'USER:EMAIL_SENDING'
+    EMAIL_SENDING = 'USER:EMAIL_SENDING',
 }
 
 export enum HASHING_ALGORITHMS {
@@ -30,5 +30,3 @@ export enum TOKEN_INVALIDATION_ERROR_MESSAGE {
     USER_ERROR = 'User Is Not Found or Something Went Wrong',
     NULL = '',
 }
-
-

@@ -16,6 +16,7 @@ import { RedisConnection, RedisServices } from '@/utils/redis';
 import BullWorkers from '@/integrations/workers';
 import { AUTH_ROUTE } from './types/general.interfaces';
 import { SEEDED_USER_NAME, SEEDED_USER_PASSWORD, TEST_SEEDED_EMAIL } from '@/config/defaults';
+import refreshTokenRepository from '@/repository/refresh_token.repo';
 
 describe('auth controller tests', () => {
     let app: App;
@@ -46,8 +47,11 @@ describe('auth controller tests', () => {
 
         const S3Service = new S3Services(s3);
 
+        const refresh_token_repository = new refreshTokenRepository(DB, user_repository, session_repository);
+
         const auth_controller = new authController(
             user_repository,
+            refresh_token_repository,
             session_repository,
             redis_services,
             workers,
@@ -80,11 +84,7 @@ describe('auth controller tests', () => {
         });
 
         it('should fail if does not have the sufficient privileges', async () => {
-            const login = await login_request(
-                app,
-                String(TEST_SEEDED_EMAIL),
-                String(SEEDED_USER_PASSWORD)
-            );
+            const login = await login_request(app, String(TEST_SEEDED_EMAIL), String(SEEDED_USER_PASSWORD));
 
             const cookies = login.headers['set-cookie'];
 
@@ -98,17 +98,10 @@ describe('auth controller tests', () => {
 
             expect(response.status).toBe(403);
 
-            expect(response.body).toHaveProperty(
-                'message',
-                'unsufficient privileges to perform this action'
-            );
+            expect(response.body).toHaveProperty('message', 'unsufficient privileges to perform this action');
         });
         it("shouldn't create user with existing email", async () => {
-            const login = await login_request(
-                app,
-                String(SEEDED_USER_NAME),
-                String(SEEDED_USER_PASSWORD)
-            );
+            const login = await login_request(app, String(SEEDED_USER_NAME), String(SEEDED_USER_PASSWORD));
 
             const cookies = login.headers['set-cookie'];
 
@@ -130,18 +123,11 @@ describe('auth controller tests', () => {
 
             expect(response.status).toBe(403);
 
-            expect(response.body).toHaveProperty(
-                'message',
-                `user with email:${existed_user_payload.email} is already exist`
-            );
+            expect(response.body).toHaveProperty('message', `user with email:${existed_user_payload.email} is already exist`);
         }, 15000);
 
         it('should create user successfully', async () => {
-            const login = await login_request(
-                app,
-                String(SEEDED_USER_NAME),
-                String(SEEDED_USER_PASSWORD)
-            );
+            const login = await login_request(app, String(SEEDED_USER_NAME), String(SEEDED_USER_PASSWORD));
 
             const cookies = login.headers['set-cookie'];
 
@@ -167,7 +153,7 @@ describe('auth controller tests', () => {
             expect(response.body).toHaveProperty('message', 'user created successfully');
 
             expect(response.body).toHaveProperty('createdUser');
-        },15000);
+        }, 15000);
     });
 
     describe('POST /post-users/login', () => {
@@ -190,11 +176,7 @@ describe('auth controller tests', () => {
         });
 
         it('should login user successfully and set cookies', async () => {
-            const response = await login_request(
-                app,
-                String(TEST_SEEDED_EMAIL),
-                String(SEEDED_USER_PASSWORD)
-            );
+            const response = await login_request(app, String(TEST_SEEDED_EMAIL), String(SEEDED_USER_PASSWORD));
 
             const rawCookies = response.headers['set-cookie'];
 

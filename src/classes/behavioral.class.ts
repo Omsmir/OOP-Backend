@@ -99,7 +99,7 @@ export class CommandInvoker {
     }
 
     public getCommands() {
-        return this.queue
+        return this.queue;
     }
 
     public run() {

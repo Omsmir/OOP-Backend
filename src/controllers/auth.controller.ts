@@ -2,15 +2,12 @@ import UserService from '@/services/auth.service';
 import { BaseController } from './base.controller';
 import HttpException from '@/exceptions/httpException';
 import { Request, Response } from 'express';
-import {
-    createUserSchemaInterface,
-    deleteUserSchemaInterface,
-    updateUserSchemaInterface,
-} from '@/schemas/auth.schema';
+import { createUserSchemaInterface, deleteUserSchemaInterface, updateUserSchemaInterface } from '@/schemas/auth.schema';
 import { UserFactory } from '@/classes/creationalPatterns';
 import { EMAIL_SERVICES } from '@/utils/mail-service';
 import { CommandInvoker, EventBus, LoggerSubscriber } from '@/classes/behavioral.class';
 import { EMAIL_TEMPLATES, SUBJECT_TYPES } from '@/interfaces/global.interface';
+import { PERMISSIONS } from '@/interfaces/permissions';
 
 class UserController extends BaseController {
     private sub: EventBus = new EventBus();
@@ -23,16 +20,14 @@ class UserController extends BaseController {
         this.sub.subcribe(new LoggerSubscriber()); // observer behavoiral pattern subscriber
     }
 
-    public createUserHandler = async (
-        req: Request<createUserSchemaInterface['params'], {}, createUserSchemaInterface['body']>,
-        res: Response
-    ) => {
+    public createUserHandler = async (req: Request<createUserSchemaInterface['params'], {}, createUserSchemaInterface['body']>, res: Response) => {
         try {
+
             const id = req.params.id;
 
             const adminUser = await this.userService.findUser({
                 _id: id,
-                permissions: { $in: ['write'] },
+                permissions: { $in: [PERMISSIONS.ROOT_ADMIN] },
             });
 
             if (!adminUser || (adminUser.role !== 'admin' && req.body.role === 'admin')) {
@@ -42,10 +37,7 @@ class UserController extends BaseController {
             const existedUser = await this.userService.findUser({ email: req.body.email });
 
             if (existedUser) {
-                throw new HttpException(
-                    403,
-                    `user with email:${existedUser.email} is already exist`
-                );
+                throw new HttpException(403, `user with email:${existedUser.email} is already exist`);
             }
 
             const createdUserInstance = this.userFactory.create(req.body.role); // factory design pattern usage
@@ -56,7 +48,7 @@ class UserController extends BaseController {
 
             const user = {
                 ...req.body,
-                role: createdUserInstance.role , // factory design pattern usage
+                role: createdUserInstance.role, // factory design pattern usage
                 permissions: createdUserInstance.permissions(), // factory design pattern usage
             };
 
@@ -73,10 +65,7 @@ class UserController extends BaseController {
         }
     };
 
-    public updateUserHandler = async (
-        req: Request<updateUserSchemaInterface['params'], {}, updateUserSchemaInterface['body']>,
-        res: Response
-    ) => {
+    public updateUserHandler = async (req: Request<updateUserSchemaInterface['params'], {}, updateUserSchemaInterface['body']>, res: Response) => {
         try {
             const id = req.params.id;
             const userId = req.body.userId;
@@ -86,7 +75,7 @@ class UserController extends BaseController {
             }
             const adminUser = await this.userService.findUser({
                 _id: id,
-                permissions: { $in: ['update'] },
+                permissions: { $in: [PERMISSIONS.ROOT_ADMIN] },
             });
 
             if (!adminUser) {
@@ -125,10 +114,7 @@ class UserController extends BaseController {
         }
     };
 
-    public deleteUserHandler = async (
-        req: Request<deleteUserSchemaInterface['params'], {}, deleteUserSchemaInterface['body']>,
-        res: Response
-    ) => {
+    public deleteUserHandler = async (req: Request<deleteUserSchemaInterface['params'], {}, deleteUserSchemaInterface['body']>, res: Response) => {
         try {
             const id = req.params.id;
             const userId = req.body.userId;

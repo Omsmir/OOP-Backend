@@ -3,41 +3,48 @@ import { z } from 'zod';
 const validImageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
 
 const payload = {
-    body: z.object({
-        name: z.string({ required_error: 'name is required' }),
-        email: z.string({ required_error: 'email is required' }).email({ message: 'not a vaild email' }),
-        password: z.string({ required_error: 'password is required' }),
-        role: z.enum(['admin', 'user', 'guest'], { required_error: 'role is required' }),
-    }),
+    body: z
+        .object({
+            name: z.string({ error: 'name is required' }),
+            email: z.string({ error: 'email is required' }).email({ message: 'not a vaild email' }),
+            password: z.string({ error: 'password is required' }),
+            confirmpassword: z.string({ error: 'confirm password is required' }),
+
+            role: z.enum(['admin', 'user', 'guest'], { error: 'role is required' }),
+        })
+        .refine((data) => data.password == data.confirmpassword, {
+            path: ['confirmpassword'],
+            message: "passwords doesn't match",
+        }),
 };
 
 const deletePayload = {
     body: z.object({
-        userId: z.string({ required_error: 'user is is required' }),
+        userId: z.string({ error: 'user is is required' }),
     }),
 };
 
 const updatePayload = {
     body: z.object({
-        userId: z.string({ required_error: 'userId is required' }),
-        role: z.enum(['admin', 'user', 'guest'], { required_error: 'role is required' }),
+        userId: z.string({ error: 'userId is required' }),
+        role: z.enum(['admin', 'user', 'guest'], { error: 'role is required' }),
     }),
 };
 
 const params = {
     params: z.object({
-        id: z.string({ required_error: 'user id is required' }),
+        id: z.string({ error: 'user id is required' }),
     }),
 };
 
 const createUserPayload = {
     body: z.object({
-        name: z.string({ required_error: 'name is required' }),
-        email: z.string({ required_error: 'email is required' }).email({ message: 'not a valid email' }),
-        password: z.string({ required_error: 'password is required' }),
-        age: z.string({ required_error: 'age is required' }),
-        role: z.enum(['admin', 'user', 'guest'], { required_error: 'role is required' }),
-        gender: z.enum(['male', 'female', 'other'], { required_error: 'please select a gender' }),
+        name: z.string({ error: 'name is required' }),
+        email: z.string({ error: 'email is required' }).email({ message: 'not a valid email' }),
+        password: z.string({ error: 'password is required' }),
+        age: z.string({ error: 'age is required' }),
+        role: z.enum(['admin', 'user', 'guest'], { error: 'role is required' }),
+        gender: z.enum(['male', 'female', 'other'], { error: 'please select a gender' }),
     }),
 };
 
@@ -69,7 +76,7 @@ const updateUserPayload = {
 
 const sendEmailPayload = {
     body: z.object({
-        email: z.string({ required_error: 'please support the email of the recipient' }).email(),
+        email: z.string({ error: 'please support the email of the recipient' }).email(),
     }),
     query: z.object({
         template_name: z.enum(Object.values(EMAIL_TEMPLATES) as [string, ...string[]]),

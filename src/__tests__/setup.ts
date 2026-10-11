@@ -20,9 +20,7 @@ export const prepareDatabase = async () => {
     const connectionString = (globalThis as Record<string, unknown>).__POSTGRES_URI__ as string;
 
     if (!connectionString) {
-        throw new Error(
-            'PostgreSQL container not found. Make sure globalSetup is configured correctly.'
-        );
+        throw new Error('PostgreSQL container not found. Make sure globalSetup is configured correctly.');
     }
 
     // Connect to the shared database
@@ -48,14 +46,12 @@ export const closeDatabase = async (client: Client) => {
 
 export const resetDatabase = async (client: Client) => {
     // Only truncate tables that are populated during tests, keep the initial state
-        await client.query(`
+    await client.query(`
         TRUNCATE TABLE
         sessions
         RESTART IDENTITY CASCADE
       `);
-    await client.query(
-        `DELETE FROM users WHERE email NOT IN ('omarsamiir@outlook.com','omarsamir232@gmail.com');`
-    );
+    await client.query(`DELETE FROM users WHERE email NOT IN ('omarsamiir@outlook.com','omarsamir232@gmail.com');`);
 };
 
 export const login_request = async (app: App, email: string, password: string) => {

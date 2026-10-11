@@ -25,10 +25,7 @@ class BookController extends BaseController {
         }
     };
 
-    public CreateBookHandler = async (
-        req: Request<{}, {}, BookSchemaInterface['body']>,
-        res: Response
-    ) => {
+    public CreateBookHandler = async (req: Request<{}, {}, BookSchemaInterface['body']>, res: Response) => {
         try {
             const title = req.body.title;
 
@@ -64,10 +61,7 @@ class BookController extends BaseController {
         }
     };
 
-    public BorrowBookHandler = async (
-        req: Request<{}, {}, {}, getBookSchemaInterface['query']>,
-        res: Response
-    ) => {
+    public BorrowBookHandler = async (req: Request<{}, {}, {}, getBookSchemaInterface['query']>, res: Response) => {
         try {
             const title = req.query.title;
 
@@ -76,11 +70,7 @@ class BookController extends BaseController {
             if (book) {
                 throw new HttpException(403, `this book is already borrowed by another reader`);
             }
-            await this.bookService.UpdateBook(
-                { title },
-                { borrowed: true },
-                { runValidators: true, new: true }
-            );
+            await this.bookService.UpdateBook({ title }, { borrowed: true }, { runValidators: true, new: true });
 
             res.status(200).json({ message: 'this book is borrowed by you' });
         } catch (error) {
@@ -88,20 +78,14 @@ class BookController extends BaseController {
         }
     };
 
-    public DeleteBookHandler = async (
-        req: Request<{}, {}, {}, getBookSchemaInterface['query']>,
-        res: Response
-    ) => {
+    public DeleteBookHandler = async (req: Request<{}, {}, {}, getBookSchemaInterface['query']>, res: Response) => {
         try {
             const title = req.query.title;
 
             const book = await this.bookService.GetBook({ title });
 
             if (!book) {
-                throw new HttpException(
-                    403,
-                    `this book is already borrowed by a reader and can't be deleted right now`
-                );
+                throw new HttpException(403, `this book is already borrowed by a reader and can't be deleted right now`);
             }
             await this.bookService.DeleteBook({ title });
 
